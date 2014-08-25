@@ -17,6 +17,7 @@ PODS:
   - AFNetworking/Reachability (2.3.1)
   - AFNetworking/Security (2.3.1)
   - AFNetworking/Serialization (2.3.1)
+  - CNGridView (1.1.4)
   - MASPreferences (1.1)
   - PVAsyncImageView (0.0.1)
   - PXListView (0.0.1)
@@ -25,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.3)
+  - CNGridView (~> 1.1)
   - MASPreferences (~> 1.1)
   - PVAsyncImageView (~> 0.0)
   - PXListView (~> 0.0)
@@ -33,6 +35,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  CNGridView: bc4b4bf7b518da3dfeee4a4b6f5a65b9c41f557c
   MASPreferences: 971d03da4b3818f8ea0d0ef10b86b02b2c052d17
   PVAsyncImageView: c520d07f666f4f05393ae7d166ee8b146afd2fe1
   PXListView: c78477f8f4524bf8b7665f93212b9e638a2aecba

@@ -18,6 +18,8 @@
 			<key>apis</key>
 			<array>
 				<dict>
+					<key>contentType</key>
+					<string>text/html</string>
 					<key>name</key>
 					<string>likeapp</string>
 					<key>method</key>
@@ -31,6 +33,8 @@
 					</dict>
 				</dict>
 				<dict>
+					<key>contentType</key>
+					<string>text/xml</string>
 					<key>name</key>
 					<string>softwarelist</string>
 					<key>parameters</key>

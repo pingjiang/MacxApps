@@ -9,10 +9,17 @@
 #import <Cocoa/Cocoa.h>
 #import "PXSourceList.h"
 
-@interface PJAppDelegate : NSObject <NSApplicationDelegate, PXSourceListDataSource, PXSourceListDelegate>
+@class PJSoftwareGridViewController;
+
+@interface PJAppDelegate : NSObject <NSApplicationDelegate, PXSourceListDataSource, PXSourceListDelegate> {
+    NSView *_defaultView;
+    NSView *_keyView;
+    PJSoftwareGridViewController *_softwareGridViewController;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet PXSourceList *sourceList;
+@property (weak) IBOutlet NSBox *viewBox;
 @property (weak) IBOutlet NSTextField *selectedItemLabel;
 @property (weak) IBOutlet NSButtonCell *removeButton;
 

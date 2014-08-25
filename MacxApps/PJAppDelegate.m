@@ -10,6 +10,8 @@
 #import "PJSoftwareInfo.h"
 #import "PJSoftwareCollection.h"
 #import "PJSoftwareCategory.h"
+#import "PJSoftwareGridViewController.h"
+#import "PJSoftwareManager.h"
 
 @interface PJAppDelegate ()
 @property (strong, nonatomic) NSMutableArray *modelObjects;
@@ -31,6 +33,15 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
 }
 
+- (void)awakeFromNib {
+    if (!_softwareGridViewController) {
+        _softwareGridViewController = [[PJSoftwareGridViewController alloc] init];
+        _defaultView = self.viewBox.contentView;
+        
+        _keyView = _defaultView;
+    }
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self registerDefaults];
@@ -42,6 +53,10 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     [self setUpDataModel];
     
     [self.sourceList reloadData];
+    
+    //[[PJSoftwareManager sharedManager] querySoftwareListAll];
+    // 6103
+    [[PJSoftwareManager sharedManager] likeSoftware:6103];
 }
 
 
@@ -265,6 +280,14 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     
     self.selectedItemLabel.stringValue = newLabel;
     self.removeButton.enabled = removeButtonEnabled;
+    
+    // Change view content
+    // _softwareGridViewController
+    if (_keyView != [_softwareGridViewController view]) {
+        _keyView = [_softwareGridViewController view];
+        [self.viewBox setContentView:_keyView];
+        [_softwareGridViewController loadData];
+    }
 }
 
 #pragma mark - Drag and Drop
