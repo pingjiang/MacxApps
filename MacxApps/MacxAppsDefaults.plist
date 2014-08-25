@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>HTTPCache</key>
+	<dict/>
+	<key>SoftwareListProviders</key>
+	<array>
+		<dict>
+			<key>url</key>
+			<string>http://soft.macx.cn</string>
+			<key>name</key>
+			<string>macx</string>
+			<key>description</key>
+			<string>MacX是很多Mac爱好者的乐园，可以免费（免积分）下载各种优秀的破解软件。一直以来我都是直接浏览网站，下载自己需要的软件的。现在他们出了一款客户端软件，可以直接的在本地搜索和更新软件。</string>
+			<key>version</key>
+			<string>1.2.3</string>
+			<key>apis</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>likeapp</string>
+					<key>method</key>
+					<string>GET</string>
+					<key>path</key>
+					<string>/like-app.asp</string>
+					<key>parameters</key>
+					<dict>
+						<key>softid</key>
+						<integer>0</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>softwarelist</string>
+					<key>parameters</key>
+					<dict>
+						<key>order</key>
+						<string></string>
+						<key>no</key>
+						<integer>100</integer>
+						<key>id</key>
+						<string>soft</string>
+					</dict>
+					<key>path</key>
+					<string>/xml.asp</string>
+					<key>method</key>
+					<string>GET</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

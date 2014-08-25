@@ -1,1088 +1,565 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>2EBB8F98EE22427FACECCBDF</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-MacxApps-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>3F08696F82554CDF8D7ED5EF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DDFD939322BD4AE2A7E90B39</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>64E62A3B0C454DA88EA37B53</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>ACD66D44D0224B5B9182B155</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-MacxApps.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods-MacxApps.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AA919AAE164002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2ABB19AAE164002D77DA</string>
-				<string>D70F2AD919AAE165002D77DA</string>
-				<string>D70F2AB419AAE164002D77DA</string>
-				<string>D70F2AB319AAE164002D77DA</string>
-				<string>ACD66D44D0224B5B9182B155</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AAA19AAE164002D77DA</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>PJ</string>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>&#24179;&#27743;</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>D70F2AD219AAE165002D77DA</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>D70F2AB119AAE164002D77DA</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>D70F2AAD19AAE164002D77DA</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>D70F2AA919AAE164002D77DA</string>
-			<key>productRefGroup</key>
-			<string>D70F2AB319AAE164002D77DA</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>D70F2AB119AAE164002D77DA</string>
-				<string>D70F2AD219AAE165002D77DA</string>
-			</array>
-		</dict>
-		<key>D70F2AAD19AAE164002D77DA</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D70F2AE119AAE165002D77DA</string>
-				<string>D70F2AE219AAE165002D77DA</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D70F2AAE19AAE164002D77DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D70F2AC919AAE164002D77DA</string>
-				<string>D70F2AC219AAE164002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D70F2AAF19AAE164002D77DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D70F2AB619AAE164002D77DA</string>
-				<string>3F08696F82554CDF8D7ED5EF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D70F2AB019AAE164002D77DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D70F2AC019AAE164002D77DA</string>
-				<string>D70F2ACE19AAE165002D77DA</string>
-				<string>D70F2AC619AAE164002D77DA</string>
-				<string>D70F2ACC19AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D70F2AB119AAE164002D77DA</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>D70F2AE319AAE165002D77DA</string>
-			<key>buildPhases</key>
-			<array>
-				<string>64E62A3B0C454DA88EA37B53</string>
-				<string>D70F2AAE19AAE164002D77DA</string>
-				<string>D70F2AAF19AAE164002D77DA</string>
-				<string>D70F2AB019AAE164002D77DA</string>
-				<string>2EBB8F98EE22427FACECCBDF</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MacxApps</string>
-			<key>productName</key>
-			<string>MacxApps</string>
-			<key>productReference</key>
-			<string>D70F2AB219AAE164002D77DA</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>D70F2AB219AAE164002D77DA</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MacxApps.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D70F2AB319AAE164002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2AB219AAE164002D77DA</string>
-				<string>D70F2AD319AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AB419AAE164002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2AB519AAE164002D77DA</string>
-				<string>D70F2AD419AAE165002D77DA</string>
-				<string>D70F2AB719AAE164002D77DA</string>
-				<string>DDFD939322BD4AE2A7E90B39</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AB519AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Cocoa.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Cocoa.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D70F2AB619AAE164002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2AB519AAE164002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2AB719AAE164002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2AB819AAE164002D77DA</string>
-				<string>D70F2AB919AAE164002D77DA</string>
-				<string>D70F2ABA19AAE164002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Other Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AB819AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AppKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/AppKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D70F2AB919AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreData.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreData.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D70F2ABA19AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D70F2ABB19AAE164002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2AC719AAE164002D77DA</string>
-				<string>D70F2AC819AAE164002D77DA</string>
-				<string>D70F2ACA19AAE165002D77DA</string>
-				<string>D70F2ACD19AAE165002D77DA</string>
-				<string>D70F2ABC19AAE164002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>MacxApps</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ABC19AAE164002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2ABD19AAE164002D77DA</string>
-				<string>D70F2ABE19AAE164002D77DA</string>
-				<string>D70F2AC119AAE164002D77DA</string>
-				<string>D70F2AC319AAE164002D77DA</string>
-				<string>D70F2AC419AAE164002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ABD19AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>MacxApps-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ABE19AAE164002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2ABF19AAE164002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ABF19AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AC019AAE164002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2ABE19AAE164002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2AC119AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AC219AAE164002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2AC119AAE164002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2AC319AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MacxApps-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AC419AAE164002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2AC519AAE164002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Credits.rtf</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AC519AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.rtf</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/Credits.rtf</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AC619AAE164002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2AC419AAE164002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2AC719AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PJAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AC819AAE164002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PJAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AC919AAE164002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2AC819AAE164002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2ACA19AAE165002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2ACB19AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>MainMenu.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ACB19AAE165002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/MainMenu.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ACC19AAE165002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2ACA19AAE165002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2ACD19AAE165002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ACE19AAE165002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2ACD19AAE165002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2ACF19AAE165002D77DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D70F2AE019AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D70F2AD019AAE165002D77DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D70F2AD619AAE165002D77DA</string>
-				<string>D70F2AD519AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D70F2AD119AAE165002D77DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D70F2ADE19AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D70F2AD219AAE165002D77DA</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>D70F2AE619AAE165002D77DA</string>
-			<key>buildPhases</key>
-			<array>
-				<string>D70F2ACF19AAE165002D77DA</string>
-				<string>D70F2AD019AAE165002D77DA</string>
-				<string>D70F2AD119AAE165002D77DA</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>D70F2AD819AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MacxAppsTests</string>
-			<key>productName</key>
-			<string>MacxAppsTests</string>
-			<key>productReference</key>
-			<string>D70F2AD319AAE165002D77DA</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>D70F2AD319AAE165002D77DA</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MacxAppsTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D70F2AD419AAE165002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>D70F2AD519AAE165002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2AD419AAE165002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2AD619AAE165002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2AB519AAE164002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2AD719AAE165002D77DA</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D70F2AAA19AAE164002D77DA</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>D70F2AB119AAE164002D77DA</string>
-			<key>remoteInfo</key>
-			<string>MacxApps</string>
-		</dict>
-		<key>D70F2AD819AAE165002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>D70F2AB119AAE164002D77DA</string>
-			<key>targetProxy</key>
-			<string>D70F2AD719AAE165002D77DA</string>
-		</dict>
-		<key>D70F2AD919AAE165002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2ADF19AAE165002D77DA</string>
-				<string>D70F2ADA19AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>MacxAppsTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ADA19AAE165002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2ADB19AAE165002D77DA</string>
-				<string>D70F2ADC19AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ADB19AAE165002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>MacxAppsTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ADC19AAE165002D77DA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D70F2ADD19AAE165002D77DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ADD19AAE165002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2ADE19AAE165002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2ADC19AAE165002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2ADF19AAE165002D77DA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MacxAppsTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D70F2AE019AAE165002D77DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D70F2ADF19AAE165002D77DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D70F2AE119AAE165002D77DA</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.9</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D70F2AE219AAE165002D77DA</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.9</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>D70F2AE319AAE165002D77DA</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D70F2AE419AAE165002D77DA</string>
-				<string>D70F2AE519AAE165002D77DA</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D70F2AE419AAE165002D77DA</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>ACD66D44D0224B5B9182B155</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MacxApps/MacxApps-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MacxApps/MacxApps-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D70F2AE519AAE165002D77DA</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>ACD66D44D0224B5B9182B155</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MacxApps/MacxApps-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MacxApps/MacxApps-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>D70F2AE619AAE165002D77DA</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D70F2AE719AAE165002D77DA</string>
-				<string>D70F2AE819AAE165002D77DA</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D70F2AE719AAE165002D77DA</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/MacxApps.app/Contents/MacOS/MacxApps</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MacxApps/MacxApps-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>MacxAppsTests/MacxAppsTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D70F2AE819AAE165002D77DA</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/MacxApps.app/Contents/MacOS/MacxApps</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>MacxApps/MacxApps-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MacxAppsTests/MacxAppsTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>DDFD939322BD4AE2A7E90B39</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-MacxApps.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D70F2AAA19AAE164002D77DA</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F08696F82554CDF8D7ED5EF /* libPods-MacxApps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */; };
+		D70F2AB619AAE164002D77DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F2AB519AAE164002D77DA /* Cocoa.framework */; };
+		D70F2AC019AAE164002D77DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D70F2ABE19AAE164002D77DA /* InfoPlist.strings */; };
+		D70F2AC219AAE164002D77DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AC119AAE164002D77DA /* main.m */; };
+		D70F2AC619AAE164002D77DA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AC419AAE164002D77DA /* Credits.rtf */; };
+		D70F2AC919AAE164002D77DA /* PJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AC819AAE164002D77DA /* PJAppDelegate.m */; };
+		D70F2ACC19AAE165002D77DA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70F2ACA19AAE165002D77DA /* MainMenu.xib */; };
+		D70F2ACE19AAE165002D77DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70F2ACD19AAE165002D77DA /* Images.xcassets */; };
+		D70F2AD519AAE165002D77DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F2AD419AAE165002D77DA /* XCTest.framework */; };
+		D70F2AD619AAE165002D77DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F2AB519AAE164002D77DA /* Cocoa.framework */; };
+		D70F2ADE19AAE165002D77DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D70F2ADC19AAE165002D77DA /* InfoPlist.strings */; };
+		D70F2AE019AAE165002D77DA /* MacxAppsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2ADF19AAE165002D77DA /* MacxAppsTests.m */; };
+		D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AEB19AB0536002D77DA /* PJSoftwareInfo.m */; };
+		D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AEE19AB0597002D77DA /* PJSoftwareCollection.m */; };
+		D70F2AF319AB0EBD002D77DA /* macx-softlist.xml in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF019AB0EBD002D77DA /* macx-softlist.xml */; };
+		D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */; };
+		D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */; };
+		D70F2AF819AB0F32002D77DA /* PJSoftwareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AF719AB0F32002D77DA /* PJSoftwareCategory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D70F2AD719AAE165002D77DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D70F2AAA19AAE164002D77DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D70F2AB119AAE164002D77DA;
+			remoteInfo = MacxApps;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacxApps.xcconfig"; path = "Pods/Pods-MacxApps.xcconfig"; sourceTree = "<group>"; };
+		D70F2AB219AAE164002D77DA /* MacxApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacxApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D70F2AB519AAE164002D77DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D70F2AB819AAE164002D77DA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D70F2AB919AAE164002D77DA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D70F2ABA19AAE164002D77DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D70F2ABD19AAE164002D77DA /* MacxApps-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacxApps-Info.plist"; sourceTree = "<group>"; };
+		D70F2ABF19AAE164002D77DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D70F2AC119AAE164002D77DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D70F2AC319AAE164002D77DA /* MacxApps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacxApps-Prefix.pch"; sourceTree = "<group>"; };
+		D70F2AC519AAE164002D77DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D70F2AC719AAE164002D77DA /* PJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJAppDelegate.h; sourceTree = "<group>"; };
+		D70F2AC819AAE164002D77DA /* PJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PJAppDelegate.m; sourceTree = "<group>"; };
+		D70F2ACB19AAE165002D77DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D70F2ACD19AAE165002D77DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D70F2AD319AAE165002D77DA /* MacxAppsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacxAppsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D70F2AD419AAE165002D77DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D70F2ADB19AAE165002D77DA /* MacxAppsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacxAppsTests-Info.plist"; sourceTree = "<group>"; };
+		D70F2ADD19AAE165002D77DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D70F2ADF19AAE165002D77DA /* MacxAppsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacxAppsTests.m; sourceTree = "<group>"; };
+		D70F2AEA19AB0536002D77DA /* PJSoftwareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareInfo.h; sourceTree = "<group>"; };
+		D70F2AEB19AB0536002D77DA /* PJSoftwareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareInfo.m; sourceTree = "<group>"; };
+		D70F2AED19AB0597002D77DA /* PJSoftwareCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareCollection.h; sourceTree = "<group>"; };
+		D70F2AEE19AB0597002D77DA /* PJSoftwareCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareCollection.m; sourceTree = "<group>"; };
+		D70F2AF019AB0EBD002D77DA /* macx-softlist.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "macx-softlist.xml"; sourceTree = "<group>"; };
+		D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mac-soft-categories-macx.json"; sourceTree = "<group>"; };
+		D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MacxAppsDefaults.plist; sourceTree = "<group>"; };
+		D70F2AF619AB0F32002D77DA /* PJSoftwareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareCategory.h; sourceTree = "<group>"; };
+		D70F2AF719AB0F32002D77DA /* PJSoftwareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareCategory.m; sourceTree = "<group>"; };
+		DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacxApps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D70F2AAF19AAE164002D77DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AB619AAE164002D77DA /* Cocoa.framework in Frameworks */,
+				3F08696F82554CDF8D7ED5EF /* libPods-MacxApps.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D70F2AD019AAE165002D77DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AD619AAE165002D77DA /* Cocoa.framework in Frameworks */,
+				D70F2AD519AAE165002D77DA /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D70F2AA919AAE164002D77DA = {
+			isa = PBXGroup;
+			children = (
+				D70F2ABB19AAE164002D77DA /* MacxApps */,
+				D70F2AD919AAE165002D77DA /* MacxAppsTests */,
+				D70F2AB419AAE164002D77DA /* Frameworks */,
+				D70F2AB319AAE164002D77DA /* Products */,
+				ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		D70F2AB319AAE164002D77DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AB219AAE164002D77DA /* MacxApps.app */,
+				D70F2AD319AAE165002D77DA /* MacxAppsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D70F2AB419AAE164002D77DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AB519AAE164002D77DA /* Cocoa.framework */,
+				D70F2AD419AAE165002D77DA /* XCTest.framework */,
+				D70F2AB719AAE164002D77DA /* Other Frameworks */,
+				DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D70F2AB719AAE164002D77DA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AB819AAE164002D77DA /* AppKit.framework */,
+				D70F2AB919AAE164002D77DA /* CoreData.framework */,
+				D70F2ABA19AAE164002D77DA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D70F2ABB19AAE164002D77DA /* MacxApps */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AE919AB050D002D77DA /* Models */,
+				D70F2AC719AAE164002D77DA /* PJAppDelegate.h */,
+				D70F2AC819AAE164002D77DA /* PJAppDelegate.m */,
+				D70F2ACA19AAE165002D77DA /* MainMenu.xib */,
+				D70F2ACD19AAE165002D77DA /* Images.xcassets */,
+				D70F2ABC19AAE164002D77DA /* Supporting Files */,
+			);
+			path = MacxApps;
+			sourceTree = "<group>";
+		};
+		D70F2ABC19AAE164002D77DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AF019AB0EBD002D77DA /* macx-softlist.xml */,
+				D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */,
+				D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */,
+				D70F2ABD19AAE164002D77DA /* MacxApps-Info.plist */,
+				D70F2ABE19AAE164002D77DA /* InfoPlist.strings */,
+				D70F2AC119AAE164002D77DA /* main.m */,
+				D70F2AC319AAE164002D77DA /* MacxApps-Prefix.pch */,
+				D70F2AC419AAE164002D77DA /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D70F2AD919AAE165002D77DA /* MacxAppsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2ADF19AAE165002D77DA /* MacxAppsTests.m */,
+				D70F2ADA19AAE165002D77DA /* Supporting Files */,
+			);
+			path = MacxAppsTests;
+			sourceTree = "<group>";
+		};
+		D70F2ADA19AAE165002D77DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2ADB19AAE165002D77DA /* MacxAppsTests-Info.plist */,
+				D70F2ADC19AAE165002D77DA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D70F2AE919AB050D002D77DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AEA19AB0536002D77DA /* PJSoftwareInfo.h */,
+				D70F2AEB19AB0536002D77DA /* PJSoftwareInfo.m */,
+				D70F2AED19AB0597002D77DA /* PJSoftwareCollection.h */,
+				D70F2AEE19AB0597002D77DA /* PJSoftwareCollection.m */,
+				D70F2AF619AB0F32002D77DA /* PJSoftwareCategory.h */,
+				D70F2AF719AB0F32002D77DA /* PJSoftwareCategory.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D70F2AB119AAE164002D77DA /* MacxApps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D70F2AE319AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxApps" */;
+			buildPhases = (
+				64E62A3B0C454DA88EA37B53 /* Check Pods Manifest.lock */,
+				D70F2AAE19AAE164002D77DA /* Sources */,
+				D70F2AAF19AAE164002D77DA /* Frameworks */,
+				D70F2AB019AAE164002D77DA /* Resources */,
+				2EBB8F98EE22427FACECCBDF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacxApps;
+			productName = MacxApps;
+			productReference = D70F2AB219AAE164002D77DA /* MacxApps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D70F2AD219AAE165002D77DA /* MacxAppsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D70F2AE619AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxAppsTests" */;
+			buildPhases = (
+				D70F2ACF19AAE165002D77DA /* Sources */,
+				D70F2AD019AAE165002D77DA /* Frameworks */,
+				D70F2AD119AAE165002D77DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D70F2AD819AAE165002D77DA /* PBXTargetDependency */,
+			);
+			name = MacxAppsTests;
+			productName = MacxAppsTests;
+			productReference = D70F2AD319AAE165002D77DA /* MacxAppsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D70F2AAA19AAE164002D77DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PJ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "平江";
+				TargetAttributes = {
+					D70F2AD219AAE165002D77DA = {
+						TestTargetID = D70F2AB119AAE164002D77DA;
+					};
+				};
+			};
+			buildConfigurationList = D70F2AAD19AAE164002D77DA /* Build configuration list for PBXProject "MacxApps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D70F2AA919AAE164002D77DA;
+			productRefGroup = D70F2AB319AAE164002D77DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D70F2AB119AAE164002D77DA /* MacxApps */,
+				D70F2AD219AAE165002D77DA /* MacxAppsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D70F2AB019AAE164002D77DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AC019AAE164002D77DA /* InfoPlist.strings in Resources */,
+				D70F2ACE19AAE165002D77DA /* Images.xcassets in Resources */,
+				D70F2AC619AAE164002D77DA /* Credits.rtf in Resources */,
+				D70F2ACC19AAE165002D77DA /* MainMenu.xib in Resources */,
+				D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */,
+				D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */,
+				D70F2AF319AB0EBD002D77DA /* macx-softlist.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D70F2AD119AAE165002D77DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2ADE19AAE165002D77DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EBB8F98EE22427FACECCBDF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MacxApps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64E62A3B0C454DA88EA37B53 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D70F2AAE19AAE164002D77DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */,
+				D70F2AC919AAE164002D77DA /* PJAppDelegate.m in Sources */,
+				D70F2AF819AB0F32002D77DA /* PJSoftwareCategory.m in Sources */,
+				D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */,
+				D70F2AC219AAE164002D77DA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D70F2ACF19AAE165002D77DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AE019AAE165002D77DA /* MacxAppsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D70F2AD819AAE165002D77DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D70F2AB119AAE164002D77DA /* MacxApps */;
+			targetProxy = D70F2AD719AAE165002D77DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D70F2ABE19AAE164002D77DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D70F2ABF19AAE164002D77DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D70F2AC419AAE164002D77DA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D70F2AC519AAE164002D77DA /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D70F2ACA19AAE165002D77DA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D70F2ACB19AAE165002D77DA /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D70F2ADC19AAE165002D77DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D70F2ADD19AAE165002D77DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D70F2AE119AAE165002D77DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D70F2AE219AAE165002D77DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D70F2AE419AAE165002D77DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
+				INFOPLIST_FILE = "MacxApps/MacxApps-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D70F2AE519AAE165002D77DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
+				INFOPLIST_FILE = "MacxApps/MacxApps-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D70F2AE719AAE165002D77DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacxApps.app/Contents/MacOS/MacxApps";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MacxAppsTests/MacxAppsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D70F2AE819AAE165002D77DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacxApps.app/Contents/MacOS/MacxApps";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
+				INFOPLIST_FILE = "MacxAppsTests/MacxAppsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D70F2AAD19AAE164002D77DA /* Build configuration list for PBXProject "MacxApps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D70F2AE119AAE165002D77DA /* Debug */,
+				D70F2AE219AAE165002D77DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D70F2AE319AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxApps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D70F2AE419AAE165002D77DA /* Debug */,
+				D70F2AE519AAE165002D77DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D70F2AE619AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxAppsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D70F2AE719AAE165002D77DA /* Debug */,
+				D70F2AE819AAE165002D77DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D70F2AAA19AAE164002D77DA /* Project object */;
+}

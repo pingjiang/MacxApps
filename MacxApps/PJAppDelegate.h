@@ -7,9 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PXSourceList.h"
 
-@interface PJAppDelegate : NSObject <NSApplicationDelegate>
+@interface PJAppDelegate : NSObject <NSApplicationDelegate, PXSourceListDataSource, PXSourceListDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet PXSourceList *sourceList;
+@property (weak) IBOutlet NSTextField *selectedItemLabel;
+@property (weak) IBOutlet NSButtonCell *removeButton;
+
+
+- (IBAction)addButtonAction:(id)sender;
+- (IBAction)removeButtonAction:(id)sender;
+
 
 @end
