@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PJSoftwareGridViewController">
             <connections>
+                <outlet property="arrayController" destination="XBd-bU-QB6" id="pB3-2C-ztp"/>
                 <outlet property="gridView" destination="xFo-8n-tRd" id="fTC-v9-EFA"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -93,9 +94,9 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G1w-ny-o5r">
                     <rect key="frame" x="107" y="110" width="149" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name" id="AB2-QA-0BG">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" title="Name" usesSingleLineMode="YES" id="AB2-QA-0BG">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
@@ -111,7 +112,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Category" id="lJx-6J-xyx">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
@@ -121,33 +122,46 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z9B-Qo-ynz">
                     <rect key="frame" x="107" y="60" width="149" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Size" id="tq5-Ly-Oyy">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version - Size" id="tq5-Ly-Oyy">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="Bdm-Gr-s5r" name="displayPatternValue1" keyPath="self.representedObject.size" id="qe5-oC-cNW">
+                        <binding destination="Bdm-Gr-s5r" name="displayPatternValue1" keyPath="self.representedObject.size" id="y8G-f0-lXC">
                             <dictionary key="options">
-                                <string key="NSDisplayPattern">%{value1}@ MB</string>
+                                <string key="NSDisplayPattern">V%{value2}@ - %{value1}@ MB</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="Bdm-Gr-s5r" name="displayPatternValue2" keyPath="self.representedObject.version" previousBinding="y8G-f0-lXC" id="GKJ-QL-5WP">
+                            <dictionary key="options">
+                                <string key="NSDisplayPattern">V%{value2}@ - %{value1}@ MB</string>
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                             </dictionary>
                         </binding>
                     </connections>
                 </textField>
                 <levelIndicator verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x2Y-19-ozS">
-                    <rect key="frame" x="107" y="39" width="147" height="13"/>
+                    <rect key="frame" x="189" y="39" width="65" height="13"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <levelIndicatorCell key="cell" enabled="NO" alignment="left" doubleValue="2" maxValue="5" warningValue="2" criticalValue="2" levelIndicatorStyle="rating" id="bQ1-Xj-Q4D"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="3Dy-bK-zRU"/>
+                        <constraint firstAttribute="width" constant="65" id="Zcc-F0-dxR"/>
+                    </constraints>
+                    <levelIndicatorCell key="cell" enabled="NO" alignment="left" doubleValue="5" maxValue="5" warningValue="2" criticalValue="2" levelIndicatorStyle="rating" id="bQ1-Xj-Q4D"/>
                     <connections>
                         <binding destination="Bdm-Gr-s5r" name="value" keyPath="self.representedObject.star" id="DzG-Qz-xdI"/>
                     </connections>
                 </levelIndicator>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HTI-9F-0BF">
-                    <rect key="frame" x="101" y="3" width="66" height="32"/>
+                    <rect key="frame" x="109" y="7" width="54" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="下载" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qnL-Rr-Ule">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="54" id="a5q-km-ysW"/>
+                    </constraints>
+                    <buttonCell key="cell" type="roundTextured" title="下载" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qnL-Rr-Ule">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name="STHeitiSC-Light"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="downloadButtonAction:withSoftwareInfo:" target="-2" id="CJZ-GM-pmU"/>
@@ -159,12 +173,12 @@
                         </binding>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hql-EU-vCt">
-                    <rect key="frame" x="189" y="3" width="71" height="32"/>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hql-EU-vCt">
+                    <rect key="frame" x="189" y="7" width="65" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="详情" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5uJ-db-6sP">
+                    <buttonCell key="cell" type="roundTextured" title="详情" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5uJ-db-6sP">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name="STHeitiSC-Light"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="detailButtonAction:withSoftwareInfo:" target="-2" id="YMu-Kv-rbp"/>
@@ -176,27 +190,48 @@
                         </binding>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-3n-pXO">
+                    <rect key="frame" x="109" y="37" width="74" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="2014/01/01" id="PAC-vp-p9K">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="Bdm-Gr-s5r" name="value" keyPath="self.representedObject.lastmod" id="rRD-bY-5cc">
+                            <dictionary key="options">
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                <string key="NSValueTransformerName">PJTimestampValueTransformer</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="x2Y-19-ozS" firstAttribute="top" secondItem="Z9B-Qo-ynz" secondAttribute="bottom" constant="8" symbolic="YES" id="Ftr-ji-MFB"/>
                 <constraint firstItem="Z9B-Qo-ynz" firstAttribute="top" secondItem="FLY-9f-sCc" secondAttribute="bottom" constant="8" symbolic="YES" id="GJn-Jm-ndm"/>
-                <constraint firstItem="HTI-9F-0BF" firstAttribute="leading" secondItem="AaP-UD-Vbw" secondAttribute="trailing" constant="8" symbolic="YES" id="GgW-Aw-PDP"/>
+                <constraint firstItem="HTI-9F-0BF" firstAttribute="leading" secondItem="Z9B-Qo-ynz" secondAttribute="leading" id="H0a-Xh-tkj"/>
                 <constraint firstItem="AaP-UD-Vbw" firstAttribute="leading" secondItem="aMi-WZ-4K8" secondAttribute="leading" constant="10" id="JJq-sD-ML7"/>
+                <constraint firstItem="x2Y-19-ozS" firstAttribute="trailing" secondItem="Z9B-Qo-ynz" secondAttribute="trailing" id="Kac-DO-07u"/>
                 <constraint firstItem="G1w-ny-o5r" firstAttribute="leading" secondItem="AaP-UD-Vbw" secondAttribute="trailing" constant="10" id="LXe-yW-bII"/>
                 <constraint firstAttribute="bottom" secondItem="AaP-UD-Vbw" secondAttribute="bottom" constant="10" id="P2P-mN-O7d"/>
+                <constraint firstItem="Hql-EU-vCt" firstAttribute="top" secondItem="x2Y-19-ozS" secondAttribute="bottom" constant="8" symbolic="YES" id="Qon-lf-Qru"/>
                 <constraint firstItem="G1w-ny-o5r" firstAttribute="trailing" secondItem="FLY-9f-sCc" secondAttribute="trailing" id="RGZ-wg-fOb"/>
                 <constraint firstItem="FLY-9f-sCc" firstAttribute="top" secondItem="G1w-ny-o5r" secondAttribute="bottom" constant="8" symbolic="YES" id="RTS-Nf-yod"/>
-                <constraint firstItem="x2Y-19-ozS" firstAttribute="trailing" secondItem="Z9B-Qo-ynz" secondAttribute="trailing" id="Rg7-Vf-bHs"/>
-                <constraint firstItem="x2Y-19-ozS" firstAttribute="top" secondItem="Z9B-Qo-ynz" secondAttribute="bottom" constant="8" symbolic="YES" id="aj8-mZ-z5l"/>
+                <constraint firstItem="x2Y-19-ozS" firstAttribute="leading" secondItem="sb4-3n-pXO" secondAttribute="trailing" constant="8" symbolic="YES" id="Sqb-WS-1Yc"/>
+                <constraint firstItem="Hql-EU-vCt" firstAttribute="leading" secondItem="HTI-9F-0BF" secondAttribute="trailing" constant="26" id="WSV-I6-W3e"/>
+                <constraint firstItem="sb4-3n-pXO" firstAttribute="top" secondItem="Z9B-Qo-ynz" secondAttribute="bottom" constant="6" id="XnV-Le-W5S"/>
                 <constraint firstItem="FLY-9f-sCc" firstAttribute="trailing" secondItem="Z9B-Qo-ynz" secondAttribute="trailing" id="crV-jj-kPM"/>
-                <constraint firstItem="HTI-9F-0BF" firstAttribute="bottom" secondItem="AaP-UD-Vbw" secondAttribute="bottom" id="eB2-iT-qdv"/>
                 <constraint firstItem="G1w-ny-o5r" firstAttribute="top" secondItem="AaP-UD-Vbw" secondAttribute="top" id="eBi-GH-21c"/>
-                <constraint firstItem="x2Y-19-ozS" firstAttribute="leading" secondItem="AaP-UD-Vbw" secondAttribute="trailing" constant="8" symbolic="YES" id="ezH-Rx-GXt"/>
                 <constraint firstItem="AaP-UD-Vbw" firstAttribute="top" secondItem="aMi-WZ-4K8" secondAttribute="top" constant="12" id="fXT-za-zKD"/>
+                <constraint firstItem="Hql-EU-vCt" firstAttribute="baseline" secondItem="HTI-9F-0BF" secondAttribute="baseline" id="gFd-MR-L7n"/>
                 <constraint firstAttribute="trailing" secondItem="G1w-ny-o5r" secondAttribute="trailing" constant="10" id="l60-rR-Ces"/>
+                <constraint firstItem="sb4-3n-pXO" firstAttribute="leading" secondItem="AaP-UD-Vbw" secondAttribute="trailing" constant="12" id="pYu-Km-nHR"/>
+                <constraint firstItem="x2Y-19-ozS" firstAttribute="centerY" secondItem="sb4-3n-pXO" secondAttribute="centerY" id="pxh-E2-py4"/>
                 <constraint firstItem="FLY-9f-sCc" firstAttribute="leading" secondItem="G1w-ny-o5r" secondAttribute="leading" id="q2A-EM-PQw"/>
                 <constraint firstItem="Z9B-Qo-ynz" firstAttribute="leading" secondItem="FLY-9f-sCc" secondAttribute="leading" id="r0n-5Z-Qx2"/>
-                <constraint firstItem="Hql-EU-vCt" firstAttribute="trailing" secondItem="x2Y-19-ozS" secondAttribute="trailing" id="t5Q-t8-8oT"/>
-                <constraint firstItem="Hql-EU-vCt" firstAttribute="baseline" secondItem="HTI-9F-0BF" secondAttribute="baseline" id="zIQ-qx-NJK"/>
+                <constraint firstItem="x2Y-19-ozS" firstAttribute="trailing" secondItem="Hql-EU-vCt" secondAttribute="trailing" id="xaZ-TA-XeA"/>
             </constraints>
         </view>
         <arrayController id="XBd-bU-QB6" userLabel="Software Grid Controller">

@@ -9,7 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import "PJSoftwareInfoParser.h"
 
-@interface PJSoftwareGridViewController : NSViewController<NSCollectionViewDelegate, PJParseResultDelegate>
+@interface PJSoftwareGridViewController : NSViewController<NSCollectionViewDelegate, PJParseResultDelegate> {
+    NSMutableDictionary *_sortDescriptors;
+}
+
+@property (strong) IBOutlet NSArrayController *arrayController;
 
 @property (weak) IBOutlet NSCollectionView *gridView;
 
@@ -22,5 +26,14 @@
 // public methods
 - (void)loadData;
 
+// sort
+- (void)sortBy:(NSString*)key;
+
 
 @end
+
+
+@interface PJTimestampValueTransformer : NSValueTransformer
+
+@end
+

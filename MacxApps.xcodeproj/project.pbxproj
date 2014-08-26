@@ -34,6 +34,9 @@
 		D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */; };
 		D70F2B0C19AB6A1F002D77DA /* macx-softlist-all.xml in Resources */ = {isa = PBXBuildFile; fileRef = D70F2B0B19AB6A1F002D77DA /* macx-softlist-all.xml */; };
 		D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */; };
+		D7DACD7619AC22D400D7CFE1 /* PJWindowTitlebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */; };
+		D7DACD7719AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */; };
+		D7DACD7A19AC377800D7CFE1 /* PJUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7919AC377800D7CFE1 /* PJUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,11 @@
 		D70F2B0B19AB6A1F002D77DA /* macx-softlist-all.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "macx-softlist-all.xml"; sourceTree = "<group>"; };
 		D70F2B0D19AB6B87002D77DA /* PJSoftwareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareManager.h; sourceTree = "<group>"; };
 		D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareManager.m; sourceTree = "<group>"; };
+		D7DACD7319AC22D300D7CFE1 /* PJWindowTitlebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJWindowTitlebarViewController.h; sourceTree = "<group>"; };
+		D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJWindowTitlebarViewController.m; sourceTree = "<group>"; };
+		D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJWindowTitlebarViewController.xib; sourceTree = "<group>"; };
+		D7DACD7819AC377800D7CFE1 /* PJUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUtils.h; sourceTree = "<group>"; };
+		D7DACD7919AC377800D7CFE1 /* PJUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUtils.m; sourceTree = "<group>"; };
 		DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacxApps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -226,6 +234,9 @@
 				D70F2AFA19AB2AA3002D77DA /* PJSoftwareGridViewController.h */,
 				D70F2AFB19AB2AA3002D77DA /* PJSoftwareGridViewController.m */,
 				D70F2AFC19AB2AA3002D77DA /* PJSoftwareGridViewController.xib */,
+				D7DACD7319AC22D300D7CFE1 /* PJWindowTitlebarViewController.h */,
+				D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */,
+				D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +248,8 @@
 				D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */,
 				D70F2B0D19AB6B87002D77DA /* PJSoftwareManager.h */,
 				D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */,
+				D7DACD7819AC377800D7CFE1 /* PJUtils.h */,
+				D7DACD7919AC377800D7CFE1 /* PJUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -329,6 +342,7 @@
 				D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */,
 				D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */,
 				D70F2B0519AB309E002D77DA /* BackgroundSolid.png in Resources */,
+				D7DACD7719AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib in Resources */,
 				D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */,
 				D70F2AFE19AB2AA3002D77DA /* PJSoftwareGridViewController.xib in Resources */,
 				D70F2B0C19AB6A1F002D77DA /* macx-softlist-all.xml in Resources */,
@@ -389,8 +403,10 @@
 				D70F2AF819AB0F32002D77DA /* PJSoftwareCategory.m in Sources */,
 				D70F2AFD19AB2AA3002D77DA /* PJSoftwareGridViewController.m in Sources */,
 				D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */,
+				D7DACD7A19AC377800D7CFE1 /* PJUtils.m in Sources */,
 				D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */,
 				D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */,
+				D7DACD7619AC22D400D7CFE1 /* PJWindowTitlebarViewController.m in Sources */,
 				D70F2AC219AAE164002D77DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

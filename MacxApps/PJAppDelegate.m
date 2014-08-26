@@ -12,6 +12,8 @@
 #import "PJSoftwareCategory.h"
 #import "PJSoftwareGridViewController.h"
 #import "PJSoftwareManager.h"
+#import "INAppStoreWindow.h"
+#import "PJWindowTitlebarViewController.h"
 
 @interface PJAppDelegate ()
 @property (strong, nonatomic) NSMutableArray *modelObjects;
@@ -33,13 +35,51 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
 }
 
+
+// _softwareGridViewController
+//if (_keyView != [_softwareGridViewController view]) {
+//    _keyView = [_softwareGridViewController view];
+//    [self.viewBox setContentView:_keyView];
+//    [_softwareGridViewController loadData];
+//}
 - (void)awakeFromNib {
     if (!_softwareGridViewController) {
         _softwareGridViewController = [[PJSoftwareGridViewController alloc] init];
         _defaultView = self.viewBox.contentView;
         
-        _keyView = _defaultView;
+        _keyView = _softwareGridViewController.view;
+        [self.viewBox setContentView:_keyView];
+        [_softwareGridViewController loadData];
     }
+    
+    // The class of the window has been set in INAppStoreWindow in Interface Builder
+	INAppStoreWindow *aWindow = (INAppStoreWindow *) [self window];
+	aWindow.titleBarHeight = 40.0;
+	aWindow.trafficLightButtonsLeftMargin = 13.0;
+    // aWindow.fullScreenButtonRightMargin = 13.0;
+	
+	NSView *titleBarView = aWindow.titleBarView;
+	NSSize segmentSize = NSMakeSize(440, 25);
+	NSRect segmentFrame = NSMakeRect(NSMaxX(titleBarView.bounds) - 15 - segmentSize.width,
+                                     NSMidY(titleBarView.bounds) - (segmentSize.height / 2.f),
+                                     segmentSize.width, segmentSize.height);
+	
+    PJWindowTitlebarViewController *vc = [[PJWindowTitlebarViewController alloc] initWithFrame:segmentFrame];
+    [vc setArrayController:_softwareGridViewController.arrayController];
+    NSLog(@"vc array controller: %@", vc.arrayController);
+    //[vc.view addConstraint:[NSLayoutConstraint cons]]
+//    
+//    //constraint
+//    NSLayoutConstraint *bottomSpaceConstraint = [NSLayoutConstraint constraintWithItem:vc.view
+//                                                                             attribute:NSLayoutAttributeRight
+//                                                                             relatedBy:NSLayoutRelationEqual
+//                                                                                toItem:titleBarView
+//                                                                             attribute:NSLayoutAttributeRight
+//                                                                            multiplier:1.0
+//                                                                              constant:0.0];
+//    [vc.view addConstraint:bottomSpaceConstraint];
+    
+	[titleBarView addSubview:vc.view];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -56,7 +96,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     
     //[[PJSoftwareManager sharedManager] querySoftwareListAll];
     // 6103
-    [[PJSoftwareManager sharedManager] likeSoftware:6103];
+    // [[PJSoftwareManager sharedManager] likeSoftware:6103];
 }
 
 
@@ -282,12 +322,6 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     self.removeButton.enabled = removeButtonEnabled;
     
     // Change view content
-    // _softwareGridViewController
-    if (_keyView != [_softwareGridViewController view]) {
-        _keyView = [_softwareGridViewController view];
-        [self.viewBox setContentView:_keyView];
-        [_softwareGridViewController loadData];
-    }
 }
 
 #pragma mark - Drag and Drop

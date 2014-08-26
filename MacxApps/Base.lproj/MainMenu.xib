@@ -670,10 +670,10 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="MacxApps" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="MacxApps" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="INAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="1052" height="552"/>
+            <rect key="contentRect" x="122" y="237" width="1052" height="552"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="1052" height="552"/>
@@ -750,17 +750,16 @@
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJq-ey-JDa" customClass="PXSourceListBadgeView">
+                                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="aJq-ey-JDa" customClass="PXSourceListBadgeView">
                                                                             <rect key="frame" x="180" y="2" width="30" height="14"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="30" id="bVq-S3-zHo"/>
-                                                                            </constraints>
                                                                         </customView>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="centerY" secondItem="aJq-ey-JDa" secondAttribute="centerY" id="QMw-3i-RUs"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="aJq-ey-JDa" secondAttribute="trailing" constant="6" id="hIE-18-Va2"/>
+                                                                        <constraint firstItem="aJq-ey-JDa" firstAttribute="top" secondItem="xhz-kz-Ktv" secondAttribute="top" constant="1" id="1uI-GU-dKv"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="aJq-ey-JDa" secondAttribute="trailing" constant="6" id="Bab-4U-NTk"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="aJq-ey-JDa" secondAttribute="bottom" constant="2" id="QSc-Vt-QYj"/>
+                                                                        <constraint firstItem="aJq-ey-JDa" firstAttribute="leading" secondItem="xhz-kz-Ktv" secondAttribute="leading" constant="180" id="nOW-on-zJN"/>
                                                                     </constraints>
                                                                     <connections>
                                                                         <outlet property="badgeView" destination="aJq-ey-JDa" id="DoJ-uj-gZX"/>
@@ -840,9 +839,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="832" height="552"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80F-XZ-dDx">
-                                                    <rect key="frame" x="225" y="268" width="199" height="17"/>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="80F-XZ-dDx">
+                                                    <rect key="frame" x="317" y="268" width="199" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="195" id="5gD-ip-0T9"/>
+                                                        <constraint firstAttribute="height" constant="17" id="xqc-Dh-dRz"/>
+                                                    </constraints>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="4no-C3-Bst">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -852,8 +855,8 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="centerY" secondItem="80F-XZ-dDx" secondAttribute="centerY" id="mOe-PI-JRE"/>
-                                            <constraint firstAttribute="centerX" secondItem="80F-XZ-dDx" secondAttribute="centerX" id="wC5-ea-njv"/>
+                                            <constraint firstAttribute="centerY" secondItem="80F-XZ-dDx" secondAttribute="centerY" id="HPk-Zs-kFR"/>
+                                            <constraint firstAttribute="centerX" secondItem="80F-XZ-dDx" secondAttribute="centerX" id="MVM-pO-OOj"/>
                                         </constraints>
                                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
