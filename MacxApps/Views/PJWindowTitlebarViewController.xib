@@ -36,12 +36,10 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </searchFieldCell>
                     <connections>
-                        <binding destination="-2" name="predicate" keyPath="arrayController.filterPredicate" id="uMj-AR-XLb">
+                        <binding destination="nik-cw-Qh4" name="predicate" keyPath="filterPredicate" id="BQr-Qm-kPm">
                             <dictionary key="options">
-                                <bool key="NSAlwaysPresentsApplicationModalAlerts" value="YES"/>
                                 <string key="NSDisplayName">predicate</string>
                                 <string key="NSPredicateFormat">name contains[c] $value</string>
-                                <bool key="NSValidatesImmediately" value="YES"/>
                             </dictionary>
                         </binding>
                     </connections>
@@ -57,5 +55,10 @@
                 <constraint firstAttribute="bottom" secondItem="1ii-NC-iNn" secondAttribute="bottom" constant="3" id="gRa-US-yKb"/>
             </constraints>
         </customView>
+        <arrayController id="nik-cw-Qh4" userLabel="SearchItems Controller">
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="self.arrayController.content" id="Lpv-am-V2F"/>
+            </connections>
+        </arrayController>
     </objects>
 </document>

@@ -37,6 +37,10 @@
 		D7DACD7619AC22D400D7CFE1 /* PJWindowTitlebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */; };
 		D7DACD7719AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */; };
 		D7DACD7A19AC377800D7CFE1 /* PJUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7919AC377800D7CFE1 /* PJUtils.m */; };
+		D7DACD7E19AC551900D7CFE1 /* PJSoftwareListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */; };
+		D7DACD7F19AC551900D7CFE1 /* PJSoftwareListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */; };
+		D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */; };
+		D7DACD8419AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,12 @@
 		D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJWindowTitlebarViewController.xib; sourceTree = "<group>"; };
 		D7DACD7819AC377800D7CFE1 /* PJUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUtils.h; sourceTree = "<group>"; };
 		D7DACD7919AC377800D7CFE1 /* PJUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUtils.m; sourceTree = "<group>"; };
+		D7DACD7B19AC551900D7CFE1 /* PJSoftwareListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareListViewController.h; sourceTree = "<group>"; };
+		D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareListViewController.m; sourceTree = "<group>"; };
+		D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJSoftwareListViewController.xib; sourceTree = "<group>"; };
+		D7DACD8019AC638B00D7CFE1 /* PJSoftwareDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareDetailViewController.h; sourceTree = "<group>"; };
+		D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareDetailViewController.m; sourceTree = "<group>"; };
+		D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJSoftwareDetailViewController.xib; sourceTree = "<group>"; };
 		DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacxApps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -237,6 +247,12 @@
 				D7DACD7319AC22D300D7CFE1 /* PJWindowTitlebarViewController.h */,
 				D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */,
 				D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */,
+				D7DACD7B19AC551900D7CFE1 /* PJSoftwareListViewController.h */,
+				D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */,
+				D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */,
+				D7DACD8019AC638B00D7CFE1 /* PJSoftwareDetailViewController.h */,
+				D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */,
+				D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,10 +351,12 @@
 			files = (
 				D70F2AC019AAE164002D77DA /* InfoPlist.strings in Resources */,
 				D70F2ACE19AAE165002D77DA /* Images.xcassets in Resources */,
+				D7DACD8419AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib in Resources */,
 				D70F2B0419AB309E002D77DA /* BackgroundNoisy.png in Resources */,
 				D70F2B0319AB309E002D77DA /* BackgroundDust.png in Resources */,
 				D70F2AC619AAE164002D77DA /* Credits.rtf in Resources */,
 				D70F2ACC19AAE165002D77DA /* MainMenu.xib in Resources */,
+				D7DACD7F19AC551900D7CFE1 /* PJSoftwareListViewController.xib in Resources */,
 				D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */,
 				D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */,
 				D70F2B0519AB309E002D77DA /* BackgroundSolid.png in Resources */,
@@ -406,8 +424,10 @@
 				D7DACD7A19AC377800D7CFE1 /* PJUtils.m in Sources */,
 				D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */,
 				D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */,
+				D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */,
 				D7DACD7619AC22D400D7CFE1 /* PJWindowTitlebarViewController.m in Sources */,
 				D70F2AC219AAE164002D77DA /* main.m in Sources */,
+				D7DACD7E19AC551900D7CFE1 /* PJSoftwareListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

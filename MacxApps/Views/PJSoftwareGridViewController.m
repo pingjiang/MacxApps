@@ -33,15 +33,6 @@
     [self.gridView setBackgroundColors:@[bgColor]];
 }
 
-- (void)loadData {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"macx-softlist" ofType:@"xml"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:data];
-    [_parser setResultDelegate:self];
-    //[_parser setNeedDebug:YES];
-    [_parser parse];
-}
-
 - (void)sortBy:(NSString *)key {
     if (!_sortDescriptors) {
         _sortDescriptors = [[NSMutableDictionary alloc] init];
@@ -59,29 +50,6 @@
     
     [self.arrayController setSortDescriptors:@[sortDescriptor]];
 }
-
-#pragma mark - ParseResult Delegate
-- (void)didBeginParseResult {
-    if (!_items) {
-        [self setItems:[[NSMutableArray alloc] init]];
-    }
-}
-
-- (void)didParseResult:(NSDictionary *)nodeInfo {
-    [self willChangeValueForKey:@"items"];
-    [_items addObject:nodeInfo];
-    [self didChangeValueForKey:@"items"];
-    
-    // [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:[_softwareList count] - 1] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
-}
-- (void)onParseResultError:(NSError*)error {
-    NSLog(@"onParseResultError %@", error);
-}
-- (void)didParseResultDone {
-    // NSLog(@"didParseResultDone");
-    //[self.tableView reloadData];
-}
-
 
 - (IBAction)downloadButtonAction:(id)sender withSoftwareInfo:(id)softwareInfo {
     NSLog(@"downloadButtonAction %@, software info: %@", sender, softwareInfo);

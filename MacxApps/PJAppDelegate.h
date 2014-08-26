@@ -8,19 +8,29 @@
 
 #import <Cocoa/Cocoa.h>
 #import "PXSourceList.h"
+#import "PJSoftwareInfoParser.h"
+#import "PJSoftwareListViewController.h"
 
 @class PJSoftwareGridViewController;
+@class PJSoftwareListViewController;
+@class PJSoftwareDetailViewController;
 
-@interface PJAppDelegate : NSObject <NSApplicationDelegate, PXSourceListDataSource, PXSourceListDelegate> {
+@interface PJAppDelegate : NSObject <NSApplicationDelegate, PXSourceListDataSource, PXSourceListDelegate, PJParseResultDelegate, PJSelectionDelegate> {
     NSView *_defaultView;
     NSView *_keyView;
     PJSoftwareGridViewController *_softwareGridViewController;
+    PJSoftwareListViewController *_softwareListViewController;
+    PJSoftwareDetailViewController *_softwareDetailViewController;
 }
 
+@property (strong) NSMutableArray *items;
+
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSSplitView *splitView;
+
 @property (weak) IBOutlet PXSourceList *sourceList;
+@property (weak) IBOutlet NSBox *middleViewBox;
 @property (weak) IBOutlet NSBox *viewBox;
-@property (weak) IBOutlet NSTextField *selectedItemLabel;
 @property (weak) IBOutlet NSButtonCell *removeButton;
 
 

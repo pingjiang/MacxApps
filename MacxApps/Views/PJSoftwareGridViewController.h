@@ -7,9 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PJSoftwareInfoParser.h"
 
-@interface PJSoftwareGridViewController : NSViewController<NSCollectionViewDelegate, PJParseResultDelegate> {
+@interface PJSoftwareGridViewController : NSViewController<NSCollectionViewDelegate> {
     NSMutableDictionary *_sortDescriptors;
 }
 
@@ -17,14 +16,11 @@
 
 @property (weak) IBOutlet NSCollectionView *gridView;
 
-@property (strong) NSMutableArray *items;
+@property (strong) NSArray *items;
 
 // Bind actions
 - (IBAction)downloadButtonAction:(id)sender withSoftwareInfo:(id)softwareInfo;
 - (IBAction)detailButtonAction:(id)sender withSoftwareInfo:(id)softwareInfo ;
-
-// public methods
-- (void)loadData;
 
 // sort
 - (void)sortBy:(NSString*)key;

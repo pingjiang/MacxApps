@@ -13,8 +13,8 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="PJAppDelegate">
             <connections>
+                <outlet property="middleViewBox" destination="mfw-h8-Gtj" id="oBP-Z7-6qO"/>
                 <outlet property="removeButton" destination="tmi-WZ-fJw" id="mG9-PK-WT6"/>
-                <outlet property="selectedItemLabel" destination="80F-XZ-dDx" id="qu5-x7-qGo"/>
                 <outlet property="sourceList" destination="z9z-1R-Efg" id="aBl-wO-WOv"/>
                 <outlet property="viewBox" destination="s6M-F3-w3y" id="sx3-gX-G44"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -673,24 +673,24 @@
         <window title="MacxApps" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="INAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="122" y="237" width="1052" height="552"/>
+            <rect key="contentRect" x="122" y="237" width="1213" height="552"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="1052" height="552"/>
+                <rect key="frame" x="0.0" y="0.0" width="1213" height="552"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-9k-lwy">
-                        <rect key="frame" x="0.0" y="0.0" width="1052" height="552"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1213" height="552"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <customView id="ywF-sJ-KYs">
-                                <rect key="frame" x="0.0" y="0.0" width="219" height="552"/>
+                                <rect key="frame" x="0.0" y="0.0" width="218" height="552"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV4-ja-Dy7">
+                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV4-ja-Dy7">
                                         <rect key="frame" x="0.0" y="24" width="219" height="528"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <clipView key="contentView" id="g7D-Gn-kYt">
+                                        <clipView key="contentView" misplaced="YES" id="g7D-Gn-kYt">
                                             <rect key="frame" x="0.0" y="0.0" width="219" height="528"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -828,51 +828,55 @@
                                     <constraint firstAttribute="trailing" secondItem="dV4-ja-Dy7" secondAttribute="trailing" id="sO2-LS-weD"/>
                                 </constraints>
                             </customView>
-                            <customView id="hP6-zy-ina">
-                                <rect key="frame" x="220" y="0.0" width="832" height="552"/>
+                            <customView id="yND-2n-Lza">
+                                <rect key="frame" x="219" y="0.0" width="300" height="552"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-F3-w3y">
-                                        <rect key="frame" x="0.0" y="0.0" width="832" height="552"/>
+                                    <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="mfw-h8-Gtj">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="552"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView">
-                                            <rect key="frame" x="0.0" y="0.0" width="832" height="552"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="552"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="80F-XZ-dDx">
-                                                    <rect key="frame" x="317" y="268" width="199" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="195" id="5gD-ip-0T9"/>
-                                                        <constraint firstAttribute="height" constant="17" id="xqc-Dh-dRz"/>
-                                                    </constraints>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="4no-C3-Bst">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="centerY" secondItem="80F-XZ-dDx" secondAttribute="centerY" id="HPk-Zs-kFR"/>
-                                            <constraint firstAttribute="centerX" secondItem="80F-XZ-dDx" secondAttribute="centerX" id="MVM-pO-OOj"/>
-                                        </constraints>
                                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </box>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="s6M-F3-w3y" secondAttribute="trailing" id="JgV-4U-aua"/>
-                                    <constraint firstItem="s6M-F3-w3y" firstAttribute="leading" secondItem="hP6-zy-ina" secondAttribute="leading" id="WuT-kF-6Ly"/>
-                                    <constraint firstItem="s6M-F3-w3y" firstAttribute="top" secondItem="hP6-zy-ina" secondAttribute="top" id="enB-37-igd"/>
-                                    <constraint firstAttribute="bottom" secondItem="s6M-F3-w3y" secondAttribute="bottom" id="nSq-Kd-kWc"/>
+                                    <constraint firstItem="mfw-h8-Gtj" firstAttribute="top" secondItem="yND-2n-Lza" secondAttribute="top" id="2BQ-JC-9v1"/>
+                                    <constraint firstAttribute="bottom" secondItem="mfw-h8-Gtj" secondAttribute="bottom" id="3VA-RE-Vjv"/>
+                                    <constraint firstAttribute="trailing" secondItem="mfw-h8-Gtj" secondAttribute="trailing" id="Od0-IU-jkG"/>
+                                    <constraint firstItem="mfw-h8-Gtj" firstAttribute="leading" secondItem="yND-2n-Lza" secondAttribute="leading" id="YMk-je-kAx"/>
+                                </constraints>
+                            </customView>
+                            <customView id="hP6-zy-ina">
+                                <rect key="frame" x="520" y="0.0" width="693" height="552"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-F3-w3y">
+                                        <rect key="frame" x="0.0" y="0.0" width="693" height="552"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView">
+                                            <rect key="frame" x="0.0" y="0.0" width="693" height="552"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </box>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="s6M-F3-w3y" firstAttribute="leading" secondItem="hP6-zy-ina" secondAttribute="leading" id="6pE-h7-cIO"/>
+                                    <constraint firstItem="s6M-F3-w3y" firstAttribute="top" secondItem="hP6-zy-ina" secondAttribute="top" id="ENz-T3-G79"/>
+                                    <constraint firstAttribute="bottom" secondItem="s6M-F3-w3y" secondAttribute="bottom" id="fc5-rn-rgG"/>
+                                    <constraint firstAttribute="trailing" secondItem="s6M-F3-w3y" secondAttribute="trailing" id="gQF-gv-uME"/>
                                 </constraints>
                             </customView>
                         </subviews>
                         <holdingPriorities>
                             <real value="400"/>
-                            <real value="100"/>
+                            <real value="400"/>
+                            <real value="200"/>
                         </holdingPriorities>
                     </splitView>
                 </subviews>

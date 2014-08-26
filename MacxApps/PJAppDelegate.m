@@ -14,12 +14,14 @@
 #import "PJSoftwareManager.h"
 #import "INAppStoreWindow.h"
 #import "PJWindowTitlebarViewController.h"
+#import "PJSoftwareDetailViewController.h"
 
 @interface PJAppDelegate ()
 @property (strong, nonatomic) NSMutableArray *modelObjects;
 @property (strong, nonatomic) NSMutableArray *sourceListItems;
 
 - (void)registerDefaults;
+- (void)loadItems;
 
 @end
 
@@ -29,12 +31,22 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 
 @implementation PJAppDelegate
 
+@synthesize items = _items;
+
 - (void)registerDefaults {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"MacxAppsDefaults" ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
 }
 
+- (void)loadItems {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"macx-softlist" ofType:@"xml"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:data];
+    [_parser setResultDelegate:self];
+    //[_parser setNeedDebug:YES];
+    [_parser parse];
+}
 
 // _softwareGridViewController
 //if (_keyView != [_softwareGridViewController view]) {
@@ -43,13 +55,24 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 //    [_softwareGridViewController loadData];
 //}
 - (void)awakeFromNib {
+    if (!_items) {
+        [self loadItems];
+    }
+    
     if (!_softwareGridViewController) {
         _softwareGridViewController = [[PJSoftwareGridViewController alloc] init];
         _defaultView = self.viewBox.contentView;
         
         _keyView = _softwareGridViewController.view;
         [self.viewBox setContentView:_keyView];
-        [_softwareGridViewController loadData];
+        [_softwareGridViewController setItems:_items];
+    }
+    
+    if (!_softwareListViewController) {
+        _softwareListViewController = [[PJSoftwareListViewController alloc] init];
+        [_softwareListViewController setItems:_items];
+        [_softwareListViewController setSelectionDelegate:self];
+        [self.middleViewBox setContentView:_softwareListViewController.view];
     }
     
     // The class of the window has been set in INAppStoreWindow in Interface Builder
@@ -66,7 +89,8 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 	
     PJWindowTitlebarViewController *vc = [[PJWindowTitlebarViewController alloc] initWithFrame:segmentFrame];
     [vc setArrayController:_softwareGridViewController.arrayController];
-    NSLog(@"vc array controller: %@", vc.arrayController);
+    // NSLog(@"vc array controller: %@", vc.arrayController);
+    // TODO 使用约束来控制位置，自动布局，这样调整大小的时候也能够正确的工作
     //[vc.view addConstraint:[NSLayoutConstraint cons]]
 //    
 //    //constraint
@@ -318,7 +342,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
             newLabel = @"User-created collection selected.";
     }
     
-    self.selectedItemLabel.stringValue = newLabel;
+    // self.selectedItemLabel.stringValue = newLabel;
     self.removeButton.enabled = removeButtonEnabled;
     
     // Change view content
@@ -398,6 +422,44 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     [aSourceList endUpdates];
     
     return YES;
+}
+
+
+#pragma mark - ParseResult Delegate
+- (void)didBeginParseResult {
+    if (!_items) {
+        [self setItems:[[NSMutableArray alloc] init]];
+    }
+}
+
+- (void)didParseResult:(NSDictionary *)nodeInfo {
+    [self willChangeValueForKey:@"items"];
+    [_items addObject:nodeInfo];
+    [self didChangeValueForKey:@"items"];
+}
+- (void)onParseResultError:(NSError*)error {
+    NSLog(@"onParseResultError %@", error);
+}
+- (void)didParseResultDone {
+    // NSLog(@"didParseResultDone");
+    //[self.tableView reloadData];
+}
+
+/// Selection Delegate
+- (void)selectionDidChanged:(id)selectedObject {
+    if (!selectedObject) {
+        return;
+    }
+    
+    if (!_softwareDetailViewController) {
+        _softwareDetailViewController = [[PJSoftwareDetailViewController alloc] init];
+        _keyView = _softwareDetailViewController.view;
+        [self.viewBox setContentView:_keyView];
+    }
+    
+    if (_softwareDetailViewController.representedObject != selectedObject) {
+        [_softwareDetailViewController setRepresentedObject:selectedObject];
+    }
 }
 
 @end
