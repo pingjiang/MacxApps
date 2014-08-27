@@ -98,30 +98,63 @@ NSString *const kSoftwareListProviders = @"SoftwareListProviders";
     [manager GET:requestURL parameters:parameters success:success failure:failure];
 }
 
-- (void)querySoftwareListAll {
-    [self querySoftwareList:100 orderBy:nil];
+- (void)querySoftwareListAll:(void (^)(id obj))responseWith {
+    [self querySoftwareList:10 orderBy:nil responseWith:responseWith];
 }
 
-- (void)querySoftwareList:(NSInteger)category orderBy:(NSString*)order {
+- (void)querySoftwareList:(NSInteger)category orderBy:(NSString*)order responseWith:(void (^)(id obj))responseWith {
     [self callApi:@"softwarelist" updateParameter:^(NSMutableDictionary* parameters) {
         [parameters setObject:@(category) forKey:@"no"];
         if (order) {
-            [parameters setObject:@"order" forKey:order];
+            [parameters setObject:order forKey:@"order"];
         }
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"XML: %@", responseObject);
+        // NSLog(@"XML: %@", responseObject);
+        responseWith(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        responseWith(nil);
     }];
 }
 
-- (void)likeSoftware:(NSInteger)softId {
+- (void)likeSoftware:(NSInteger)softId responseWith:(void (^)(id obj))responseWith {
     [self callApi:@"likeapp" updateParameter:^(NSMutableDictionary* parameters) {
         [parameters setObject:@(softId) forKey:@"softid"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Total likes: %@", responseObject);
+        // NSLog(@"Total likes: %@", responseObject);
+        responseWith(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        responseWith(nil);
+    }];
+}
+
+//"tid": "2137517",
+//"readperm": "0",
+//"author": "-",
+//"authorid": "8",
+//"subject": "iPhone 6\u7684 M7\u8fd0\u52a8\u534f\u5904\u7406\u5668\u88ab\u79f0\u4e3a Phosphorus\uff08\u78f7\uff09",
+//"dateline": "<span title=\"14-8-25 19:00:56\">3&nbsp;\u5c0f\u65f6\u524d<\/span>",
+//"lastpost": "<span title=\"14-8-25 21:50:53\">21&nbsp;\u5206\u949f\u524d<\/span>",
+//"lastposter": "wt303474",
+//"views": "1319",
+//"replies": "10",
+//"attachment": "2",
+//"dbdateline": "1408964456",
+//"dblastpost": "1408974653",
+//"img": "data\/attachment\/forum\/201408\/25\/190046a0t9piiv70fl977o.jpg"
+//
+//
+//@"tid", @"author", @"subject", @"views", @"img", @"attachment", @"dateline"
+- (void)queryMacxNews:(void (^)(id responseObject))responseWith {
+    [self callApi:@"macxnews" updateParameter:^(NSMutableDictionary* parameters) {
+        //[parameters setObject:@(softId) forKey:@"softid"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"News JSON: %@", [responseObject className]);
+        responseWith(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        responseWith(nil);
     }];
 }
 

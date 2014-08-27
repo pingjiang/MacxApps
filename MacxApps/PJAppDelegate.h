@@ -11,19 +11,16 @@
 #import "PJSoftwareInfoParser.h"
 #import "PJSoftwareListViewController.h"
 
-@class PJSoftwareGridViewController;
-@class PJSoftwareListViewController;
-@class PJSoftwareDetailViewController;
-
 @interface PJAppDelegate : NSObject <NSApplicationDelegate, PXSourceListDataSource, PXSourceListDelegate, PJParseResultDelegate, PJSelectionDelegate> {
     NSView *_defaultView;
-    NSView *_keyView;
-    PJSoftwareGridViewController *_softwareGridViewController;
-    PJSoftwareListViewController *_softwareListViewController;
-    PJSoftwareDetailViewController *_softwareDetailViewController;
+    NSTableView *_keyListView;
+    NSArray *_sidebarSysItems;
+    NSMutableDictionary *_viewControllerCache;
+    id _rowMacxNewsJsonObject;
 }
 
 @property (strong) NSMutableArray *items;
+@property (weak) NSArray *macxNews;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSSplitView *splitView;

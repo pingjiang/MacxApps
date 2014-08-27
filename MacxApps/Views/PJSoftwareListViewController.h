@@ -7,27 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PJSelectionDelegate.h"
+#import "PJListViewController.h"
 
-@protocol PJSelectionDelegate <NSObject>
-
-- (void)selectionDidChanged:(id)selectedObject;
-
-@end
-
-@interface PJSoftwareListViewController : NSViewController<NSTableViewDelegate> {
-    id _selectionDelegate;
-}
-
-@property (weak) NSArray *items;
-
-@property (strong) IBOutlet NSArrayController *arrayController;
-
-@property (weak) IBOutlet NSTableView *tableView;
-
+@interface PJSoftwareListViewController : PJListViewController
 
 - (id)initWithFrame:(NSRect)frameRect;
-
-- (id<PJSelectionDelegate>)selectionDelegate;
-- (void)setSelectionDelegate:(id<PJSelectionDelegate>)delegate;
 
 @end

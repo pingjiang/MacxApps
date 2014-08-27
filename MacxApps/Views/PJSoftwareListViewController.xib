@@ -104,17 +104,17 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="yMw-FA-KvV" name="displayPatternValue1" keyPath="objectValue.type" id="gGB-Ca-M5E">
-                                                                <dictionary key="options">
-                                                                    <string key="NSDisplayPattern">%{value1}@ - %{value2}@ - V%{value3}@</string>
-                                                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                                </dictionary>
-                                                            </binding>
                                                             <binding destination="yMw-FA-KvV" name="displayPatternValue2" keyPath="objectValue.lastmod" previousBinding="gGB-Ca-M5E" id="U5y-wr-zaW">
                                                                 <dictionary key="options">
                                                                     <string key="NSDisplayPattern">%{value1}@ - %{value2}@ - V%{value3}@</string>
                                                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                                     <string key="NSValueTransformerName">PJTimestampValueTransformer</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                            <binding destination="yMw-FA-KvV" name="displayPatternValue1" keyPath="objectValue.type" id="gGB-Ca-M5E">
+                                                                <dictionary key="options">
+                                                                    <string key="NSDisplayPattern">%{value1}@ - %{value2}@ - V%{value3}@</string>
+                                                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                                 </dictionary>
                                                             </binding>
                                                             <binding destination="yMw-FA-KvV" name="displayPatternValue3" keyPath="objectValue.version" previousBinding="U5y-wr-zaW" id="jjP-0G-Ue5">
@@ -150,7 +150,7 @@
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="8wf-u4-Y6P">
-                        <rect key="frame" x="0.0" y="-16" width="0.0" height="16"/>
+                        <rect key="frame" x="0.0" y="359" width="300" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="5RS-0X-mTH">

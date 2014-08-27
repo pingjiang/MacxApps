@@ -1,19 +1,21 @@
 //
-//  PJSoftwareDetailViewController.m
+//  PJMacxNewsViewController.m
 //  MacxApps
 //
 //  Created by 平江 on 14-8-26.
 //  Copyright (c) 2014年 平江. All rights reserved.
 //
 
-#import "PJSoftwareDetailViewController.h"
+#import "PJMacxNewsViewController.h"
+#import "NSString+PJAdditions.h"
 
-@interface PJSoftwareDetailViewController ()
+@interface PJMacxNewsViewController ()
 
 @end
 
-@implementation PJSoftwareDetailViewController
+@implementation PJMacxNewsViewController
 
+@synthesize macxNews;
 
 - (id)init
 {
@@ -23,6 +25,5 @@
     }
     return self;
 }
-
 
 @end

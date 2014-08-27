@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class PJSoftwareInfoParser;
+
 @protocol PJParseResultDelegate <NSObject>
 
 - (void)didBeginParseResult;
-- (void)didParseResult:(NSDictionary *)nodeInfo;
-- (void)onParseResultError:(NSError*)error;
-- (void)didParseResultDone;
+- (BOOL)didParseResult:(NSDictionary *)nodeInfo;
+- (BOOL)onParseResultError:(NSError*)error;
+- (void)didParseResultDone:(PJSoftwareInfoParser*)parser;
 
 @end
 
@@ -28,6 +30,7 @@
 
 @property (nonatomic) BOOL needDebug;
 @property (nonatomic, strong) NSMutableArray *nodeList;
+@property (weak) id targetObject;
 
 - (id<PJParseResultDelegate>)resultDelegate;
 - (void)setResultDelegate:(id<PJParseResultDelegate>)theDelegate;

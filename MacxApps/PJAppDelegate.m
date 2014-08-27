@@ -15,6 +15,8 @@
 #import "INAppStoreWindow.h"
 #import "PJWindowTitlebarViewController.h"
 #import "PJSoftwareDetailViewController.h"
+#import "PJMacxNewsViewController.h"
+#import "PJMacxNewsListViewController.h"
 
 @interface PJAppDelegate ()
 @property (strong, nonatomic) NSMutableArray *modelObjects;
@@ -22,6 +24,13 @@
 
 - (void)registerDefaults;
 - (void)loadItems;
+
+- (void)changeViewFor:(NSString*)identifier;
+
+- (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
+- (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
+- (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
+- (void)updateMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 
 @end
 
@@ -32,6 +41,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 @implementation PJAppDelegate
 
 @synthesize items = _items;
+@synthesize macxNews;
 
 - (void)registerDefaults {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"MacxAppsDefaults" ofType:@"plist"];
@@ -39,42 +49,120 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
 }
 
-- (void)loadItems {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"macx-softlist" ofType:@"xml"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:data];
-    [_parser setResultDelegate:self];
-    //[_parser setNeedDebug:YES];
-    [_parser parse];
+- (void)changeViewFor:(NSString *)identifier {
+    NSLog(@"Change view for %@", identifier);
+    if (!_viewControllerCache) {
+        _viewControllerCache = [[NSMutableDictionary alloc] init];
+    }
+    
+    id cache = _viewControllerCache[identifier];
+    id obj = nil;
+    PJListViewController *listViewController = nil;
+    PJDetailViewController *detailViewController = nil;
+    if (!cache) {
+        NSUInteger i = [_sidebarSysItems indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+            if (![obj[@"identifier"] isEqualToString:identifier]) {
+                return NO;
+            }
+            
+            return YES;
+        }];
+        
+        if (i == NSNotFound) {
+            return;
+        }
+        
+        obj = [_sidebarSysItems objectAtIndex:i];
+        id listClass = NSClassFromString(obj[@"listViewControllerClassName"]);
+        if (!listClass) {
+            return;
+        }
+        listViewController = [[listClass alloc] init];
+        if (!listViewController) {
+            return;
+        }
+        id detailClass = NSClassFromString(obj[@"detailViewControllerClassName"]);
+        if (!detailClass) {
+            return;
+        }
+        detailViewController = [[detailClass alloc] init];
+        if (!detailViewController) {
+            return;
+        }
+        
+        SEL viewControllerInitializer = NSSelectorFromString(obj[@"viewControllerInitializerSelectorName"]);
+        if (!viewControllerInitializer) {
+            return;
+        }
+        
+        [listViewController setListIdentifier:identifier];
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self performSelector:viewControllerInitializer withObject:listViewController withObject:detailViewController];
+        
+        cache = @[obj, listViewController, detailViewController];
+        [_viewControllerCache setObject:cache forKey:identifier];
+    } else {
+        obj = cache[0];
+        listViewController = cache[1];
+        detailViewController = cache[2];
+    }
+    
+    SEL viewControllerUpdater = NSSelectorFromString(obj[@"viewControllerUpdaterSelectorName"]);
+    if (!viewControllerUpdater) {
+        return;
+    }
+    
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [self performSelector:viewControllerUpdater withObject:listViewController withObject:detailViewController];
+    
+    [self.middleViewBox setContentView:listViewController.view];
+    [self.viewBox setContentView:_defaultView];
 }
 
-// _softwareGridViewController
-//if (_keyView != [_softwareGridViewController view]) {
-//    _keyView = [_softwareGridViewController view];
-//    [self.viewBox setContentView:_keyView];
-//    [_softwareGridViewController loadData];
-//}
-- (void)awakeFromNib {
+- (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
+    NSLog(@"initializeSoftwareList %@ %@", listViewController, detailViewController);
+    [listViewController setSelectionDelegate:self];
+    
+    [self.middleViewBox setContentView:listViewController.view];
+    
     if (!_items) {
-        [self loadItems];
+        [self setItems:[[NSMutableArray alloc] init]];
     }
+    [[PJSoftwareManager sharedManager] querySoftwareListAll:^(id obj) {
+        PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:obj];
+        [_parser setResultDelegate:self];
+        [_parser setTargetObject:listViewController];
+        //[_parser setNeedDebug:YES];
+        [_parser parse];
+    }];
+}
+- (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
+    NSLog(@"initializeMacxNewsList %@ %@", listViewController, detailViewController);
+    [listViewController setSelectionDelegate:self];
     
-    if (!_softwareGridViewController) {
-        _softwareGridViewController = [[PJSoftwareGridViewController alloc] init];
-        _defaultView = self.viewBox.contentView;
+    [self.middleViewBox setContentView:listViewController.view];
+    
+    [[PJSoftwareManager sharedManager]  queryMacxNews:^(id responseObject) {
+        NSError *error = nil;
+        _rowMacxNewsJsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+        if (error) {
+            NSLog(@"Decode JSON error: %@", error);
+            [self setMacxNews:@[]];
+            return;
+        }
         
-        _keyView = _softwareGridViewController.view;
-        [self.viewBox setContentView:_keyView];
-        [_softwareGridViewController setItems:_items];
-    }
-    
-    if (!_softwareListViewController) {
-        _softwareListViewController = [[PJSoftwareListViewController alloc] init];
-        [_softwareListViewController setItems:_items];
-        [_softwareListViewController setSelectionDelegate:self];
-        [self.middleViewBox setContentView:_softwareListViewController.view];
-    }
-    
+        [self setMacxNews:_rowMacxNewsJsonObject[@"Variables"][@"forum_threadlist"]];
+        [listViewController setItems:self.macxNews];
+    }];
+}
+- (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
+    NSLog(@"updateSoftwareList %@ %@", listViewController, detailViewController);
+}
+- (void)updateMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
+    NSLog(@"updateMacxNewsList %@ %@", listViewController, detailViewController);
+}
+
+- (void)awakeFromNib {
     // The class of the window has been set in INAppStoreWindow in Interface Builder
 	INAppStoreWindow *aWindow = (INAppStoreWindow *) [self window];
 	aWindow.titleBarHeight = 40.0;
@@ -88,7 +176,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
                                      segmentSize.width, segmentSize.height);
 	
     PJWindowTitlebarViewController *vc = [[PJWindowTitlebarViewController alloc] initWithFrame:segmentFrame];
-    [vc setArrayController:_softwareGridViewController.arrayController];
+    // [vc setArrayController:_softwareGridViewController.arrayController];
     // NSLog(@"vc array controller: %@", vc.arrayController);
     // TODO 使用约束来控制位置，自动布局，这样调整大小的时候也能够正确的工作
     //[vc.view addConstraint:[NSLayoutConstraint cons]]
@@ -104,6 +192,10 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 //    [vc.view addConstraint:bottomSpaceConstraint];
     
 	[titleBarView addSubview:vc.view];
+    
+    if (!_defaultView) {
+        _defaultView = [self.viewBox contentView];
+    }
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -118,9 +210,11 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     
     [self.sourceList reloadData];
     
+    [self changeViewFor:_sidebarSysItems[0][@"identifier"]];
     //[[PJSoftwareManager sharedManager] querySoftwareListAll];
     // 6103
     // [[PJSoftwareManager sharedManager] likeSoftware:6103];
+    
 }
 
 
@@ -134,7 +228,37 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 - (void)setUpDataModel
 {
     // @[@"最新动态", @"最新软件", @"软件排行", @"装机必备", @"软件更新"
-    NSDictionary *names = @{@"PopSoftwares": @"最新动态", @"LatestSoftwares": @"最新软件", @"RankSoftwares": @"软件排行", @"EssentialSoftwares": @"装机必备", @"UpdatedSoftwares": @"软件更新"};
+    if (!_sidebarSysItems) {
+        _sidebarSysItems = @[@{
+            @"identifier": @"AllSoftwares",
+            @"name": @"所有软件",
+            @"listViewControllerClassName": @"PJSoftwareListViewController",
+            @"detailViewControllerClassName": @"PJSoftwareDetailViewController",
+            @"viewControllerInitializerSelectorName": @"initializeSoftwareList:andDetail:",
+            @"viewControllerUpdaterSelectorName": @"updateSoftwareList:andDetail:"
+        }, @{
+            @"identifier": @"LatestSoftwares",
+            @"name": @"最新软件"
+        }, @{
+            @"identifier": @"RankSoftwares",
+            @"name": @"软件排行"
+        }, @{
+            @"identifier": @"EssentialSoftwares",
+            @"name": @"装机必备"
+        }, @{
+            @"identifier": @"NewsOfSoftwares",
+            @"name": @"Macx新闻",
+            @"listViewControllerClassName": @"PJMacxNewsListViewController",
+            @"detailViewControllerClassName": @"PJMacxNewsDetailViewController",
+            @"viewControllerInitializerSelectorName": @"initializeMacxNewsList:andDetail:",
+            @"viewControllerUpdaterSelectorName": @"updateMacxNewsList:andDetail:"
+        }, @{
+            @"identifier": @"DowloadedSoftwares",
+            @"name": @"下载管理"
+        }];
+        
+    }
+    
     // Icon images we're going to use in the Source List.
     NSImage *photosImage = [NSImage imageNamed:@"NSUser"];
     [photosImage setTemplate:YES];
@@ -149,8 +273,8 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     self.modelObjects = [NSMutableArray array];
     NSMutableArray *sourceListSysItems = [NSMutableArray array];
     
-    for (NSString *key in names) {
-        PJSoftwareCollection *softaresCollection = [PJSoftwareCollection collectionWithTitle:names[key] identifier:key type:PJSoftwareCollectionTypeLibrary];
+    for (NSDictionary *sysItem in _sidebarSysItems) {
+        PJSoftwareCollection *softaresCollection = [PJSoftwareCollection collectionWithTitle:sysItem[@"name"] identifier:sysItem[@"identifier"] type:PJSoftwareCollectionTypeLibrary];
         [self addNumberOfPhotoObjects:264 toCollection:softaresCollection];
         // Store all of the model objects in an array because each source list item only holds a weak reference to them.
         [self.modelObjects addObject:softaresCollection];
@@ -328,18 +452,11 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 {
     PXSourceListItem *selectedItem = [self.sourceList itemAtRow:self.sourceList.selectedRow];
     BOOL removeButtonEnabled = NO;
-    NSString *newLabel = @"";
     if (selectedItem) {
         // Only allow us to remove items in the 'albums' group.
         removeButtonEnabled = [[self.albumsItem children] containsObject:selectedItem];
-        
-        // We can use the underlying model object to do something based on the selection.
         PJSoftwareCollection *collection = selectedItem.representedObject;
-        
-        if (collection.identifier)
-            newLabel = [NSString stringWithFormat:@"'%@' collection selected.", collection.identifier];
-        else
-            newLabel = @"User-created collection selected.";
+        [self changeViewFor:collection.identifier];
     }
     
     // self.selectedItemLabel.stringValue = newLabel;
@@ -427,38 +544,39 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 
 #pragma mark - ParseResult Delegate
 - (void)didBeginParseResult {
-    if (!_items) {
-        [self setItems:[[NSMutableArray alloc] init]];
-    }
+    NSLog(@"Enter %s", __PRETTY_FUNCTION__);
 }
 
-- (void)didParseResult:(NSDictionary *)nodeInfo {
-    [self willChangeValueForKey:@"items"];
+- (BOOL)didParseResult:(NSDictionary *)nodeInfo {
     [_items addObject:nodeInfo];
-    [self didChangeValueForKey:@"items"];
+    
+    return NO;
 }
-- (void)onParseResultError:(NSError*)error {
+
+- (BOOL)onParseResultError:(NSError*)error {
     NSLog(@"onParseResultError %@", error);
+    return YES;
 }
-- (void)didParseResultDone {
-    // NSLog(@"didParseResultDone");
-    //[self.tableView reloadData];
+- (void)didParseResultDone:(PJSoftwareInfoParser*)parser {
+    NSLog(@"Enter %s", __PRETTY_FUNCTION__);
+    [parser.targetObject setItems:self.items];
 }
 
 /// Selection Delegate
-- (void)selectionDidChanged:(id)selectedObject {
+- (void)selectionDidChanged:(NSString*)selectableIdentifier withObject:(id)selectedObject {
     if (!selectedObject) {
         return;
     }
-    
-    if (!_softwareDetailViewController) {
-        _softwareDetailViewController = [[PJSoftwareDetailViewController alloc] init];
-        _keyView = _softwareDetailViewController.view;
-        [self.viewBox setContentView:_keyView];
+    id cache = _viewControllerCache[selectableIdentifier];
+    if (!cache) {
+        return;
     }
     
-    if (_softwareDetailViewController.representedObject != selectedObject) {
-        [_softwareDetailViewController setRepresentedObject:selectedObject];
+    PJDetailViewController *detailViewController = cache[2];
+    [self.viewBox setContentView:detailViewController.view];
+    
+    if (detailViewController.representedObject != selectedObject) {
+        [detailViewController setRepresentedObject:selectedObject];
     }
 }
 

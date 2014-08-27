@@ -41,6 +41,19 @@
 		D7DACD7F19AC551900D7CFE1 /* PJSoftwareListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */; };
 		D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */; };
 		D7DACD8419AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */; };
+		D7DACD8819AC9F9100D7CFE1 /* PJMacxNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8619AC9F9100D7CFE1 /* PJMacxNewsViewController.m */; };
+		D7DACD8919AC9F9100D7CFE1 /* PJMacxNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD8719AC9F9100D7CFE1 /* PJMacxNewsViewController.xib */; };
+		D7DACD8C19AC9FDD00D7CFE1 /* PJMacxNewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8B19AC9FDD00D7CFE1 /* PJMacxNewsManager.m */; };
+		D7DACD8F19ACA05F00D7CFE1 /* PJMacxClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8E19ACA05F00D7CFE1 /* PJMacxClient.m */; };
+		D7DACD9219ACA35100D7CFE1 /* PJMacxNewsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD9119ACA35100D7CFE1 /* PJMacxNewsParser.m */; };
+		D7DE980A19AD7D7E00795E75 /* NSString+PJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE980919AD7D7E00795E75 /* NSString+PJAdditions.m */; };
+		D7DE980E19AD9DC800795E75 /* PJMacxNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE980C19AD9DC800795E75 /* PJMacxNewsListViewController.m */; };
+		D7DE980F19AD9DC800795E75 /* PJMacxNewsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DE980D19AD9DC800795E75 /* PJMacxNewsListViewController.xib */; };
+		D7DE981319ADA10A00795E75 /* PJMacxNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981119ADA10A00795E75 /* PJMacxNewsDetailViewController.m */; };
+		D7DE981419ADA10A00795E75 /* PJMacxNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DE981219ADA10A00795E75 /* PJMacxNewsDetailViewController.xib */; };
+		D7DE981719ADA63D00795E75 /* PJListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981619ADA63D00795E75 /* PJListViewController.m */; };
+		D7DE981A19ADA64C00795E75 /* PJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981919ADA64C00795E75 /* PJDetailViewController.m */; };
+		D7DE981E19ADA88600795E75 /* PJValueTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981D19ADA88600795E75 /* PJValueTransformers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +119,30 @@
 		D7DACD8019AC638B00D7CFE1 /* PJSoftwareDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareDetailViewController.h; sourceTree = "<group>"; };
 		D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareDetailViewController.m; sourceTree = "<group>"; };
 		D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJSoftwareDetailViewController.xib; sourceTree = "<group>"; };
+		D7DACD8519AC9F9100D7CFE1 /* PJMacxNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsViewController.h; sourceTree = "<group>"; };
+		D7DACD8619AC9F9100D7CFE1 /* PJMacxNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsViewController.m; sourceTree = "<group>"; };
+		D7DACD8719AC9F9100D7CFE1 /* PJMacxNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJMacxNewsViewController.xib; sourceTree = "<group>"; };
+		D7DACD8A19AC9FDD00D7CFE1 /* PJMacxNewsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsManager.h; sourceTree = "<group>"; };
+		D7DACD8B19AC9FDD00D7CFE1 /* PJMacxNewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsManager.m; sourceTree = "<group>"; };
+		D7DACD8D19ACA05F00D7CFE1 /* PJMacxClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxClient.h; sourceTree = "<group>"; };
+		D7DACD8E19ACA05F00D7CFE1 /* PJMacxClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxClient.m; sourceTree = "<group>"; };
+		D7DACD9019ACA35100D7CFE1 /* PJMacxNewsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsParser.h; sourceTree = "<group>"; };
+		D7DACD9119ACA35100D7CFE1 /* PJMacxNewsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsParser.m; sourceTree = "<group>"; };
+		D7DE980819AD7D7E00795E75 /* NSString+PJAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PJAdditions.h"; sourceTree = "<group>"; };
+		D7DE980919AD7D7E00795E75 /* NSString+PJAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PJAdditions.m"; sourceTree = "<group>"; };
+		D7DE980B19AD9DC800795E75 /* PJMacxNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsListViewController.h; sourceTree = "<group>"; };
+		D7DE980C19AD9DC800795E75 /* PJMacxNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsListViewController.m; sourceTree = "<group>"; };
+		D7DE980D19AD9DC800795E75 /* PJMacxNewsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJMacxNewsListViewController.xib; sourceTree = "<group>"; };
+		D7DE981019ADA10A00795E75 /* PJMacxNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsDetailViewController.h; sourceTree = "<group>"; };
+		D7DE981119ADA10A00795E75 /* PJMacxNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsDetailViewController.m; sourceTree = "<group>"; };
+		D7DE981219ADA10A00795E75 /* PJMacxNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJMacxNewsDetailViewController.xib; sourceTree = "<group>"; };
+		D7DE981519ADA63D00795E75 /* PJListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJListViewController.h; sourceTree = "<group>"; };
+		D7DE981619ADA63D00795E75 /* PJListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJListViewController.m; sourceTree = "<group>"; };
+		D7DE981819ADA64C00795E75 /* PJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJDetailViewController.h; sourceTree = "<group>"; };
+		D7DE981919ADA64C00795E75 /* PJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJDetailViewController.m; sourceTree = "<group>"; };
+		D7DE981B19ADA6C000795E75 /* PJSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJSelectionDelegate.h; sourceTree = "<group>"; };
+		D7DE981C19ADA88600795E75 /* PJValueTransformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJValueTransformers.h; sourceTree = "<group>"; };
+		D7DE981D19ADA88600795E75 /* PJValueTransformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJValueTransformers.m; sourceTree = "<group>"; };
 		DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacxApps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -253,6 +290,20 @@
 				D7DACD8019AC638B00D7CFE1 /* PJSoftwareDetailViewController.h */,
 				D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */,
 				D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */,
+				D7DACD8519AC9F9100D7CFE1 /* PJMacxNewsViewController.h */,
+				D7DACD8619AC9F9100D7CFE1 /* PJMacxNewsViewController.m */,
+				D7DACD8719AC9F9100D7CFE1 /* PJMacxNewsViewController.xib */,
+				D7DE980B19AD9DC800795E75 /* PJMacxNewsListViewController.h */,
+				D7DE980C19AD9DC800795E75 /* PJMacxNewsListViewController.m */,
+				D7DE980D19AD9DC800795E75 /* PJMacxNewsListViewController.xib */,
+				D7DE981019ADA10A00795E75 /* PJMacxNewsDetailViewController.h */,
+				D7DE981119ADA10A00795E75 /* PJMacxNewsDetailViewController.m */,
+				D7DE981219ADA10A00795E75 /* PJMacxNewsDetailViewController.xib */,
+				D7DE981519ADA63D00795E75 /* PJListViewController.h */,
+				D7DE981619ADA63D00795E75 /* PJListViewController.m */,
+				D7DE981819ADA64C00795E75 /* PJDetailViewController.h */,
+				D7DE981919ADA64C00795E75 /* PJDetailViewController.m */,
+				D7DE981B19ADA6C000795E75 /* PJSelectionDelegate.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +317,16 @@
 				D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */,
 				D7DACD7819AC377800D7CFE1 /* PJUtils.h */,
 				D7DACD7919AC377800D7CFE1 /* PJUtils.m */,
+				D7DACD8A19AC9FDD00D7CFE1 /* PJMacxNewsManager.h */,
+				D7DACD8B19AC9FDD00D7CFE1 /* PJMacxNewsManager.m */,
+				D7DACD8D19ACA05F00D7CFE1 /* PJMacxClient.h */,
+				D7DACD8E19ACA05F00D7CFE1 /* PJMacxClient.m */,
+				D7DACD9019ACA35100D7CFE1 /* PJMacxNewsParser.h */,
+				D7DACD9119ACA35100D7CFE1 /* PJMacxNewsParser.m */,
+				D7DE980819AD7D7E00795E75 /* NSString+PJAdditions.h */,
+				D7DE980919AD7D7E00795E75 /* NSString+PJAdditions.m */,
+				D7DE981C19ADA88600795E75 /* PJValueTransformers.h */,
+				D7DE981D19ADA88600795E75 /* PJValueTransformers.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -356,6 +417,8 @@
 				D70F2B0319AB309E002D77DA /* BackgroundDust.png in Resources */,
 				D70F2AC619AAE164002D77DA /* Credits.rtf in Resources */,
 				D70F2ACC19AAE165002D77DA /* MainMenu.xib in Resources */,
+				D7DE981419ADA10A00795E75 /* PJMacxNewsDetailViewController.xib in Resources */,
+				D7DACD8919AC9F9100D7CFE1 /* PJMacxNewsViewController.xib in Resources */,
 				D7DACD7F19AC551900D7CFE1 /* PJSoftwareListViewController.xib in Resources */,
 				D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */,
 				D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */,
@@ -364,6 +427,7 @@
 				D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */,
 				D70F2AFE19AB2AA3002D77DA /* PJSoftwareGridViewController.xib in Resources */,
 				D70F2B0C19AB6A1F002D77DA /* macx-softlist-all.xml in Resources */,
+				D7DE980F19AD9DC800795E75 /* PJMacxNewsListViewController.xib in Resources */,
 				D70F2AF319AB0EBD002D77DA /* macx-softlist.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,16 +482,26 @@
 			files = (
 				D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */,
 				D70F2AC919AAE164002D77DA /* PJAppDelegate.m in Sources */,
+				D7DE980E19AD9DC800795E75 /* PJMacxNewsListViewController.m in Sources */,
+				D7DE981319ADA10A00795E75 /* PJMacxNewsDetailViewController.m in Sources */,
 				D70F2AF819AB0F32002D77DA /* PJSoftwareCategory.m in Sources */,
 				D70F2AFD19AB2AA3002D77DA /* PJSoftwareGridViewController.m in Sources */,
 				D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */,
+				D7DACD8819AC9F9100D7CFE1 /* PJMacxNewsViewController.m in Sources */,
+				D7DE981A19ADA64C00795E75 /* PJDetailViewController.m in Sources */,
+				D7DACD8F19ACA05F00D7CFE1 /* PJMacxClient.m in Sources */,
 				D7DACD7A19AC377800D7CFE1 /* PJUtils.m in Sources */,
 				D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */,
 				D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */,
+				D7DACD9219ACA35100D7CFE1 /* PJMacxNewsParser.m in Sources */,
+				D7DE980A19AD7D7E00795E75 /* NSString+PJAdditions.m in Sources */,
+				D7DE981E19ADA88600795E75 /* PJValueTransformers.m in Sources */,
 				D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */,
 				D7DACD7619AC22D400D7CFE1 /* PJWindowTitlebarViewController.m in Sources */,
 				D70F2AC219AAE164002D77DA /* main.m in Sources */,
 				D7DACD7E19AC551900D7CFE1 /* PJSoftwareListViewController.m in Sources */,
+				D7DE981719ADA63D00795E75 /* PJListViewController.m in Sources */,
+				D7DACD8C19AC9FDD00D7CFE1 /* PJMacxNewsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

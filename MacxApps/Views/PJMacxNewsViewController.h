@@ -1,5 +1,5 @@
 //
-//  PJSoftwareDetailViewController.h
+//  PJMacxNewsViewController.h
 //  MacxApps
 //
 //  Created by 平江 on 14-8-26.
@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PJDetailViewController.h"
 
-@interface PJSoftwareDetailViewController : PJDetailViewController
+@interface PJMacxNewsViewController : NSViewController
+
+@property (weak) NSArray *macxNews;
 
 @end

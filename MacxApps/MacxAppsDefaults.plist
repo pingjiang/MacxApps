@@ -42,12 +42,35 @@
 						<key>order</key>
 						<string></string>
 						<key>no</key>
-						<integer>100</integer>
+						<integer>10</integer>
 						<key>id</key>
 						<string>soft</string>
 					</dict>
 					<key>path</key>
 					<string>/xml.asp</string>
+					<key>method</key>
+					<string>GET</string>
+				</dict>
+				<dict>
+					<key>contentType</key>
+					<string>application/json</string>
+					<key>name</key>
+					<string>macxnews</string>
+					<key>parameters</key>
+					<dict>
+						<key>module</key>
+						<string>forumdisplay</string>
+						<key>fid</key>
+						<string>news</string>
+						<key>filter</key>
+						<string>author</string>
+						<key>orderby</key>
+						<string>repley</string>
+						<key>dateline</key>
+						<integer>86400</integer>
+					</dict>
+					<key>path</key>
+					<string>http://www.macx.cn/api/mobile/index.php</string>
 					<key>method</key>
 					<string>GET</string>
 				</dict>

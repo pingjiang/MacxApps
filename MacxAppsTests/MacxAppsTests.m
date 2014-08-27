@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NSString+PJAdditions.h"
 
 @interface MacxAppsTests : XCTestCase
 
@@ -28,7 +29,9 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSString *s = @"<span title=\"14-8-25 19:00:56\">3&nbsp;\u5c0f\u65f6\u524d</span>";
+    NSString *found = [s substringWithBound:@"\"" withBound:@"\"" options:0];
+    XCTAssertTrue([@"14-8-25 19:00:56" isEqualToString:found]);
 }
 
 @end

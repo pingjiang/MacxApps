@@ -21,6 +21,7 @@
 
 @synthesize needDebug;
 @synthesize nodeList = _nodeList;
+@synthesize targetObject;
 
 - (id<PJParseResultDelegate>)resultDelegate {
     return _resultDelegate;
@@ -70,7 +71,7 @@
 // sent when the parser begins parsing of the document.
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     if (needDebug) NSLog(@"parserDidEndDocument");
-    [_resultDelegate didParseResultDone];
+    [_resultDelegate didParseResultDone:self];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
@@ -96,7 +97,9 @@
     }
     
     if ([self isNodeElement:elementName]) {
-        [_resultDelegate didParseResult:[_nodeInfo copy]];
+        if ([_resultDelegate didParseResult:[_nodeInfo copy]]) {
+            [_parser abortParsing];
+        }
         if (needDebug) NSLog(@"result %@", _nodeInfo);
         [_nodeInfo removeAllObjects];
     } else if ([self isNodeMemberElement:elementName]) {
@@ -131,13 +134,17 @@
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     if (needDebug) NSLog(@"parseErrorOccurred %@", parseError);
-    [_resultDelegate onParseResultError:parseError];
+    if ([_resultDelegate onParseResultError:parseError]) {
+        [_parser abortParsing];
+    }
 }
 // ...and this reports a fatal error to the delegate. The parser will stop parsing.
 
 - (void)parser:(NSXMLParser *)parser validationErrorOccurred:(NSError *)validationError {
     if (needDebug) NSLog(@"validationErrorOccurred %@", validationError);
-    [_resultDelegate onParseResultError:validationError];
+    if ([_resultDelegate onParseResultError:validationError]) {
+        [_parser abortParsing];
+    }
 }
 
 @end

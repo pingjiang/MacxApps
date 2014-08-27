@@ -1,5 +1,5 @@
 //
-//  PJUtils.h
+//  PJMacxNewsParser.h
 //  MacxApps
 //
 //  Created by 平江 on 14-8-26.
@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PJUtils : NSObject
-
-
-+ (NSString *)convertTimestamp:(NSString *)timestamp withFormat:(NSString*)format;
+@interface PJMacxNewsParser : NSObject
 
 @end

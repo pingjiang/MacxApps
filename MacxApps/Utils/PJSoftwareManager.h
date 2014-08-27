@@ -15,9 +15,10 @@
 
 + (instancetype)sharedManager;
 
-- (void)querySoftwareListAll;
-- (void)querySoftwareList:(NSInteger)category orderBy:(NSString*)order;
-- (void)likeSoftware:(NSInteger)softId;
+- (void)querySoftwareListAll:(void (^)(id obj))responseWith;
+- (void)querySoftwareList:(NSInteger)category orderBy:(NSString*)order responseWith:(void (^)(id obj))responseWith;
+- (void)likeSoftware:(NSInteger)softId responseWith:(void (^)(id obj))responseWith;
+- (void)queryMacxNews:(void (^)(id responseObject))responseWith;
 
 - (void)fetchImage:(NSString*)url;
 - (void)downloadFile:(NSString *)url toDirectory:(NSURL *)directoryURL;
