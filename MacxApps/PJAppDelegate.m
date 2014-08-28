@@ -175,22 +175,25 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
                                      segmentSize.width, segmentSize.height);
 	
     PJWindowTitlebarViewController *vc = [[PJWindowTitlebarViewController alloc] initWithFrame:segmentFrame];
-    // [vc setArrayController:_softwareGridViewController.arrayController];
-    // NSLog(@"vc array controller: %@", vc.arrayController);
-    // TODO 使用约束来控制位置，自动布局，这样调整大小的时候也能够正确的工作
-    //[vc.view addConstraint:[NSLayoutConstraint cons]]
-//    
-//    //constraint
-//    NSLayoutConstraint *bottomSpaceConstraint = [NSLayoutConstraint constraintWithItem:vc.view
-//                                                                             attribute:NSLayoutAttributeRight
-//                                                                             relatedBy:NSLayoutRelationEqual
-//                                                                                toItem:titleBarView
-//                                                                             attribute:NSLayoutAttributeRight
-//                                                                            multiplier:1.0
-//                                                                              constant:0.0];
-//    [vc.view addConstraint:bottomSpaceConstraint];
+    [titleBarView addSubview:vc.view];
+    [vc.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:titleBarView
+                                                                             attribute:NSLayoutAttributeTrailing
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:vc.view
+                                                                             attribute:NSLayoutAttributeRight
+                                                                            multiplier:1.0
+                                                                              constant:13.0];
+    NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:titleBarView
+                                                          attribute:NSLayoutAttributeCenterY
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:vc.view
+                                                          attribute:NSLayoutAttributeCenterY
+                                                         multiplier:1.0
+                                                           constant:1.0];
+    [titleBarView addConstraints:@[c1, c2]];
     
-	[titleBarView addSubview:vc.view];
+    [aWindow setShowsTitle:YES];
     
     if (!_defaultView) {
         _defaultView = [self.viewBox contentView];
@@ -274,7 +277,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     
     for (NSDictionary *sysItem in _sidebarSysItems) {
         PJSoftwareCollection *softaresCollection = [PJSoftwareCollection collectionWithTitle:sysItem[@"name"] identifier:sysItem[@"identifier"] type:PJSoftwareCollectionTypeLibrary];
-        [self addNumberOfPhotoObjects:264 toCollection:softaresCollection];
+        [self addNumberOfPhotoObjects:0 toCollection:softaresCollection];
         // Store all of the model objects in an array because each source list item only holds a weak reference to them.
         [self.modelObjects addObject:softaresCollection];
         
@@ -320,7 +323,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
             NSInteger subsubItemRawId = [dict[@"cid"] integerValue];
             NSString *subsubItemId = subsubItemRawId == 0 ? nil : [NSString stringWithFormat:@"MacxAppsSubCategory%ld", subsubItemRawId];
             PJSoftwareCollection *softaresCollection = [PJSoftwareCollection collectionWithTitle:subsubItemName identifier:subsubItemId type:PJSoftwareCollectionTypeUserCreated];
-            [self addNumberOfPhotoObjects:123 toCollection:softaresCollection];
+            [self addNumberOfPhotoObjects:0 toCollection:softaresCollection];
             // Store all of the model objects in an array because each source list item only holds a weak reference to them.
             [self.modelObjects addObject:softaresCollection];
             

@@ -32,6 +32,7 @@
 		D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D70F2B0219AB309E002D77DA /* AppleLogo.png */; };
 		D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */; };
 		D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */; };
+		D75A5A9019AF86B200108EE1 /* MacxApps.icns in Resources */ = {isa = PBXBuildFile; fileRef = D75A5A8F19AF86B200108EE1 /* MacxApps.icns */; };
 		D7DACD7619AC22D400D7CFE1 /* PJWindowTitlebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */; };
 		D7DACD7719AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */; };
 		D7DACD7A19AC377800D7CFE1 /* PJUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7919AC377800D7CFE1 /* PJUtils.m */; };
@@ -101,6 +102,7 @@
 		D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareInfoParser.m; sourceTree = "<group>"; };
 		D70F2B0D19AB6B87002D77DA /* PJSoftwareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareManager.h; sourceTree = "<group>"; };
 		D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareManager.m; sourceTree = "<group>"; };
+		D75A5A8F19AF86B200108EE1 /* MacxApps.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MacxApps.icns; sourceTree = "<group>"; };
 		D7DACD7319AC22D300D7CFE1 /* PJWindowTitlebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJWindowTitlebarViewController.h; sourceTree = "<group>"; };
 		D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJWindowTitlebarViewController.m; sourceTree = "<group>"; };
 		D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJWindowTitlebarViewController.xib; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		D70F2ABC19AAE164002D77DA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D75A5A8F19AF86B200108EE1 /* MacxApps.icns */,
 				D70F2AFF19AB309E002D77DA /* BackgroundDust.png */,
 				D70F2B0019AB309E002D77DA /* BackgroundNoisy.png */,
 				D70F2B0119AB309E002D77DA /* BackgroundSolid.png */,
@@ -402,6 +405,7 @@
 				D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */,
 				D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */,
 				D70F2B0519AB309E002D77DA /* BackgroundSolid.png in Resources */,
+				D75A5A9019AF86B200108EE1 /* MacxApps.icns in Resources */,
 				D7DACD7719AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib in Resources */,
 				D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */,
 				D70F2AFE19AB2AA3002D77DA /* PJSoftwareGridViewController.xib in Resources */,
@@ -607,7 +611,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
@@ -621,7 +624,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
