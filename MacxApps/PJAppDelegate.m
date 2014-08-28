@@ -23,7 +23,6 @@
 @property (strong, nonatomic) NSMutableArray *sourceListItems;
 
 - (void)registerDefaults;
-- (void)loadItems;
 
 - (void)changeViewFor:(NSString*)identifier;
 
