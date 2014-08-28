@@ -1,0 +1,74 @@
+{
+    "cid": 0,
+    "name": "软件分类",
+    "website": "http://macx.cn",
+    "url": "http://soft.macx.cn/index.asp",
+    "category_url": "${url}?classid=${id}&categoryid=${cid}", 
+    "items": [
+        { "cid": 1, "name": "网络工具", "items": [
+            { "cid": 2, "name": "上传下载" }, 
+            { "cid": 3, "name": "远程控制" }, 
+            { "cid": 35, "name": "聊天通讯" }, 
+            { "cid": 37, "name": "网页浏览" }, 
+            { "cid": 38, "name": "邮件收发" }, 
+            { "cid": 43, "name": "Plugins" }
+        ]},
+        { "cid": 2, "name": "系统相关", "items": [
+            { "cid": 4, "name": "操作系统" }, 
+            { "cid": 5, "name": "系统修复" }, 
+            { "cid": 6, "name": "编程开发" }, 
+            { "cid": 29, "name": "压缩解压" }, 
+            { "cid": 30, "name": "工具" }, 
+            { "cid": 32, "name": "Widget" }, 
+            { "cid": 39, "name": "辅助程式" }
+        ]},
+        { "cid": 3, "name": "苹果软件", "items": [
+            { "cid": 7, "name": "iWork" }, 
+            { "cid": 8, "name": "Keynote" }, 
+            { "cid": 9, "name": "Final Cut" }, 
+            { "cid": 17, "name": "iLife" }, 
+            { "cid": 45, "name": "iPod" }, 
+            { "cid": 46, "name": "Aperture" }
+        ]},
+        { "cid": 4, "name": "设计相关", "items": [
+            { "cid": 10, "name": "3D制作" }, 
+            { "cid": 11, "name": "影视编辑" }, 
+            { "cid": 12, "name": "平面设计" }, 
+            { "cid": 13, "name": "音频编辑" }, 
+            { "cid": 14, "name": "网页制作" }, 
+            { "cid": 36, "name": "Plugins" }, 
+            { "cid": 42, "name": "素材下载" }
+        ]},
+        { "cid": 5, "name": "游戏娱乐", "items": [
+            { "cid": 0, "name": "大型游戏", "url": "http://game.macx.cn" }, 
+            { "cid": 16, "name": "小型游戏" }
+        ]},
+        { "cid": 6, "name": "文字处理", "items": [
+            { "cid": 18, "name": "MS Office" }, 
+            { "cid": 41, "name": "文字编辑" }, 
+            { "cid": 44, "name": "办公套件" }
+        ]},
+        { "cid": 7, "name": "日常工具", "items": [
+            { "cid": 19, "name": "媒体播放" }, 
+            { "cid": 20, "name": "图片浏览" }, 
+            { "cid": 21, "name": "光盘刻录" }, 
+            { "cid": 22, "name": "其他类别" }, 
+            { "cid": 23, "name": "数据演算" }, 
+            { "cid": 27, "name": "翻译" }, 
+            { "cid": 28, "name": "屏幕捕获" }, 
+            { "cid": 33, "name": "iPOD" }, 
+            { "cid": 40, "name": "媒体转换" }
+        ]},
+        { "cid": 8, "name": "破解补丁", "items": [
+            { "cid": 24, "name": "游戏补丁" }, 
+            { "cid": 25, "name": "软件破解" }
+        ]},
+        { "cid": 9, "name": "其他软件", "items": [
+            { "cid": 26, "name": "序列号" }, 
+            { "cid": 31, "name": "Macworld" }, 
+            { "cid": 34, "name": "汉化补丁" }, 
+            { "cid": 47, "name": "iPhone" }
+        ]}
+    ]
+}
+

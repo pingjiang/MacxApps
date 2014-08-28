@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?><root><software>
+<id>3717</id>
+		<type><![CDATA[光盘刻录]]></type>
+		<name><![CDATA[RipIt ]]></name>
+		<bundle_id></bundle_id>
+		<language></language>
+		<os><![CDATA[10.6+]]></os>
+		<osbit></osbit>
+		<keywords> </keywords>
+		<introduction></introduction>
+		<description><![CDATA[将DVD影片光盘完全复制到电脑上的软件.速度快并且帮助你归类整理方便你找到并且再次播放
+
+RipIt...Moviesaregreat,butdiscsareapain.RipItgetsyourmoviesoffthediscandontoyourMac,whereit'seasiertofind,organizeandplaythem.
+]]></description>
+		<official_site></official_site>
+		<release_time>1408636800</release_time>
+		<free> </free>
+		<plug> </plug>
+        <star>3</star>
+		<sandbox> </sandbox>
+		<logo_url><![CDATA[http://img.macx.cn/upload/softicon1/2010312180.png]]></logo_url>
+        <pic_url><![CDATA[http://img.macx.cn/upload/softicon1/20103121759.jpg]]></pic_url>
+		<lastmod>1408636800</lastmod>
+		<version>1.6.8</version>
+		<build_version> </build_version>
+		<download_url><![CDATA[http://free4.macx.cn:8881/tools/other2/RipIt168.dmg]]></download_url>
+        <download_url2><![CDATA[http://pan.baidu.com/s/1hqxKtjI]]></download_url2>
+        <baidu_key><![CDATA[          ]]></baidu_key>
+        <macappstore><![CDATA[https://itunes.apple.com/cn/app/id?mt=12]]></macappstore>
+		<other_download_url>
+			<url><![CDATA[http://free4.macx.cn:8881/tools/other2/RipIt168.dmg]]></url>
+			<url></url>
+		</other_download_url>
+		<official_download_url> </official_download_url>
+		<size>17</size>
+		<md5> </md5>
+		<sha1> </sha1>
+		<score></score>
+		<source_detail><![CDATA[http://soft.macx.cn/3717.htm]]></source_detail>
+
+</software><software>
+<id>4657</id>
+		<type><![CDATA[影视编辑]]></type>
+		<name><![CDATA[Compressor ]]></name>
+		<bundle_id></bundle_id>
+		<language></language>
+		<os><![CDATA[10.6+]]></os>
+		<osbit></osbit>
+		<keywords> </keywords>
+		<introduction></introduction>
+		<description><![CDATA[Compressor是为视频后期制作专业人员和压缩专业人员所设计的，他们需要能高性能地处理最终数字内容，并最大限度地控制这些内容以满足DVD创作、流媒体服务器以及无线设备的需要。
+
+Compressor不仅为您提供了调整大小、裁剪、图像处理、编码以及传输的选项，还提供了批处理、VBR选项和H.264编码。您也可以使用Droplet和AppleScript，指定并存储转码设置，使用过滤器，指定目的位置等。Compressor还提供用于Apple设备、DVD、Web、CD和音乐台的各种输出格式。
+
+<ahref=http://www.macx.cn/a/a2000i1920812.htmtarget=_blank><fontcolor=red>如不能启动请围观这里</font></a>]]></description>
+		<official_site></official_site>
+		<release_time>1408636800</release_time>
+		<free> </free>
+		<plug> </plug>
+        <star>3</star>
+		<sandbox> </sandbox>
+		<logo_url><![CDATA[http://img.macx.cn/upload/softicon1/201162318127.jpg]]></logo_url>
+        <pic_url><![CDATA[http://img.macx.cn/upload/softicon1/201162318155.jpg]]></pic_url>
+		<lastmod>1408636800</lastmod>
+		<version>4.1.3</version>
+		<build_version> </build_version>
+		<download_url><![CDATA[http://free4.macx.cn:8881/Desgin/movie/Compressor413.dmg]]></download_url>
+        <download_url2><![CDATA[http://pan.baidu.com/s/1eQiUeXk]]></download_url2>
+        <baidu_key><![CDATA[s0p8      ]]></baidu_key>
+        <macappstore><![CDATA[https://itunes.apple.com/cn/app/id424390742?mt=12]]></macappstore>
+		<other_download_url>
+			<url><![CDATA[http://free4.macx.cn:8881/Desgin/movie/Compressor413.dmg]]></url>
+			<url></url>
+		</other_download_url>
+		<official_download_url> </official_download_url>
+		<size>240</size>
+		<md5> </md5>
+		<sha1> </sha1>
+		<score></score>
+		<source_detail><![CDATA[http://soft.macx.cn/4657.htm]]></source_detail>
+
+</software><software>
+<id>6154</id>
+		<type><![CDATA[工具]]></type>
+		<name><![CDATA[Parallels Desktop]]></name>
+		<bundle_id></bundle_id>
+		<language></language>
+		<os><![CDATA[10.6+]]></os>
+		<osbit></osbit>
+		<keywords> </keywords>
+		<introduction></introduction>
+		<description><![CDATA[在IntelMacs运行MaxOSX操作系统的同时，运行Windows、Linux或其他操作系统及其应用软件的系统平台。用户不必像Mac/Win双重起动解决方按那样：先要保存正在编辑的文件，然后关闭MacOSX系统，并要忍受又一个启动循环。ParallelsDesktop可以直接在Mac运行的环境下同时启动和运行Windows程序,从而真正实现双系统运行。
+
+教程:
+<ahref=http://www.macx.cn/thread-2073133-1-1.html>ParallelsDesktop8虚拟机安装windows教程</a>
+
+<ahref=http://www.macx.cn/thread-2103092-1-1.html>ParallelsDesktop9虚拟机安装Windows7教程</a>
+]]></description>
+		<official_site></official_site>
+		<release_time>1408636800</release_time>
+		<free> </free>
+		<plug> </plug>
+        <star>3</star>
+		<sandbox> </sandbox>
+		<logo_url><![CDATA[http://img.macx.cn/upload/softicon1/20147919859.jpg]]></logo_url>
+        <pic_url><![CDATA[http://img.macx.cn/upload/softicon1/20116485426.jpg]]></pic_url>
+		<lastmod>1408636800</lastmod>
+		<version>10.27675</version>
+		<build_version> </build_version>
+		<download_url><![CDATA[http://free4.macx.cn:8881/tools/system/pd10_27675.dmg]]></download_url>
+        <download_url2><![CDATA[]]></download_url2>
+        <baidu_key><![CDATA[          ]]></baidu_key>
+        <macappstore><![CDATA[https://itunes.apple.com/cn/app/id?mt=12]]></macappstore>
+		<other_download_url>
+			<url><![CDATA[http://free4.macx.cn:8881/tools/system/pd10_27675.dmg]]></url>
+			<url></url>
+		</other_download_url>
+		<official_download_url> </official_download_url>
+		<size>246</size>
+		<md5> </md5>
+		<sha1> </sha1>
+		<score></score>
+		<source_detail><![CDATA[http://soft.macx.cn/6154.htm]]></source_detail>
+
+</software><software>
+<id>6155</id>
+		<type><![CDATA[其他类别]]></type>
+		<name><![CDATA[TransType]]></name>
+		<bundle_id></bundle_id>
+		<language></language>
+		<os><![CDATA[10.6+]]></os>
+		<osbit></osbit>
+		<keywords> </keywords>
+		<introduction></introduction>
+		<description><![CDATA[Mac和Windows转换字体格式的工具，支持所有主要字体格式：PostScript，TrueType，OpenType。支持批量处理与Office、iWork协同处理。]]></description>
+		<official_site></official_site>
+		<release_time>1408636800</release_time>
+		<free> </free>
+		<plug> </plug>
+        <star>3</star>
+		<sandbox> </sandbox>
+		<logo_url><![CDATA[http://img.macx.cn/upload/softicon1/2014822115331.png]]></logo_url>
+        <pic_url><![CDATA[http://img.macx.cn/upload/softicon1/2014822115317.jpg]]></pic_url>
+		<lastmod>1408636800</lastmod>
+		<version>4.0.1</version>
+		<build_version> </build_version>
+		<download_url><![CDATA[http://free4.macx.cn:8881/tools/other2/TransType401.dmg]]></download_url>
+        <download_url2><![CDATA[http://pan.baidu.com/s/1dDtMDQ5]]></download_url2>
+        <baidu_key><![CDATA[          ]]></baidu_key>
+        <macappstore><![CDATA[https://itunes.apple.com/cn/app/id?mt=12]]></macappstore>
+		<other_download_url>
+			<url><![CDATA[http://free4.macx.cn:8881/tools/other2/TransType401.dmg]]></url>
+			<url></url>
+		</other_download_url>
+		<official_download_url> </official_download_url>
+		<size>23</size>
+		<md5> </md5>
+		<sha1> </sha1>
+		<score></score>
+		<source_detail><![CDATA[http://soft.macx.cn/6155.htm]]></source_detail>
+
+</software>
+</root>

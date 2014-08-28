@@ -1,0 +1,733 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F08696F82554CDF8D7ED5EF /* libPods-MacxApps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */; };
+		D70F2AB619AAE164002D77DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F2AB519AAE164002D77DA /* Cocoa.framework */; };
+		D70F2AC019AAE164002D77DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D70F2ABE19AAE164002D77DA /* InfoPlist.strings */; };
+		D70F2AC219AAE164002D77DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AC119AAE164002D77DA /* main.m */; };
+		D70F2AC619AAE164002D77DA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AC419AAE164002D77DA /* Credits.rtf */; };
+		D70F2AC919AAE164002D77DA /* PJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AC819AAE164002D77DA /* PJAppDelegate.m */; };
+		D70F2ACC19AAE165002D77DA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70F2ACA19AAE165002D77DA /* MainMenu.xib */; };
+		D70F2ACE19AAE165002D77DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70F2ACD19AAE165002D77DA /* Images.xcassets */; };
+		D70F2AD519AAE165002D77DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F2AD419AAE165002D77DA /* XCTest.framework */; };
+		D70F2AD619AAE165002D77DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F2AB519AAE164002D77DA /* Cocoa.framework */; };
+		D70F2ADE19AAE165002D77DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D70F2ADC19AAE165002D77DA /* InfoPlist.strings */; };
+		D70F2AE019AAE165002D77DA /* MacxAppsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2ADF19AAE165002D77DA /* MacxAppsTests.m */; };
+		D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AEB19AB0536002D77DA /* PJSoftwareInfo.m */; };
+		D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AEE19AB0597002D77DA /* PJSoftwareCollection.m */; };
+		D70F2AF319AB0EBD002D77DA /* macx-softlist.xml in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF019AB0EBD002D77DA /* macx-softlist.xml */; };
+		D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */; };
+		D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */; };
+		D70F2AF819AB0F32002D77DA /* PJSoftwareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AF719AB0F32002D77DA /* PJSoftwareCategory.m */; };
+		D70F2AFD19AB2AA3002D77DA /* PJSoftwareGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AFB19AB2AA3002D77DA /* PJSoftwareGridViewController.m */; };
+		D70F2AFE19AB2AA3002D77DA /* PJSoftwareGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AFC19AB2AA3002D77DA /* PJSoftwareGridViewController.xib */; };
+		D70F2B0319AB309E002D77DA /* BackgroundDust.png in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AFF19AB309E002D77DA /* BackgroundDust.png */; };
+		D70F2B0419AB309E002D77DA /* BackgroundNoisy.png in Resources */ = {isa = PBXBuildFile; fileRef = D70F2B0019AB309E002D77DA /* BackgroundNoisy.png */; };
+		D70F2B0519AB309E002D77DA /* BackgroundSolid.png in Resources */ = {isa = PBXBuildFile; fileRef = D70F2B0119AB309E002D77DA /* BackgroundSolid.png */; };
+		D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D70F2B0219AB309E002D77DA /* AppleLogo.png */; };
+		D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */; };
+		D70F2B0C19AB6A1F002D77DA /* macx-softlist-all.xml in Resources */ = {isa = PBXBuildFile; fileRef = D70F2B0B19AB6A1F002D77DA /* macx-softlist-all.xml */; };
+		D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */; };
+		D7DACD7619AC22D400D7CFE1 /* PJWindowTitlebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */; };
+		D7DACD7719AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */; };
+		D7DACD7A19AC377800D7CFE1 /* PJUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7919AC377800D7CFE1 /* PJUtils.m */; };
+		D7DACD7E19AC551900D7CFE1 /* PJSoftwareListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */; };
+		D7DACD7F19AC551900D7CFE1 /* PJSoftwareListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */; };
+		D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */; };
+		D7DACD8419AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */; };
+		D7DACD8819AC9F9100D7CFE1 /* PJMacxNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8619AC9F9100D7CFE1 /* PJMacxNewsViewController.m */; };
+		D7DACD8919AC9F9100D7CFE1 /* PJMacxNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD8719AC9F9100D7CFE1 /* PJMacxNewsViewController.xib */; };
+		D7DACD8C19AC9FDD00D7CFE1 /* PJMacxNewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8B19AC9FDD00D7CFE1 /* PJMacxNewsManager.m */; };
+		D7DACD8F19ACA05F00D7CFE1 /* PJMacxClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8E19ACA05F00D7CFE1 /* PJMacxClient.m */; };
+		D7DACD9219ACA35100D7CFE1 /* PJMacxNewsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD9119ACA35100D7CFE1 /* PJMacxNewsParser.m */; };
+		D7DE980A19AD7D7E00795E75 /* NSString+PJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE980919AD7D7E00795E75 /* NSString+PJAdditions.m */; };
+		D7DE980E19AD9DC800795E75 /* PJMacxNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE980C19AD9DC800795E75 /* PJMacxNewsListViewController.m */; };
+		D7DE980F19AD9DC800795E75 /* PJMacxNewsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DE980D19AD9DC800795E75 /* PJMacxNewsListViewController.xib */; };
+		D7DE981319ADA10A00795E75 /* PJMacxNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981119ADA10A00795E75 /* PJMacxNewsDetailViewController.m */; };
+		D7DE981419ADA10A00795E75 /* PJMacxNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DE981219ADA10A00795E75 /* PJMacxNewsDetailViewController.xib */; };
+		D7DE981719ADA63D00795E75 /* PJListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981619ADA63D00795E75 /* PJListViewController.m */; };
+		D7DE981A19ADA64C00795E75 /* PJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981919ADA64C00795E75 /* PJDetailViewController.m */; };
+		D7DE981E19ADA88600795E75 /* PJValueTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981D19ADA88600795E75 /* PJValueTransformers.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D70F2AD719AAE165002D77DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D70F2AAA19AAE164002D77DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D70F2AB119AAE164002D77DA;
+			remoteInfo = MacxApps;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacxApps.xcconfig"; path = "Pods/Pods-MacxApps.xcconfig"; sourceTree = "<group>"; };
+		D70F2AB219AAE164002D77DA /* MacxApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacxApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D70F2AB519AAE164002D77DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D70F2AB819AAE164002D77DA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D70F2AB919AAE164002D77DA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D70F2ABA19AAE164002D77DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D70F2ABD19AAE164002D77DA /* MacxApps-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacxApps-Info.plist"; sourceTree = "<group>"; };
+		D70F2ABF19AAE164002D77DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D70F2AC119AAE164002D77DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D70F2AC319AAE164002D77DA /* MacxApps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacxApps-Prefix.pch"; sourceTree = "<group>"; };
+		D70F2AC519AAE164002D77DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D70F2AC719AAE164002D77DA /* PJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJAppDelegate.h; sourceTree = "<group>"; };
+		D70F2AC819AAE164002D77DA /* PJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PJAppDelegate.m; sourceTree = "<group>"; };
+		D70F2ACB19AAE165002D77DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D70F2ACD19AAE165002D77DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D70F2AD319AAE165002D77DA /* MacxAppsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacxAppsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D70F2AD419AAE165002D77DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D70F2ADB19AAE165002D77DA /* MacxAppsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacxAppsTests-Info.plist"; sourceTree = "<group>"; };
+		D70F2ADD19AAE165002D77DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D70F2ADF19AAE165002D77DA /* MacxAppsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacxAppsTests.m; sourceTree = "<group>"; };
+		D70F2AEA19AB0536002D77DA /* PJSoftwareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareInfo.h; sourceTree = "<group>"; };
+		D70F2AEB19AB0536002D77DA /* PJSoftwareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareInfo.m; sourceTree = "<group>"; };
+		D70F2AED19AB0597002D77DA /* PJSoftwareCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareCollection.h; sourceTree = "<group>"; };
+		D70F2AEE19AB0597002D77DA /* PJSoftwareCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareCollection.m; sourceTree = "<group>"; };
+		D70F2AF019AB0EBD002D77DA /* macx-softlist.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "macx-softlist.xml"; sourceTree = "<group>"; };
+		D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mac-soft-categories-macx.json"; sourceTree = "<group>"; };
+		D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MacxAppsDefaults.plist; sourceTree = "<group>"; };
+		D70F2AF619AB0F32002D77DA /* PJSoftwareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareCategory.h; sourceTree = "<group>"; };
+		D70F2AF719AB0F32002D77DA /* PJSoftwareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareCategory.m; sourceTree = "<group>"; };
+		D70F2AFA19AB2AA3002D77DA /* PJSoftwareGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareGridViewController.h; sourceTree = "<group>"; };
+		D70F2AFB19AB2AA3002D77DA /* PJSoftwareGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareGridViewController.m; sourceTree = "<group>"; };
+		D70F2AFC19AB2AA3002D77DA /* PJSoftwareGridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJSoftwareGridViewController.xib; sourceTree = "<group>"; };
+		D70F2AFF19AB309E002D77DA /* BackgroundDust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundDust.png; sourceTree = "<group>"; };
+		D70F2B0019AB309E002D77DA /* BackgroundNoisy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundNoisy.png; sourceTree = "<group>"; };
+		D70F2B0119AB309E002D77DA /* BackgroundSolid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundSolid.png; sourceTree = "<group>"; };
+		D70F2B0219AB309E002D77DA /* AppleLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleLogo.png; sourceTree = "<group>"; };
+		D70F2B0819AB5EEA002D77DA /* PJSoftwareInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareInfoParser.h; sourceTree = "<group>"; };
+		D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareInfoParser.m; sourceTree = "<group>"; };
+		D70F2B0B19AB6A1F002D77DA /* macx-softlist-all.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "macx-softlist-all.xml"; sourceTree = "<group>"; };
+		D70F2B0D19AB6B87002D77DA /* PJSoftwareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareManager.h; sourceTree = "<group>"; };
+		D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareManager.m; sourceTree = "<group>"; };
+		D7DACD7319AC22D300D7CFE1 /* PJWindowTitlebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJWindowTitlebarViewController.h; sourceTree = "<group>"; };
+		D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJWindowTitlebarViewController.m; sourceTree = "<group>"; };
+		D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJWindowTitlebarViewController.xib; sourceTree = "<group>"; };
+		D7DACD7819AC377800D7CFE1 /* PJUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUtils.h; sourceTree = "<group>"; };
+		D7DACD7919AC377800D7CFE1 /* PJUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJUtils.m; sourceTree = "<group>"; };
+		D7DACD7B19AC551900D7CFE1 /* PJSoftwareListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareListViewController.h; sourceTree = "<group>"; };
+		D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareListViewController.m; sourceTree = "<group>"; };
+		D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJSoftwareListViewController.xib; sourceTree = "<group>"; };
+		D7DACD8019AC638B00D7CFE1 /* PJSoftwareDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareDetailViewController.h; sourceTree = "<group>"; };
+		D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareDetailViewController.m; sourceTree = "<group>"; };
+		D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJSoftwareDetailViewController.xib; sourceTree = "<group>"; };
+		D7DACD8519AC9F9100D7CFE1 /* PJMacxNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsViewController.h; sourceTree = "<group>"; };
+		D7DACD8619AC9F9100D7CFE1 /* PJMacxNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsViewController.m; sourceTree = "<group>"; };
+		D7DACD8719AC9F9100D7CFE1 /* PJMacxNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJMacxNewsViewController.xib; sourceTree = "<group>"; };
+		D7DACD8A19AC9FDD00D7CFE1 /* PJMacxNewsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsManager.h; sourceTree = "<group>"; };
+		D7DACD8B19AC9FDD00D7CFE1 /* PJMacxNewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsManager.m; sourceTree = "<group>"; };
+		D7DACD8D19ACA05F00D7CFE1 /* PJMacxClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxClient.h; sourceTree = "<group>"; };
+		D7DACD8E19ACA05F00D7CFE1 /* PJMacxClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxClient.m; sourceTree = "<group>"; };
+		D7DACD9019ACA35100D7CFE1 /* PJMacxNewsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsParser.h; sourceTree = "<group>"; };
+		D7DACD9119ACA35100D7CFE1 /* PJMacxNewsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsParser.m; sourceTree = "<group>"; };
+		D7DE980819AD7D7E00795E75 /* NSString+PJAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PJAdditions.h"; sourceTree = "<group>"; };
+		D7DE980919AD7D7E00795E75 /* NSString+PJAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PJAdditions.m"; sourceTree = "<group>"; };
+		D7DE980B19AD9DC800795E75 /* PJMacxNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsListViewController.h; sourceTree = "<group>"; };
+		D7DE980C19AD9DC800795E75 /* PJMacxNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsListViewController.m; sourceTree = "<group>"; };
+		D7DE980D19AD9DC800795E75 /* PJMacxNewsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJMacxNewsListViewController.xib; sourceTree = "<group>"; };
+		D7DE981019ADA10A00795E75 /* PJMacxNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxNewsDetailViewController.h; sourceTree = "<group>"; };
+		D7DE981119ADA10A00795E75 /* PJMacxNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxNewsDetailViewController.m; sourceTree = "<group>"; };
+		D7DE981219ADA10A00795E75 /* PJMacxNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJMacxNewsDetailViewController.xib; sourceTree = "<group>"; };
+		D7DE981519ADA63D00795E75 /* PJListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJListViewController.h; sourceTree = "<group>"; };
+		D7DE981619ADA63D00795E75 /* PJListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJListViewController.m; sourceTree = "<group>"; };
+		D7DE981819ADA64C00795E75 /* PJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJDetailViewController.h; sourceTree = "<group>"; };
+		D7DE981919ADA64C00795E75 /* PJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJDetailViewController.m; sourceTree = "<group>"; };
+		D7DE981B19ADA6C000795E75 /* PJSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJSelectionDelegate.h; sourceTree = "<group>"; };
+		D7DE981C19ADA88600795E75 /* PJValueTransformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJValueTransformers.h; sourceTree = "<group>"; };
+		D7DE981D19ADA88600795E75 /* PJValueTransformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJValueTransformers.m; sourceTree = "<group>"; };
+		DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacxApps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D70F2AAF19AAE164002D77DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AB619AAE164002D77DA /* Cocoa.framework in Frameworks */,
+				3F08696F82554CDF8D7ED5EF /* libPods-MacxApps.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D70F2AD019AAE165002D77DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AD619AAE165002D77DA /* Cocoa.framework in Frameworks */,
+				D70F2AD519AAE165002D77DA /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D70F2AA919AAE164002D77DA = {
+			isa = PBXGroup;
+			children = (
+				D70F2ABB19AAE164002D77DA /* MacxApps */,
+				D70F2AD919AAE165002D77DA /* MacxAppsTests */,
+				D70F2AB419AAE164002D77DA /* Frameworks */,
+				D70F2AB319AAE164002D77DA /* Products */,
+				ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		D70F2AB319AAE164002D77DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AB219AAE164002D77DA /* MacxApps.app */,
+				D70F2AD319AAE165002D77DA /* MacxAppsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D70F2AB419AAE164002D77DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AB519AAE164002D77DA /* Cocoa.framework */,
+				D70F2AD419AAE165002D77DA /* XCTest.framework */,
+				D70F2AB719AAE164002D77DA /* Other Frameworks */,
+				DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D70F2AB719AAE164002D77DA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AB819AAE164002D77DA /* AppKit.framework */,
+				D70F2AB919AAE164002D77DA /* CoreData.framework */,
+				D70F2ABA19AAE164002D77DA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D70F2ABB19AAE164002D77DA /* MacxApps */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2B0719AB5EC0002D77DA /* Utils */,
+				D70F2AF919AB2A5F002D77DA /* Views */,
+				D70F2AE919AB050D002D77DA /* Models */,
+				D70F2AC719AAE164002D77DA /* PJAppDelegate.h */,
+				D70F2AC819AAE164002D77DA /* PJAppDelegate.m */,
+				D70F2ACA19AAE165002D77DA /* MainMenu.xib */,
+				D70F2ACD19AAE165002D77DA /* Images.xcassets */,
+				D70F2ABC19AAE164002D77DA /* Supporting Files */,
+			);
+			path = MacxApps;
+			sourceTree = "<group>";
+		};
+		D70F2ABC19AAE164002D77DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2B0B19AB6A1F002D77DA /* macx-softlist-all.xml */,
+				D70F2AFF19AB309E002D77DA /* BackgroundDust.png */,
+				D70F2B0019AB309E002D77DA /* BackgroundNoisy.png */,
+				D70F2B0119AB309E002D77DA /* BackgroundSolid.png */,
+				D70F2B0219AB309E002D77DA /* AppleLogo.png */,
+				D70F2AF019AB0EBD002D77DA /* macx-softlist.xml */,
+				D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */,
+				D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */,
+				D70F2ABD19AAE164002D77DA /* MacxApps-Info.plist */,
+				D70F2ABE19AAE164002D77DA /* InfoPlist.strings */,
+				D70F2AC119AAE164002D77DA /* main.m */,
+				D70F2AC319AAE164002D77DA /* MacxApps-Prefix.pch */,
+				D70F2AC419AAE164002D77DA /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D70F2AD919AAE165002D77DA /* MacxAppsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2ADF19AAE165002D77DA /* MacxAppsTests.m */,
+				D70F2ADA19AAE165002D77DA /* Supporting Files */,
+			);
+			path = MacxAppsTests;
+			sourceTree = "<group>";
+		};
+		D70F2ADA19AAE165002D77DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2ADB19AAE165002D77DA /* MacxAppsTests-Info.plist */,
+				D70F2ADC19AAE165002D77DA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D70F2AE919AB050D002D77DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AEA19AB0536002D77DA /* PJSoftwareInfo.h */,
+				D70F2AEB19AB0536002D77DA /* PJSoftwareInfo.m */,
+				D70F2AED19AB0597002D77DA /* PJSoftwareCollection.h */,
+				D70F2AEE19AB0597002D77DA /* PJSoftwareCollection.m */,
+				D70F2AF619AB0F32002D77DA /* PJSoftwareCategory.h */,
+				D70F2AF719AB0F32002D77DA /* PJSoftwareCategory.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D70F2AF919AB2A5F002D77DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2AFA19AB2AA3002D77DA /* PJSoftwareGridViewController.h */,
+				D70F2AFB19AB2AA3002D77DA /* PJSoftwareGridViewController.m */,
+				D70F2AFC19AB2AA3002D77DA /* PJSoftwareGridViewController.xib */,
+				D7DACD7319AC22D300D7CFE1 /* PJWindowTitlebarViewController.h */,
+				D7DACD7419AC22D400D7CFE1 /* PJWindowTitlebarViewController.m */,
+				D7DACD7519AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib */,
+				D7DACD7B19AC551900D7CFE1 /* PJSoftwareListViewController.h */,
+				D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */,
+				D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */,
+				D7DACD8019AC638B00D7CFE1 /* PJSoftwareDetailViewController.h */,
+				D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */,
+				D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */,
+				D7DACD8519AC9F9100D7CFE1 /* PJMacxNewsViewController.h */,
+				D7DACD8619AC9F9100D7CFE1 /* PJMacxNewsViewController.m */,
+				D7DACD8719AC9F9100D7CFE1 /* PJMacxNewsViewController.xib */,
+				D7DE980B19AD9DC800795E75 /* PJMacxNewsListViewController.h */,
+				D7DE980C19AD9DC800795E75 /* PJMacxNewsListViewController.m */,
+				D7DE980D19AD9DC800795E75 /* PJMacxNewsListViewController.xib */,
+				D7DE981019ADA10A00795E75 /* PJMacxNewsDetailViewController.h */,
+				D7DE981119ADA10A00795E75 /* PJMacxNewsDetailViewController.m */,
+				D7DE981219ADA10A00795E75 /* PJMacxNewsDetailViewController.xib */,
+				D7DE981519ADA63D00795E75 /* PJListViewController.h */,
+				D7DE981619ADA63D00795E75 /* PJListViewController.m */,
+				D7DE981819ADA64C00795E75 /* PJDetailViewController.h */,
+				D7DE981919ADA64C00795E75 /* PJDetailViewController.m */,
+				D7DE981B19ADA6C000795E75 /* PJSelectionDelegate.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D70F2B0719AB5EC0002D77DA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D70F2B0819AB5EEA002D77DA /* PJSoftwareInfoParser.h */,
+				D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */,
+				D70F2B0D19AB6B87002D77DA /* PJSoftwareManager.h */,
+				D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */,
+				D7DACD7819AC377800D7CFE1 /* PJUtils.h */,
+				D7DACD7919AC377800D7CFE1 /* PJUtils.m */,
+				D7DACD8A19AC9FDD00D7CFE1 /* PJMacxNewsManager.h */,
+				D7DACD8B19AC9FDD00D7CFE1 /* PJMacxNewsManager.m */,
+				D7DACD8D19ACA05F00D7CFE1 /* PJMacxClient.h */,
+				D7DACD8E19ACA05F00D7CFE1 /* PJMacxClient.m */,
+				D7DACD9019ACA35100D7CFE1 /* PJMacxNewsParser.h */,
+				D7DACD9119ACA35100D7CFE1 /* PJMacxNewsParser.m */,
+				D7DE980819AD7D7E00795E75 /* NSString+PJAdditions.h */,
+				D7DE980919AD7D7E00795E75 /* NSString+PJAdditions.m */,
+				D7DE981C19ADA88600795E75 /* PJValueTransformers.h */,
+				D7DE981D19ADA88600795E75 /* PJValueTransformers.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D70F2AB119AAE164002D77DA /* MacxApps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D70F2AE319AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxApps" */;
+			buildPhases = (
+				64E62A3B0C454DA88EA37B53 /* Check Pods Manifest.lock */,
+				D70F2AAE19AAE164002D77DA /* Sources */,
+				D70F2AAF19AAE164002D77DA /* Frameworks */,
+				D70F2AB019AAE164002D77DA /* Resources */,
+				2EBB8F98EE22427FACECCBDF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacxApps;
+			productName = MacxApps;
+			productReference = D70F2AB219AAE164002D77DA /* MacxApps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D70F2AD219AAE165002D77DA /* MacxAppsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D70F2AE619AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxAppsTests" */;
+			buildPhases = (
+				D70F2ACF19AAE165002D77DA /* Sources */,
+				D70F2AD019AAE165002D77DA /* Frameworks */,
+				D70F2AD119AAE165002D77DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D70F2AD819AAE165002D77DA /* PBXTargetDependency */,
+			);
+			name = MacxAppsTests;
+			productName = MacxAppsTests;
+			productReference = D70F2AD319AAE165002D77DA /* MacxAppsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D70F2AAA19AAE164002D77DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PJ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "平江";
+				TargetAttributes = {
+					D70F2AD219AAE165002D77DA = {
+						TestTargetID = D70F2AB119AAE164002D77DA;
+					};
+				};
+			};
+			buildConfigurationList = D70F2AAD19AAE164002D77DA /* Build configuration list for PBXProject "MacxApps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D70F2AA919AAE164002D77DA;
+			productRefGroup = D70F2AB319AAE164002D77DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D70F2AB119AAE164002D77DA /* MacxApps */,
+				D70F2AD219AAE165002D77DA /* MacxAppsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D70F2AB019AAE164002D77DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AC019AAE164002D77DA /* InfoPlist.strings in Resources */,
+				D70F2ACE19AAE165002D77DA /* Images.xcassets in Resources */,
+				D7DACD8419AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib in Resources */,
+				D70F2B0419AB309E002D77DA /* BackgroundNoisy.png in Resources */,
+				D70F2B0319AB309E002D77DA /* BackgroundDust.png in Resources */,
+				D70F2AC619AAE164002D77DA /* Credits.rtf in Resources */,
+				D70F2ACC19AAE165002D77DA /* MainMenu.xib in Resources */,
+				D7DE981419ADA10A00795E75 /* PJMacxNewsDetailViewController.xib in Resources */,
+				D7DACD8919AC9F9100D7CFE1 /* PJMacxNewsViewController.xib in Resources */,
+				D7DACD7F19AC551900D7CFE1 /* PJSoftwareListViewController.xib in Resources */,
+				D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */,
+				D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */,
+				D70F2B0519AB309E002D77DA /* BackgroundSolid.png in Resources */,
+				D7DACD7719AC22D400D7CFE1 /* PJWindowTitlebarViewController.xib in Resources */,
+				D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */,
+				D70F2AFE19AB2AA3002D77DA /* PJSoftwareGridViewController.xib in Resources */,
+				D70F2B0C19AB6A1F002D77DA /* macx-softlist-all.xml in Resources */,
+				D7DE980F19AD9DC800795E75 /* PJMacxNewsListViewController.xib in Resources */,
+				D70F2AF319AB0EBD002D77DA /* macx-softlist.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D70F2AD119AAE165002D77DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2ADE19AAE165002D77DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EBB8F98EE22427FACECCBDF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MacxApps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64E62A3B0C454DA88EA37B53 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D70F2AAE19AAE164002D77DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */,
+				D70F2AC919AAE164002D77DA /* PJAppDelegate.m in Sources */,
+				D7DE980E19AD9DC800795E75 /* PJMacxNewsListViewController.m in Sources */,
+				D7DE981319ADA10A00795E75 /* PJMacxNewsDetailViewController.m in Sources */,
+				D70F2AF819AB0F32002D77DA /* PJSoftwareCategory.m in Sources */,
+				D70F2AFD19AB2AA3002D77DA /* PJSoftwareGridViewController.m in Sources */,
+				D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */,
+				D7DACD8819AC9F9100D7CFE1 /* PJMacxNewsViewController.m in Sources */,
+				D7DE981A19ADA64C00795E75 /* PJDetailViewController.m in Sources */,
+				D7DACD8F19ACA05F00D7CFE1 /* PJMacxClient.m in Sources */,
+				D7DACD7A19AC377800D7CFE1 /* PJUtils.m in Sources */,
+				D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */,
+				D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */,
+				D7DACD9219ACA35100D7CFE1 /* PJMacxNewsParser.m in Sources */,
+				D7DE980A19AD7D7E00795E75 /* NSString+PJAdditions.m in Sources */,
+				D7DE981E19ADA88600795E75 /* PJValueTransformers.m in Sources */,
+				D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */,
+				D7DACD7619AC22D400D7CFE1 /* PJWindowTitlebarViewController.m in Sources */,
+				D70F2AC219AAE164002D77DA /* main.m in Sources */,
+				D7DACD7E19AC551900D7CFE1 /* PJSoftwareListViewController.m in Sources */,
+				D7DE981719ADA63D00795E75 /* PJListViewController.m in Sources */,
+				D7DACD8C19AC9FDD00D7CFE1 /* PJMacxNewsManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D70F2ACF19AAE165002D77DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D70F2AE019AAE165002D77DA /* MacxAppsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D70F2AD819AAE165002D77DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D70F2AB119AAE164002D77DA /* MacxApps */;
+			targetProxy = D70F2AD719AAE165002D77DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D70F2ABE19AAE164002D77DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D70F2ABF19AAE164002D77DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D70F2AC419AAE164002D77DA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D70F2AC519AAE164002D77DA /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D70F2ACA19AAE165002D77DA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D70F2ACB19AAE165002D77DA /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D70F2ADC19AAE165002D77DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D70F2ADD19AAE165002D77DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D70F2AE119AAE165002D77DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D70F2AE219AAE165002D77DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D70F2AE419AAE165002D77DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
+				INFOPLIST_FILE = "MacxApps/MacxApps-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D70F2AE519AAE165002D77DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
+				INFOPLIST_FILE = "MacxApps/MacxApps-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D70F2AE719AAE165002D77DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacxApps.app/Contents/MacOS/MacxApps";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MacxAppsTests/MacxAppsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D70F2AE819AAE165002D77DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacxApps.app/Contents/MacOS/MacxApps";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
+				INFOPLIST_FILE = "MacxAppsTests/MacxAppsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D70F2AAD19AAE164002D77DA /* Build configuration list for PBXProject "MacxApps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D70F2AE119AAE165002D77DA /* Debug */,
+				D70F2AE219AAE165002D77DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D70F2AE319AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxApps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D70F2AE419AAE165002D77DA /* Debug */,
+				D70F2AE519AAE165002D77DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D70F2AE619AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxAppsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D70F2AE719AAE165002D77DA /* Debug */,
+				D70F2AE819AAE165002D77DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D70F2AAA19AAE164002D77DA /* Project object */;
+}
