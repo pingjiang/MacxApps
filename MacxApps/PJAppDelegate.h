@@ -19,4 +19,10 @@
 @property (weak) IBOutlet NSBox *listViewBox;
 @property (weak) IBOutlet NSBox *detailViewBox;
 
+/// Preferences, used in bind to Application.delegate
+@property (nonatomic, readonly) NSWindowController *preferencesWindowController;
+@property (nonatomic) NSInteger focusedAdvancedControlIndex;
+
+- (IBAction)openPreferences:(id)sender;
+
 @end

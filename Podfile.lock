@@ -17,14 +17,17 @@ PODS:
   - AFNetworking/Reachability (2.3.1)
   - AFNetworking/Security (2.3.1)
   - AFNetworking/Serialization (2.3.1)
+  - MASPreferences (1.1)
   - PXSourceList (2.0.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.3)
+  - MASPreferences (~> 1.1)
   - PXSourceList (~> 2.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  MASPreferences: 971d03da4b3818f8ea0d0ef10b86b02b2c052d17
   PXSourceList: 1a718d3e11e08d49524fb417fab565c248bf9f64
 
 COCOAPODS: 0.33.1

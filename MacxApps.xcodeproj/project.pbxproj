@@ -50,6 +50,10 @@
 		D7DE981719ADA63D00795E75 /* PJListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981619ADA63D00795E75 /* PJListViewController.m */; };
 		D7DE981A19ADA64C00795E75 /* PJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981919ADA64C00795E75 /* PJDetailViewController.m */; };
 		D7DE981E19ADA88600795E75 /* PJValueTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DE981D19ADA88600795E75 /* PJValueTransformers.m */; };
+		D7E244B719B0DB2600C88033 /* PJGeneralPreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E244B519B0DB2600C88033 /* PJGeneralPreferenceViewController.m */; };
+		D7E244B819B0DB2600C88033 /* PJGeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E244B619B0DB2600C88033 /* PJGeneralPreferenceViewController.xib */; };
+		D7E244BC19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E244BA19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.m */; };
+		D7E244BD19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E244BB19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +137,12 @@
 		D7DE981B19ADA6C000795E75 /* PJSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJSelectionDelegate.h; sourceTree = "<group>"; };
 		D7DE981C19ADA88600795E75 /* PJValueTransformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJValueTransformers.h; sourceTree = "<group>"; };
 		D7DE981D19ADA88600795E75 /* PJValueTransformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJValueTransformers.m; sourceTree = "<group>"; };
+		D7E244B419B0DB2600C88033 /* PJGeneralPreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJGeneralPreferenceViewController.h; sourceTree = "<group>"; };
+		D7E244B519B0DB2600C88033 /* PJGeneralPreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJGeneralPreferenceViewController.m; sourceTree = "<group>"; };
+		D7E244B619B0DB2600C88033 /* PJGeneralPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJGeneralPreferenceViewController.xib; sourceTree = "<group>"; };
+		D7E244B919B0DB3D00C88033 /* PJAdvancedPreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAdvancedPreferenceViewController.h; sourceTree = "<group>"; };
+		D7E244BA19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAdvancedPreferenceViewController.m; sourceTree = "<group>"; };
+		D7E244BB19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJAdvancedPreferenceViewController.xib; sourceTree = "<group>"; };
 		DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacxApps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -266,34 +276,18 @@
 		D70F2AF919AB2A5F002D77DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D7DACD7B19AC551900D7CFE1 /* PJSoftwareListViewController.h */,
-				D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */,
-				D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */,
-				D7DACD8019AC638B00D7CFE1 /* PJSoftwareDetailViewController.h */,
-				D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */,
-				D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */,
-				D7DE980B19AD9DC800795E75 /* PJMacxNewsListViewController.h */,
-				D7DE980C19AD9DC800795E75 /* PJMacxNewsListViewController.m */,
-				D7DE980D19AD9DC800795E75 /* PJMacxNewsListViewController.xib */,
-				D7DE981019ADA10A00795E75 /* PJMacxNewsDetailViewController.h */,
-				D7DE981119ADA10A00795E75 /* PJMacxNewsDetailViewController.m */,
-				D7DE981219ADA10A00795E75 /* PJMacxNewsDetailViewController.xib */,
+				D7E244B019B0DABD00C88033 /* Softwares */,
+				D7E244B119B0DAC800C88033 /* MacxNews */,
 				D7DE981519ADA63D00795E75 /* PJListViewController.h */,
 				D7DE981619ADA63D00795E75 /* PJListViewController.m */,
 				D7DE981819ADA64C00795E75 /* PJDetailViewController.h */,
 				D7DE981919ADA64C00795E75 /* PJDetailViewController.m */,
 				D7DE981B19ADA6C000795E75 /* PJSelectionDelegate.h */,
-				D7C69B7F19B0263100466AD7 /* PJAppsListViewController.h */,
-				D7C69B8019B0263100466AD7 /* PJAppsListViewController.m */,
-				D7C69B8119B0263100466AD7 /* PJAppsListViewController.xib */,
-				D7C69B8419B0264500466AD7 /* PJAppsDetailViewController.h */,
-				D7C69B8519B0264500466AD7 /* PJAppsDetailViewController.m */,
-				D7C69B8619B0264500466AD7 /* PJAppsDetailViewController.xib */,
-				D7C90F7919B0776A005BD38F /* PJSidebarViewController.h */,
-				D7C90F7A19B0776A005BD38F /* PJSidebarViewController.m */,
-				D7C90F7B19B0776A005BD38F /* PJSidebarViewController.xib */,
+				D7E244B219B0DADB00C88033 /* Apps */,
+				D7E244B319B0DAE600C88033 /* Sidebar */,
 				D7C90F7E19B085AF005BD38F /* PJTableCellView.h */,
 				D7C90F7F19B085AF005BD38F /* PJTableCellView.m */,
+				D7E244BE19B0DB4300C88033 /* Preferences */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +307,68 @@
 				D7C69B8A19B0291C00466AD7 /* PJAppsManager.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D7E244B019B0DABD00C88033 /* Softwares */ = {
+			isa = PBXGroup;
+			children = (
+				D7DACD7B19AC551900D7CFE1 /* PJSoftwareListViewController.h */,
+				D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */,
+				D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */,
+				D7DACD8019AC638B00D7CFE1 /* PJSoftwareDetailViewController.h */,
+				D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */,
+				D7DACD8219AC638B00D7CFE1 /* PJSoftwareDetailViewController.xib */,
+			);
+			name = Softwares;
+			sourceTree = "<group>";
+		};
+		D7E244B119B0DAC800C88033 /* MacxNews */ = {
+			isa = PBXGroup;
+			children = (
+				D7DE980B19AD9DC800795E75 /* PJMacxNewsListViewController.h */,
+				D7DE980C19AD9DC800795E75 /* PJMacxNewsListViewController.m */,
+				D7DE980D19AD9DC800795E75 /* PJMacxNewsListViewController.xib */,
+				D7DE981019ADA10A00795E75 /* PJMacxNewsDetailViewController.h */,
+				D7DE981119ADA10A00795E75 /* PJMacxNewsDetailViewController.m */,
+				D7DE981219ADA10A00795E75 /* PJMacxNewsDetailViewController.xib */,
+			);
+			name = MacxNews;
+			sourceTree = "<group>";
+		};
+		D7E244B219B0DADB00C88033 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				D7C69B7F19B0263100466AD7 /* PJAppsListViewController.h */,
+				D7C69B8019B0263100466AD7 /* PJAppsListViewController.m */,
+				D7C69B8119B0263100466AD7 /* PJAppsListViewController.xib */,
+				D7C69B8419B0264500466AD7 /* PJAppsDetailViewController.h */,
+				D7C69B8519B0264500466AD7 /* PJAppsDetailViewController.m */,
+				D7C69B8619B0264500466AD7 /* PJAppsDetailViewController.xib */,
+			);
+			name = Apps;
+			sourceTree = "<group>";
+		};
+		D7E244B319B0DAE600C88033 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				D7C90F7919B0776A005BD38F /* PJSidebarViewController.h */,
+				D7C90F7A19B0776A005BD38F /* PJSidebarViewController.m */,
+				D7C90F7B19B0776A005BD38F /* PJSidebarViewController.xib */,
+			);
+			name = Sidebar;
+			sourceTree = "<group>";
+		};
+		D7E244BE19B0DB4300C88033 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				D7E244B419B0DB2600C88033 /* PJGeneralPreferenceViewController.h */,
+				D7E244B519B0DB2600C88033 /* PJGeneralPreferenceViewController.m */,
+				D7E244B619B0DB2600C88033 /* PJGeneralPreferenceViewController.xib */,
+				D7E244B919B0DB3D00C88033 /* PJAdvancedPreferenceViewController.h */,
+				D7E244BA19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.m */,
+				D7E244BB19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.xib */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,10 +458,12 @@
 				D70F2AC619AAE164002D77DA /* Credits.rtf in Resources */,
 				D70F2ACC19AAE165002D77DA /* MainMenu.xib in Resources */,
 				D7DE981419ADA10A00795E75 /* PJMacxNewsDetailViewController.xib in Resources */,
+				D7E244B819B0DB2600C88033 /* PJGeneralPreferenceViewController.xib in Resources */,
 				D7DACD7F19AC551900D7CFE1 /* PJSoftwareListViewController.xib in Resources */,
 				D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */,
 				D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */,
 				D75A5A9019AF86B200108EE1 /* MacxApps.icns in Resources */,
+				D7E244BD19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.xib in Resources */,
 				D7C69B8319B0263100466AD7 /* PJAppsListViewController.xib in Resources */,
 				D70F2AF419AB0EBD002D77DA /* sidebar.json in Resources */,
 				D7DE980F19AD9DC800795E75 /* PJMacxNewsListViewController.xib in Resources */,
@@ -462,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */,
+				D7E244B719B0DB2600C88033 /* PJGeneralPreferenceViewController.m in Sources */,
 				D7C90F8019B085AF005BD38F /* PJTableCellView.m in Sources */,
 				D70F2AC919AAE164002D77DA /* PJAppDelegate.m in Sources */,
 				D7C69B8219B0263100466AD7 /* PJAppsListViewController.m in Sources */,
@@ -475,6 +534,7 @@
 				D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */,
 				D7DE980A19AD7D7E00795E75 /* NSString+PJAdditions.m in Sources */,
 				D7DE981E19ADA88600795E75 /* PJValueTransformers.m in Sources */,
+				D7E244BC19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.m in Sources */,
 				D7C69B8719B0264500466AD7 /* PJAppsDetailViewController.m in Sources */,
 				D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */,
 				D70F2AC219AAE164002D77DA /* main.m in Sources */,

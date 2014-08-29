@@ -4,6 +4,7 @@
 target "MacxApps" do
     pod 'PXSourceList', '~> 2.0'
     pod 'AFNetworking', '~> 2.3'
+    pod 'MASPreferences', '~> 1.1'
 end
 
 target "MacxAppsTests" do
