@@ -73,4 +73,52 @@
 
 @end
 
+@implementation PJAppsDateValueTransformer
+
++ (Class)transformedValueClass {
+    return [NSString class];
+}
+
++ (BOOL)allowsReverseTransformation {
+    return NO;
+}
+
+// <span title="14-8-25 19:00:56">3&nbsp;\u5c0f\u65f6\u524d</span>
+- (id)transformedValue:(id)value {
+    static NSDateFormatter *dateFormatter = nil;
+    if (!dateFormatter) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];// yyyy-MM-dd 'at' HH:mm
+    }
+    
+    return [dateFormatter stringFromDate:value];
+}
+
+@end
+
+
+/// Timestamp transfomer
+@implementation PJTimestampValueTransformer
+
++ (Class)transformedValueClass {
+    return [NSString class];
+}
+
++ (BOOL)allowsReverseTransformation {
+    return NO;
+}
+
+- (id)transformedValue:(id)value {
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];
+    static NSDateFormatter *dateFormatterTimestamp = nil;
+    if (!dateFormatterTimestamp) {
+        dateFormatterTimestamp = [[NSDateFormatter alloc] init];
+        [dateFormatterTimestamp setDateFormat:@"yyyy-MM-dd"];// yyyy-MM-dd 'at' HH:mm
+    }
+    
+    return [dateFormatterTimestamp stringFromDate:date];
+}
+
+@end
+
 

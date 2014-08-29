@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "PXSourceList.h"
 #import "PJSoftwareInfoParser.h"
-#import "PJSoftwareListViewController.h"
+#import "PJSelectionDelegate.h"
 
 @interface PJAppDelegate : NSObject <NSApplicationDelegate, PXSourceListDataSource, PXSourceListDelegate, PJParseResultDelegate, PJSelectionDelegate> {
     NSView *_defaultView;
@@ -21,6 +21,7 @@
 
 @property (strong) NSMutableArray *items;
 @property (weak) NSArray *macxNews;
+@property (weak) NSArray *apps;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSSplitView *splitView;

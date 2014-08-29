@@ -10,13 +10,10 @@
 #import "PJSoftwareInfo.h"
 #import "PJSoftwareCollection.h"
 #import "PJSoftwareCategory.h"
-#import "PJSoftwareGridViewController.h"
 #import "PJSoftwareManager.h"
-#import "INAppStoreWindow.h"
-#import "PJWindowTitlebarViewController.h"
-#import "PJSoftwareDetailViewController.h"
-#import "PJMacxNewsViewController.h"
-#import "PJMacxNewsListViewController.h"
+#import "PJAppsManager.h"
+#import "PJListViewController.h"
+#import "PJDetailViewController.h"
 
 @interface PJAppDelegate ()
 @property (strong, nonatomic) NSMutableArray *modelObjects;
@@ -27,9 +24,14 @@
 - (void)changeViewFor:(NSString*)identifier;
 
 - (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
-- (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 - (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
+
+- (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 - (void)updateMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
+
+
+- (void)initializeAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
+- (void)updateAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 
 @end
 
@@ -40,7 +42,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
 @implementation PJAppDelegate
 
 @synthesize items = _items;
-@synthesize macxNews;
+@synthesize macxNews, apps;
 
 - (void)registerDefaults {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"MacxAppsDefaults" ofType:@"plist"];
@@ -135,6 +137,10 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
         [_parser parse];
     }];
 }
+- (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
+    NSLog(@"updateSoftwareList %@ %@", listViewController, detailViewController);
+}
+
 - (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
     NSLog(@"initializeMacxNewsList %@ %@", listViewController, detailViewController);
     [listViewController setSelectionDelegate:self];
@@ -154,47 +160,27 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
         [listViewController setItems:self.macxNews];
     }];
 }
-- (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
-    NSLog(@"updateSoftwareList %@ %@", listViewController, detailViewController);
-}
+
 - (void)updateMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
     NSLog(@"updateMacxNewsList %@ %@", listViewController, detailViewController);
 }
 
+
+- (void)initializeAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
+    NSLog(@"initializeAppsList %@ %@", listViewController, detailViewController);
+    [listViewController setSelectionDelegate:self];
+    
+    [self.middleViewBox setContentView:listViewController.view];
+    
+    [self setApps:[[PJAppsManager sharedManager] findApps]];
+    [listViewController setItems:self.apps];
+}
+
+- (void)updateAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
+    NSLog(@"updateAppsList %@ %@", listViewController, detailViewController);
+}
+
 - (void)awakeFromNib {
-    // The class of the window has been set in INAppStoreWindow in Interface Builder
-	INAppStoreWindow *aWindow = (INAppStoreWindow *) [self window];
-	aWindow.titleBarHeight = 40.0;
-	aWindow.trafficLightButtonsLeftMargin = 13.0;
-    // aWindow.fullScreenButtonRightMargin = 13.0;
-	
-	NSView *titleBarView = aWindow.titleBarView;
-	NSSize segmentSize = NSMakeSize(440, 25);
-	NSRect segmentFrame = NSMakeRect(NSMaxX(titleBarView.bounds) - 15 - segmentSize.width,
-                                     NSMidY(titleBarView.bounds) - (segmentSize.height / 2.f),
-                                     segmentSize.width, segmentSize.height);
-	
-    PJWindowTitlebarViewController *vc = [[PJWindowTitlebarViewController alloc] initWithFrame:segmentFrame];
-    [titleBarView addSubview:vc.view];
-    [vc.view setTranslatesAutoresizingMaskIntoConstraints:NO];
-    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:titleBarView
-                                                                             attribute:NSLayoutAttributeTrailing
-                                                                             relatedBy:NSLayoutRelationEqual
-                                                                                toItem:vc.view
-                                                                             attribute:NSLayoutAttributeRight
-                                                                            multiplier:1.0
-                                                                              constant:13.0];
-    NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:titleBarView
-                                                          attribute:NSLayoutAttributeCenterY
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:vc.view
-                                                          attribute:NSLayoutAttributeCenterY
-                                                         multiplier:1.0
-                                                           constant:1.0];
-    [titleBarView addConstraints:@[c1, c2]];
-    
-    [aWindow setShowsTitle:YES];
-    
     if (!_defaultView) {
         _defaultView = [self.viewBox contentView];
     }
@@ -229,7 +215,6 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
  */
 - (void)setUpDataModel
 {
-    // @[@"最新动态", @"最新软件", @"软件排行", @"装机必备", @"软件更新"
     if (!_sidebarSysItems) {
         _sidebarSysItems = @[@{
             @"identifier": @"AllSoftwares",
@@ -239,15 +224,6 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
             @"viewControllerInitializerSelectorName": @"initializeSoftwareList:andDetail:",
             @"viewControllerUpdaterSelectorName": @"updateSoftwareList:andDetail:"
         }, @{
-            @"identifier": @"LatestSoftwares",
-            @"name": @"最新软件"
-        }, @{
-            @"identifier": @"RankSoftwares",
-            @"name": @"软件排行"
-        }, @{
-            @"identifier": @"EssentialSoftwares",
-            @"name": @"装机必备"
-        }, @{
             @"identifier": @"NewsOfSoftwares",
             @"name": @"Macx新闻",
             @"listViewControllerClassName": @"PJMacxNewsListViewController",
@@ -255,8 +231,12 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
             @"viewControllerInitializerSelectorName": @"initializeMacxNewsList:andDetail:",
             @"viewControllerUpdaterSelectorName": @"updateMacxNewsList:andDetail:"
         }, @{
-            @"identifier": @"DowloadedSoftwares",
-            @"name": @"下载管理"
+            @"identifier": @"ManageSoftwares",
+            @"name": @"应用管理",
+            @"listViewControllerClassName": @"PJAppsListViewController",
+            @"detailViewControllerClassName": @"PJAppsDetailViewController",
+            @"viewControllerInitializerSelectorName": @"initializeAppsList:andDetail:",
+            @"viewControllerUpdaterSelectorName": @"updateAppsList:andDetail:"
         }];
         
     }

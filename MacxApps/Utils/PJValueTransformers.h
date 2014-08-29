@@ -23,3 +23,10 @@
 
 @end
 
+@interface PJAppsDateValueTransformer : NSValueTransformer
+
+@end
+
+@interface PJTimestampValueTransformer : NSValueTransformer
+
+@end
