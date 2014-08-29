@@ -65,10 +65,18 @@
         return value;
     }
     NSString *dateLine = [value substringWithBound:@"\"" withBound:@"\"" options:0];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yy-MM-dd HH:mm:ss"];// yyyy-MM-dd 'at' HH:mm
-    NSDate *date = [dateFormatter dateFromString:dateLine];
-    return [date description];
+    static NSDateFormatter *dateFormatter0 = nil;
+    static NSDateFormatter *dateFormatter1 = nil;
+    if (!dateFormatter0) {
+        dateFormatter0 = [[NSDateFormatter alloc] init];
+        [dateFormatter0 setDateFormat:@"yy-MM-dd HH:mm:ss"];// yyyy-MM-dd 'at' HH:mm
+        
+        dateFormatter1 = [[NSDateFormatter alloc] init];
+        [dateFormatter1 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];// yyyy-MM-dd 'at' HH:mm
+    }
+    
+    NSDate *date = [dateFormatter0 dateFromString:dateLine];
+    return [dateFormatter1 stringFromDate:date];
 }
 
 @end

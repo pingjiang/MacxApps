@@ -21,7 +21,7 @@
 		D70F2AE019AAE165002D77DA /* MacxAppsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2ADF19AAE165002D77DA /* MacxAppsTests.m */; };
 		D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AEB19AB0536002D77DA /* PJSoftwareInfo.m */; };
 		D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AEE19AB0597002D77DA /* PJSoftwareCollection.m */; };
-		D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */; };
+		D70F2AF419AB0EBD002D77DA /* sidebar.json in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF119AB0EBD002D77DA /* sidebar.json */; };
 		D70F2AF519AB0EBD002D77DA /* MacxAppsDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */; };
 		D70F2AF819AB0F32002D77DA /* PJSoftwareCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2AF719AB0F32002D77DA /* PJSoftwareCategory.m */; };
 		D70F2B0319AB309E002D77DA /* BackgroundDust.png in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AFF19AB309E002D77DA /* BackgroundDust.png */; };
@@ -35,6 +35,9 @@
 		D7C69B8819B0264500466AD7 /* PJAppsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C69B8619B0264500466AD7 /* PJAppsDetailViewController.xib */; };
 		D7C69B8B19B0291C00466AD7 /* PJAppsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C69B8A19B0291C00466AD7 /* PJAppsManager.m */; };
 		D7C69B8D19B02C9B00466AD7 /* PJAppsManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C69B8C19B02C9B00466AD7 /* PJAppsManagerTest.m */; };
+		D7C90F7C19B0776A005BD38F /* PJSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C90F7A19B0776A005BD38F /* PJSidebarViewController.m */; };
+		D7C90F7D19B0776A005BD38F /* PJSidebarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C90F7B19B0776A005BD38F /* PJSidebarViewController.xib */; };
+		D7C90F8019B085AF005BD38F /* PJTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C90F7F19B085AF005BD38F /* PJTableCellView.m */; };
 		D7DACD7E19AC551900D7CFE1 /* PJSoftwareListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */; };
 		D7DACD7F19AC551900D7CFE1 /* PJSoftwareListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */; };
 		D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DACD8119AC638B00D7CFE1 /* PJSoftwareDetailViewController.m */; };
@@ -84,7 +87,7 @@
 		D70F2AEB19AB0536002D77DA /* PJSoftwareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareInfo.m; sourceTree = "<group>"; };
 		D70F2AED19AB0597002D77DA /* PJSoftwareCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareCollection.h; sourceTree = "<group>"; };
 		D70F2AEE19AB0597002D77DA /* PJSoftwareCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareCollection.m; sourceTree = "<group>"; };
-		D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mac-soft-categories-macx.json"; sourceTree = "<group>"; };
+		D70F2AF119AB0EBD002D77DA /* sidebar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sidebar.json; sourceTree = "<group>"; };
 		D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MacxAppsDefaults.plist; sourceTree = "<group>"; };
 		D70F2AF619AB0F32002D77DA /* PJSoftwareCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareCategory.h; sourceTree = "<group>"; };
 		D70F2AF719AB0F32002D77DA /* PJSoftwareCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareCategory.m; sourceTree = "<group>"; };
@@ -104,6 +107,11 @@
 		D7C69B8919B0291C00466AD7 /* PJAppsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAppsManager.h; sourceTree = "<group>"; };
 		D7C69B8A19B0291C00466AD7 /* PJAppsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAppsManager.m; sourceTree = "<group>"; };
 		D7C69B8C19B02C9B00466AD7 /* PJAppsManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAppsManagerTest.m; sourceTree = "<group>"; };
+		D7C90F7919B0776A005BD38F /* PJSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSidebarViewController.h; sourceTree = "<group>"; };
+		D7C90F7A19B0776A005BD38F /* PJSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSidebarViewController.m; sourceTree = "<group>"; };
+		D7C90F7B19B0776A005BD38F /* PJSidebarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJSidebarViewController.xib; sourceTree = "<group>"; };
+		D7C90F7E19B085AF005BD38F /* PJTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJTableCellView.h; sourceTree = "<group>"; };
+		D7C90F7F19B085AF005BD38F /* PJTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJTableCellView.m; sourceTree = "<group>"; };
 		D7DACD7B19AC551900D7CFE1 /* PJSoftwareListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareListViewController.h; sourceTree = "<group>"; };
 		D7DACD7C19AC551900D7CFE1 /* PJSoftwareListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareListViewController.m; sourceTree = "<group>"; };
 		D7DACD7D19AC551900D7CFE1 /* PJSoftwareListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJSoftwareListViewController.xib; sourceTree = "<group>"; };
@@ -212,7 +220,7 @@
 				D75A5A8F19AF86B200108EE1 /* MacxApps.icns */,
 				D70F2AFF19AB309E002D77DA /* BackgroundDust.png */,
 				D70F2B0219AB309E002D77DA /* AppleLogo.png */,
-				D70F2AF119AB0EBD002D77DA /* mac-soft-categories-macx.json */,
+				D70F2AF119AB0EBD002D77DA /* sidebar.json */,
 				D70F2AF219AB0EBD002D77DA /* MacxAppsDefaults.plist */,
 				D70F2ABD19AAE164002D77DA /* MacxApps-Info.plist */,
 				D70F2ABE19AAE164002D77DA /* InfoPlist.strings */,
@@ -281,6 +289,11 @@
 				D7C69B8419B0264500466AD7 /* PJAppsDetailViewController.h */,
 				D7C69B8519B0264500466AD7 /* PJAppsDetailViewController.m */,
 				D7C69B8619B0264500466AD7 /* PJAppsDetailViewController.xib */,
+				D7C90F7919B0776A005BD38F /* PJSidebarViewController.h */,
+				D7C90F7A19B0776A005BD38F /* PJSidebarViewController.m */,
+				D7C90F7B19B0776A005BD38F /* PJSidebarViewController.xib */,
+				D7C90F7E19B085AF005BD38F /* PJTableCellView.h */,
+				D7C90F7F19B085AF005BD38F /* PJTableCellView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -394,8 +407,9 @@
 				D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */,
 				D75A5A9019AF86B200108EE1 /* MacxApps.icns in Resources */,
 				D7C69B8319B0263100466AD7 /* PJAppsListViewController.xib in Resources */,
-				D70F2AF419AB0EBD002D77DA /* mac-soft-categories-macx.json in Resources */,
+				D70F2AF419AB0EBD002D77DA /* sidebar.json in Resources */,
 				D7DE980F19AD9DC800795E75 /* PJMacxNewsListViewController.xib in Resources */,
+				D7C90F7D19B0776A005BD38F /* PJSidebarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,11 +462,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */,
+				D7C90F8019B085AF005BD38F /* PJTableCellView.m in Sources */,
 				D70F2AC919AAE164002D77DA /* PJAppDelegate.m in Sources */,
 				D7C69B8219B0263100466AD7 /* PJAppsListViewController.m in Sources */,
 				D7DE980E19AD9DC800795E75 /* PJMacxNewsListViewController.m in Sources */,
 				D7DE981319ADA10A00795E75 /* PJMacxNewsDetailViewController.m in Sources */,
 				D70F2AF819AB0F32002D77DA /* PJSoftwareCategory.m in Sources */,
+				D7C90F7C19B0776A005BD38F /* PJSidebarViewController.m in Sources */,
 				D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */,
 				D7DE981A19ADA64C00795E75 /* PJDetailViewController.m in Sources */,
 				D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */,

@@ -7,33 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PXSourceList.h"
 #import "PJSoftwareInfoParser.h"
 #import "PJSelectionDelegate.h"
 
-@interface PJAppDelegate : NSObject <NSApplicationDelegate, PXSourceListDataSource, PXSourceListDelegate, PJParseResultDelegate, PJSelectionDelegate> {
-    NSView *_defaultView;
-    NSTableView *_keyListView;
-    NSArray *_sidebarSysItems;
-    NSMutableDictionary *_viewControllerCache;
-    id _rowMacxNewsJsonObject;
-}
-
-@property (strong) NSMutableArray *items;
-@property (weak) NSArray *macxNews;
-@property (weak) NSArray *apps;
+@interface PJAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSSplitView *splitView;
 
-@property (weak) IBOutlet PXSourceList *sourceList;
-@property (weak) IBOutlet NSBox *middleViewBox;
-@property (weak) IBOutlet NSBox *viewBox;
-@property (weak) IBOutlet NSButtonCell *removeButton;
-
-
-- (IBAction)addButtonAction:(id)sender;
-- (IBAction)removeButtonAction:(id)sender;
-
+@property (weak) IBOutlet NSBox *sidebarViewBox;
+@property (weak) IBOutlet NSBox *listViewBox;
+@property (weak) IBOutlet NSBox *detailViewBox;
 
 @end
