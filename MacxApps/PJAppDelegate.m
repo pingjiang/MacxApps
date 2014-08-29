@@ -218,6 +218,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
     if (!_sidebarSysItems) {
         _sidebarSysItems = @[@{
             @"identifier": @"AllSoftwares",
+            @"iconName": @"NSHomeTemplate",
             @"name": @"所有软件",
             @"listViewControllerClassName": @"PJSoftwareListViewController",
             @"detailViewControllerClassName": @"PJSoftwareDetailViewController",
@@ -225,6 +226,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
             @"viewControllerUpdaterSelectorName": @"updateSoftwareList:andDetail:"
         }, @{
             @"identifier": @"NewsOfSoftwares",
+            @"iconName": @"NSQuickLookTemplate",
             @"name": @"Macx新闻",
             @"listViewControllerClassName": @"PJMacxNewsListViewController",
             @"detailViewControllerClassName": @"PJMacxNewsDetailViewController",
@@ -232,6 +234,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
             @"viewControllerUpdaterSelectorName": @"updateMacxNewsList:andDetail:"
         }, @{
             @"identifier": @"ManageSoftwares",
+            @"iconName": @"NSAdvanced",
             @"name": @"应用管理",
             @"listViewControllerClassName": @"PJAppsListViewController",
             @"detailViewControllerClassName": @"PJAppsDetailViewController",
@@ -240,17 +243,6 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
         }];
         
     }
-    
-    // Icon images we're going to use in the Source List.
-    NSImage *photosImage = [NSImage imageNamed:@"NSUser"];
-    [photosImage setTemplate:YES];
-    NSImage *eventsImage = [NSImage imageNamed:@"NSUser"];
-    [eventsImage setTemplate:YES];
-    NSImage *peopleImage = [NSImage imageNamed:@"NSUser"];
-    [peopleImage setTemplate:YES];
-    NSImage *placesImage = [NSImage imageNamed:@"NSUser"];
-    [placesImage setTemplate:YES];
-    
     
     self.modelObjects = [NSMutableArray array];
     NSMutableArray *sourceListSysItems = [NSMutableArray array];
@@ -261,7 +253,10 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
         // Store all of the model objects in an array because each source list item only holds a weak reference to them.
         [self.modelObjects addObject:softaresCollection];
         
-        [sourceListSysItems addObject:[PXSourceListItem itemWithRepresentedObject:softaresCollection icon:photosImage]];
+        NSImage *iconImage = [NSImage imageNamed:sysItem[@"iconName"]];
+        //[iconImage setTemplate:YES];
+        
+        [sourceListSysItems addObject:[PXSourceListItem itemWithRepresentedObject:softaresCollection icon:iconImage]];
     }
     
     
@@ -280,9 +275,6 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
         return;
     }
     NSArray *jsonItems = jsonObj[@"items"];
-    
-    NSImage *albumImage = [NSImage imageNamed:@"NSUser"];
-    [albumImage setTemplate:YES];
     
     PXSourceListItem *albumsItem = [PXSourceListItem itemWithTitle:jsonObj[@"name"] identifier:nil];
     // albumsItem.children = sourceListUserItems;
@@ -307,7 +299,7 @@ static NSString * const draggingType = @"SourceListExampleDraggingType";
             // Store all of the model objects in an array because each source list item only holds a weak reference to them.
             [self.modelObjects addObject:softaresCollection];
             
-            [sourceListUserItems addObject:[PXSourceListItem itemWithRepresentedObject:softaresCollection icon:albumImage]];
+            [sourceListUserItems addObject:[PXSourceListItem itemWithRepresentedObject:softaresCollection icon:nil]];
             
             // [self buildSourceList:level + 1 withNode:dict onCollectionCreated:onCollectionCreated];
             

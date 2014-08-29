@@ -11,4 +11,6 @@
 
 @interface PJSoftwareDetailViewController : PJDetailViewController
 
+- (IBAction)openLinkAction:(id)sender;
+
 @end

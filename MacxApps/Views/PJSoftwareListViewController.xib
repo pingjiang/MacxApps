@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <searchField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vgS-vC-uGv">
-                    <rect key="frame" x="20" y="383" width="260" height="22"/>
+                    <rect key="frame" x="20" y="370" width="260" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="ETX-HL-Y4S">
                         <font key="font" metaFont="system"/>
@@ -35,14 +35,14 @@
                     </connections>
                 </searchField>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="80" horizontalPageScroll="10" verticalLineScroll="80" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esx-qM-fKD">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="375"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="362"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="MVB-tb-mmM">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="362"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="78" rowSizeStyle="automatic" viewBased="YES" id="HSh-TJ-ntp">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="362"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,7 +162,7 @@
             <constraints>
                 <constraint firstItem="esx-qM-fKD" firstAttribute="centerX" secondItem="vgS-vC-uGv" secondAttribute="centerX" id="1zq-nv-QPd"/>
                 <constraint firstItem="vgS-vC-uGv" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="65O-bP-1gF"/>
-                <constraint firstItem="vgS-vC-uGv" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="7" id="Cgp-iH-009"/>
+                <constraint firstItem="vgS-vC-uGv" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="Cgp-iH-009"/>
                 <constraint firstItem="esx-qM-fKD" firstAttribute="top" secondItem="vgS-vC-uGv" secondAttribute="bottom" constant="8" symbolic="YES" id="VKC-4N-dLd"/>
                 <constraint firstAttribute="bottom" secondItem="esx-qM-fKD" secondAttribute="bottom" id="bSh-gd-tao"/>
                 <constraint firstItem="esx-qM-fKD" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="bo8-Pz-lTX"/>
