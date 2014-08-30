@@ -23,4 +23,6 @@
 - (id<PJSelectionDelegate>)selectionDelegate;
 - (void)setSelectionDelegate:(id<PJSelectionDelegate>)delegate;
 
+- (void)rearrangeArrayControllerItems;
+
 @end

@@ -12,8 +12,8 @@
 
 @protocol PJParseResultDelegate <NSObject>
 
-- (void)didBeginParseResult;
-- (BOOL)didParseResult:(NSDictionary *)nodeInfo;
+- (void)didBeginParseResult:(PJSoftwareInfoParser*)parser;
+- (BOOL)didParseResult:(PJSoftwareInfoParser*)parser withObject:(NSDictionary *)nodeInfo;
 - (BOOL)onParseResultError:(PJSoftwareInfoParser*)parser error:(NSError*)error;
 - (void)didParseResultDone:(PJSoftwareInfoParser*)parser;
 

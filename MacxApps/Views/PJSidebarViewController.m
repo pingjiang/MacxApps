@@ -131,6 +131,7 @@
     
     if (!_softwares) {
         [self setSoftwares:[[NSMutableArray alloc] init]];
+        [listViewController setItems:self.softwares];
     }
     //querySoftwareListAll
     [[PJMacxClient sharedClient] queryAllSoftwares:^(id obj) {
@@ -276,23 +277,32 @@
 
 
 #pragma mark - ParseResult Delegate
-- (void)didBeginParseResult {
+- (void)didBeginParseResult:(PJSoftwareInfoParser*)parser {
     NSLog(@"Enter %s", __PRETTY_FUNCTION__);
 }
 
-- (BOOL)didParseResult:(NSDictionary *)nodeInfo {
+- (BOOL)didParseResult:(PJSoftwareInfoParser*)parser withObject:(NSDictionary *)nodeInfo {
+    NSLog(@"Enter %s", __PRETTY_FUNCTION__);
     [_softwares addObject:nodeInfo];
+    
+    static int rearrangeArrayControllerItemsCount = 0;
+    if (++rearrangeArrayControllerItemsCount < 50) {
+        [parser.targetObject rearrangeArrayControllerItems];
+    } else {
+        rearrangeArrayControllerItemsCount = 0;
+    }
+    
     return NO;
 }
 
 - (BOOL)onParseResultError:(PJSoftwareInfoParser*)parser error:(NSError*)error {
     NSLog(@"onParseResultError %@", error);
-    [parser.targetObject setItems:_softwares];
+    [parser.targetObject rearrangeArrayControllerItems];
     return NO;// Do not abort, will use result below
 }
 - (void)didParseResultDone:(PJSoftwareInfoParser*)parser {
     NSLog(@"Enter %s", __PRETTY_FUNCTION__);
-    [parser.targetObject setItems:_softwares];
+    [parser.targetObject rearrangeArrayControllerItems];
 }
 
 

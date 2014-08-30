@@ -66,7 +66,7 @@
 // Document handling methods
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
     if (needDebug) NSLog(@"parserDidStartDocument");
-    [_resultDelegate didBeginParseResult];
+    [_resultDelegate didBeginParseResult:self];
 }
 // sent when the parser begins parsing of the document.
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
@@ -97,7 +97,7 @@
     }
     
     if ([self isNodeElement:elementName]) {
-        if ([_resultDelegate didParseResult:[_nodeInfo copy]]) {
+        if ([_resultDelegate didParseResult:self withObject:[_nodeInfo copy]]) {
             [_parser abortParsing];
         }
         if (needDebug) NSLog(@"result %@", _nodeInfo);

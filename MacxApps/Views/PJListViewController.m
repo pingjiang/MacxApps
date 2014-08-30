@@ -25,6 +25,10 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    //[self.arrayController setAutomaticallyRearrangesObjects:YES];
+}
+
 /// TableView Delegate
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
     NSInteger row = [self.tableView selectedRow];
@@ -42,5 +46,8 @@
     _selectionDelegate = delegate;
 }
 
+- (void)rearrangeArrayControllerItems {
+    [self.arrayController rearrangeObjects];
+}
 
 @end
