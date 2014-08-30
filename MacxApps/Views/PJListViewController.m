@@ -50,4 +50,15 @@
     [self.arrayController rearrangeObjects];
 }
 
+- (void)filterWithCategory:(NSString *)categoryName {
+    if (!categoryName) {
+        [self.arrayController setFilterPredicate:nil];
+        return;
+    }
+    NSPredicate *filterPredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject[@"type"] isEqualToString:categoryName];
+    }];
+    [self.arrayController setFilterPredicate:filterPredicate];
+}
+
 @end

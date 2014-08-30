@@ -9,12 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import "PJSoftwareInfoParser.h"
 #import "PJSelectionDelegate.h"
+#import "PJListViewController.h"
 
 @interface PJSidebarViewController : NSViewController<NSOutlineViewDataSource, NSOutlineViewDelegate,
     PJParseResultDelegate, PJSelectionDelegate> {
     id _sidebar;
     NSView *_defaultView;
     NSMutableDictionary *_viewControllerCache;
+    NSMutableDictionary *_categoryCache;
     id _rawMacxNewsJsonObject;
 }
 
@@ -27,7 +29,9 @@
 @property (weak, nonatomic) NSBox *listViewBox;
 @property (weak, nonatomic) NSBox *detailViewBox;
 
-
+- (void)changeToKeyView;
 - (void)changeViewFor:(NSString*)identifier;
+
+- (PJListViewController*)keyListViewController;
 
 @end

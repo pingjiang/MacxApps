@@ -24,5 +24,6 @@
 - (void)setSelectionDelegate:(id<PJSelectionDelegate>)delegate;
 
 - (void)rearrangeArrayControllerItems;
+- (void)filterWithCategory:(NSString*)cid;
 
 @end

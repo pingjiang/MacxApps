@@ -47,7 +47,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self.sidebarViewController.sidebarView reloadData];
-    [self.sidebarViewController changeViewFor:@"AllSoftwares"];
+    [self.sidebarViewController changeToKeyView];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender

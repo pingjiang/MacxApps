@@ -8,7 +8,6 @@
 
 #import "PJSidebarViewController.h"
 #import "PJTableCellView.h"
-#import "PJListViewController.h"
 #import "PJDetailViewController.h"
 #import "PJMacxClient.h"
 #import "PJAppsManager.h"
@@ -16,6 +15,7 @@
 @interface PJSidebarViewController ()
 
 - (void)loadSidebar;
+- (NSString*)categoryNameForId:(NSString*)cid;
 
 // Sidebar - Softwares List
 - (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
@@ -50,6 +50,38 @@
         NSLog(@"Reading JSON file error: %@", error);
         return;
     }
+    
+    _categoryCache = [[NSMutableDictionary alloc] init];
+    id userItems = _sidebar[@"items"][1][@"items"];
+    for (id userItem in userItems) {
+        NSString *cid = userItem[@"cid"];
+        NSString *name = userItem[@"name"];
+        
+        if (cid && name) {
+            _categoryCache[cid] = name;
+        }
+        
+        for (id subUserItem in userItem[@"items"]) {
+            NSString *scid = subUserItem[@"cid"];
+            NSString *sname = subUserItem[@"name"];
+            
+            if (scid && sname) {
+                _categoryCache[scid] = sname;
+            }
+        }
+    }
+}
+
+- (NSString *)categoryNameForId:(NSString *)cid {
+    return [_categoryCache objectForKey:cid];
+}
+
+- (void)changeToKeyView {
+    [self changeViewFor:@"AllSoftwares"];
+}
+
+- (PJListViewController *)keyListViewController {
+    return _viewControllerCache[@"AllSoftwares"][1];
 }
 
 - (void)changeViewFor:(NSString *)identifier {
@@ -147,6 +179,8 @@
 }
 - (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
     NSLog(@"updateSoftwareList %@ %@", listViewController, detailViewController);
+    
+    [listViewController filterWithCategory:nil];
 }
 
 - (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
@@ -187,7 +221,6 @@
 - (void)updateAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
     NSLog(@"updateAppsList %@ %@", listViewController, detailViewController);
 }
-
 
 - (id)init
 {
@@ -269,8 +302,11 @@
         [self changeViewFor:identifier];
     } else {
         NSString *cid = itemAtRow[@"cid"];
-        if (cid) {
-            NSLog(@"Change software categories %@", cid);
+        NSString *categoryName = [self categoryNameForId:cid];
+        if (categoryName) {
+            NSLog(@"Change software categories %@", categoryName);
+            [self changeToKeyView];
+            [[self keyListViewController] filterWithCategory:categoryName];
         }
     }
 }
@@ -282,7 +318,7 @@
 }
 
 - (BOOL)didParseResult:(PJSoftwareInfoParser*)parser withObject:(NSDictionary *)nodeInfo {
-    NSLog(@"Enter %s", __PRETTY_FUNCTION__);
+    //NSLog(@"Enter %s", __PRETTY_FUNCTION__);
     [_softwares addObject:nodeInfo];
     
     static int rearrangeArrayControllerItemsCount = 0;
