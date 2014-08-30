@@ -24,4 +24,8 @@
 }
 
 
+- (IBAction)moreButtonAction:(id)sender {
+    NSString *url = [NSString stringWithFormat:@"http://www.macx.cn/thread-%@-1-1.html", self.representedObject[@"tid"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+}
 @end

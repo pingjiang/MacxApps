@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) PJSidebarViewController *sidebarViewController;
 
-- (void)registerDefaults;
++ (void)registerDefaults;
 
 @end
 
@@ -24,10 +24,14 @@
 
 @synthesize preferencesWindowController = _preferencesWindowController;
 
-- (void)registerDefaults {
++ (void)registerDefaults {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"MacxAppsDefaults" ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
+}
+
++ (void)initialize {
+    [self registerDefaults];
 }
 
 - (void)awakeFromNib {
@@ -42,7 +46,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [self registerDefaults];
+    [self.sidebarViewController.sidebarView reloadData];
+    [self.sidebarViewController changeViewFor:@"AllSoftwares"];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
@@ -58,10 +63,7 @@
     {
         NSViewController *generalViewController = [[PJGeneralPreferenceViewController alloc] init];
         NSViewController *advancedViewController = [[PJAdvancedPreferenceViewController alloc] init];
-        NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, advancedViewController, nil];
-        
-        // To add a flexible space between General and Advanced preference panes insert [NSNull null]:
-        //     NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, [NSNull null], advancedViewController, nil];
+        NSArray *controllers = @[generalViewController, [NSNull null], advancedViewController];
         
         NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
         _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
@@ -74,20 +76,6 @@
 - (IBAction)openPreferences:(id)sender
 {
     [self.preferencesWindowController showWindow:nil];
-}
-
-#pragma mark -
-
-NSString *const kFocusedAdvancedControlIndex = @"FocusedAdvancedControlIndex";
-
-- (NSInteger)focusedAdvancedControlIndex
-{
-    return [[NSUserDefaults standardUserDefaults] integerForKey:kFocusedAdvancedControlIndex];
-}
-
-- (void)setFocusedAdvancedControlIndex:(NSInteger)focusedAdvancedControlIndex
-{
-    [[NSUserDefaults standardUserDefaults] setInteger:focusedAdvancedControlIndex forKey:kFocusedAdvancedControlIndex];
 }
 
 @end

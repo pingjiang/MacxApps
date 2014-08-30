@@ -678,25 +678,25 @@
         <window title="MacxApps" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="122" y="237" width="1213" height="552"/>
+            <rect key="contentRect" x="122" y="237" width="1098" height="552"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="1213" height="552"/>
+                <rect key="frame" x="0.0" y="0.0" width="1098" height="552"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-9k-lwy">
-                        <rect key="frame" x="0.0" y="0.0" width="1213" height="552"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1098" height="552"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <customView id="ywF-sJ-KYs">
-                                <rect key="frame" x="0.0" y="0.0" width="218" height="552"/>
+                                <rect key="frame" x="0.0" y="0.0" width="174" height="552"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="zrP-BD-yOq">
-                                        <rect key="frame" x="0.0" y="0.0" width="218" height="552"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="552"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView">
-                                            <rect key="frame" x="0.0" y="0.0" width="218" height="552"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="552"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -711,14 +711,14 @@
                                 </constraints>
                             </customView>
                             <customView id="yND-2n-Lza">
-                                <rect key="frame" x="219" y="0.0" width="300" height="552"/>
+                                <rect key="frame" x="175" y="0.0" width="266" height="552"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="mfw-h8-Gtj">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="552"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="266" height="552"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="552"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="266" height="552"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -733,14 +733,14 @@
                                 </constraints>
                             </customView>
                             <customView id="hP6-zy-ina">
-                                <rect key="frame" x="520" y="0.0" width="693" height="552"/>
+                                <rect key="frame" x="442" y="0.0" width="656" height="552"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-F3-w3y">
-                                        <rect key="frame" x="0.0" y="0.0" width="693" height="552"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="656" height="552"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView">
-                                            <rect key="frame" x="0.0" y="0.0" width="693" height="552"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="656" height="552"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -756,9 +756,9 @@
                             </customView>
                         </subviews>
                         <holdingPriorities>
-                            <real value="400"/>
-                            <real value="400"/>
                             <real value="200"/>
+                            <real value="100"/>
+                            <real value="100"/>
                         </holdingPriorities>
                     </splitView>
                 </subviews>

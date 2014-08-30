@@ -21,7 +21,6 @@
 
 /// Preferences, used in bind to Application.delegate
 @property (nonatomic, readonly) NSWindowController *preferencesWindowController;
-@property (nonatomic) NSInteger focusedAdvancedControlIndex;
 
 - (IBAction)openPreferences:(id)sender;
 

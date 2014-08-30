@@ -8,6 +8,6 @@ target "MacxApps" do
 end
 
 target "MacxAppsTests" do
-
+    pod 'AFNetworking', '~> 2.3'
 end
 

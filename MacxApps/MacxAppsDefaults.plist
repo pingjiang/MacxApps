@@ -2,8 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>HTTPCache</key>
-	<dict/>
+	<key>SoftwareListCacheFileName</key>
+	<string>MacxSoftwareList.xml</string>
+	<key>SoftwareListCacheDate</key>
+	<date>2014-08-30T06:24:40Z</date>
+	<key>MacxCacheExpire</key>
+	<integer>12</integer>
+	<key>MacxNewsCacheFileName</key>
+	<string>MacxNewsList.json</string>
+	<key>MacxNewsCacheDate</key>
+	<date>2014-08-30T06:24:40Z</date>
+	<key>SoftwaresNumbersPerRequest</key>
+	<integer>20</integer>
+	<key>DatelineDaysForMacxNews</key>
+	<integer>2</integer>
 	<key>SoftwareListProviders</key>
 	<array>
 		<dict>
@@ -34,6 +46,16 @@
 				</dict>
 				<dict>
 					<key>contentType</key>
+					<string>text/html</string>
+					<key>name</key>
+					<string>totalNumbers</string>
+					<key>method</key>
+					<string>GET</string>
+					<key>path</key>
+					<string>/number.asp</string>
+				</dict>
+				<dict>
+					<key>contentType</key>
 					<string>text/xml</string>
 					<key>name</key>
 					<string>softwarelist</string>
@@ -53,6 +75,31 @@
 				</dict>
 				<dict>
 					<key>contentType</key>
+					<string>text/xml</string>
+					<key>name</key>
+					<string>queryAllSoftwares</string>
+					<key>path</key>
+					<string>/softlist.xml</string>
+					<key>method</key>
+					<string>GET</string>
+				</dict>
+				<dict>
+					<key>contentType</key>
+					<string>text/xml</string>
+					<key>name</key>
+					<string>ajaxSearch</string>
+					<key>parameters</key>
+					<dict>
+						<key>keyword</key>
+						<string></string>
+					</dict>
+					<key>path</key>
+					<string>/ajax_result.asp</string>
+					<key>method</key>
+					<string>POST</string>
+				</dict>
+				<dict>
+					<key>contentType</key>
 					<string>application/json</string>
 					<key>name</key>
 					<string>macxnews</string>
@@ -67,7 +114,7 @@
 						<key>orderby</key>
 						<string>repley</string>
 						<key>dateline</key>
-						<integer>86400</integer>
+						<real>86400</real>
 					</dict>
 					<key>path</key>
 					<string>http://www.macx.cn/api/mobile/index.php</string>

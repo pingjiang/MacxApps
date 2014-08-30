@@ -11,4 +11,6 @@
 
 @interface PJMacxNewsDetailViewController : PJDetailViewController
 
+- (IBAction)moreButtonAction:(id)sender;
+
 @end

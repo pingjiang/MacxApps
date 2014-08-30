@@ -27,8 +27,10 @@
 		D70F2B0319AB309E002D77DA /* BackgroundDust.png in Resources */ = {isa = PBXBuildFile; fileRef = D70F2AFF19AB309E002D77DA /* BackgroundDust.png */; };
 		D70F2B0619AB309E002D77DA /* AppleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D70F2B0219AB309E002D77DA /* AppleLogo.png */; };
 		D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */; };
-		D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */; };
 		D75A5A9019AF86B200108EE1 /* MacxApps.icns in Resources */ = {isa = PBXBuildFile; fileRef = D75A5A8F19AF86B200108EE1 /* MacxApps.icns */; };
+		D7633A2A19B1C70300575D08 /* PJMacxClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D7633A2919B1C70300575D08 /* PJMacxClient.m */; };
+		D77ABA5B19B1782A00BD2C46 /* PJOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABA5A19B1782A00BD2C46 /* PJOutlineView.m */; };
+		D77ABA5E19B194D200BD2C46 /* PJPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABA5D19B194D200BD2C46 /* PJPreferences.m */; };
 		D7C69B8219B0263100466AD7 /* PJAppsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C69B8019B0263100466AD7 /* PJAppsListViewController.m */; };
 		D7C69B8319B0263100466AD7 /* PJAppsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C69B8119B0263100466AD7 /* PJAppsListViewController.xib */; };
 		D7C69B8719B0264500466AD7 /* PJAppsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C69B8519B0264500466AD7 /* PJAppsDetailViewController.m */; };
@@ -54,6 +56,7 @@
 		D7E244B819B0DB2600C88033 /* PJGeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E244B619B0DB2600C88033 /* PJGeneralPreferenceViewController.xib */; };
 		D7E244BC19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E244BA19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.m */; };
 		D7E244BD19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E244BB19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.xib */; };
+		EE357277E5B54541BC6312DC /* libPods-MacxAppsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E743FB3F7643538775CDA8 /* libPods-MacxAppsTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0603107E523749C6AE8B7D55 /* Pods-MacxAppsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacxAppsTests.xcconfig"; path = "Pods/Pods-MacxAppsTests.xcconfig"; sourceTree = "<group>"; };
+		A9E743FB3F7643538775CDA8 /* libPods-MacxAppsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacxAppsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacxApps.xcconfig"; path = "Pods/Pods-MacxApps.xcconfig"; sourceTree = "<group>"; };
 		D70F2AB219AAE164002D77DA /* MacxApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacxApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70F2AB519AAE164002D77DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -99,9 +104,14 @@
 		D70F2B0219AB309E002D77DA /* AppleLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleLogo.png; sourceTree = "<group>"; };
 		D70F2B0819AB5EEA002D77DA /* PJSoftwareInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareInfoParser.h; sourceTree = "<group>"; };
 		D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareInfoParser.m; sourceTree = "<group>"; };
-		D70F2B0D19AB6B87002D77DA /* PJSoftwareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSoftwareManager.h; sourceTree = "<group>"; };
-		D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSoftwareManager.m; sourceTree = "<group>"; };
 		D75A5A8F19AF86B200108EE1 /* MacxApps.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MacxApps.icns; sourceTree = "<group>"; };
+		D7633A2819B1C70300575D08 /* PJMacxClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMacxClient.h; sourceTree = "<group>"; };
+		D7633A2919B1C70300575D08 /* PJMacxClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMacxClient.m; sourceTree = "<group>"; };
+		D7633A2B19B1CD6900575D08 /* MacxApps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MacxApps.entitlements; sourceTree = "<group>"; };
+		D77ABA5919B1782A00BD2C46 /* PJOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJOutlineView.h; sourceTree = "<group>"; };
+		D77ABA5A19B1782A00BD2C46 /* PJOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJOutlineView.m; sourceTree = "<group>"; };
+		D77ABA5C19B194D200BD2C46 /* PJPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJPreferences.h; sourceTree = "<group>"; };
+		D77ABA5D19B194D200BD2C46 /* PJPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJPreferences.m; sourceTree = "<group>"; };
 		D7C69B7F19B0263100466AD7 /* PJAppsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAppsListViewController.h; sourceTree = "<group>"; };
 		D7C69B8019B0263100466AD7 /* PJAppsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAppsListViewController.m; sourceTree = "<group>"; };
 		D7C69B8119B0263100466AD7 /* PJAppsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJAppsListViewController.xib; sourceTree = "<group>"; };
@@ -162,6 +172,7 @@
 			files = (
 				D70F2AD619AAE165002D77DA /* Cocoa.framework in Frameworks */,
 				D70F2AD519AAE165002D77DA /* XCTest.framework in Frameworks */,
+				EE357277E5B54541BC6312DC /* libPods-MacxAppsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +187,7 @@
 				D70F2AB419AAE164002D77DA /* Frameworks */,
 				D70F2AB319AAE164002D77DA /* Products */,
 				ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */,
+				0603107E523749C6AE8B7D55 /* Pods-MacxAppsTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +207,7 @@
 				D70F2AD419AAE165002D77DA /* XCTest.framework */,
 				D70F2AB719AAE164002D77DA /* Other Frameworks */,
 				DDFD939322BD4AE2A7E90B39 /* libPods-MacxApps.a */,
+				A9E743FB3F7643538775CDA8 /* libPods-MacxAppsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,6 +225,7 @@
 		D70F2ABB19AAE164002D77DA /* MacxApps */ = {
 			isa = PBXGroup;
 			children = (
+				D7633A2B19B1CD6900575D08 /* MacxApps.entitlements */,
 				D70F2B0719AB5EC0002D77DA /* Utils */,
 				D70F2AF919AB2A5F002D77DA /* Views */,
 				D70F2AE919AB050D002D77DA /* Models */,
@@ -220,6 +234,10 @@
 				D70F2ACA19AAE165002D77DA /* MainMenu.xib */,
 				D70F2ACD19AAE165002D77DA /* Images.xcassets */,
 				D70F2ABC19AAE164002D77DA /* Supporting Files */,
+				D77ABA5C19B194D200BD2C46 /* PJPreferences.h */,
+				D77ABA5D19B194D200BD2C46 /* PJPreferences.m */,
+				D7633A2819B1C70300575D08 /* PJMacxClient.h */,
+				D7633A2919B1C70300575D08 /* PJMacxClient.m */,
 			);
 			path = MacxApps;
 			sourceTree = "<group>";
@@ -288,6 +306,8 @@
 				D7C90F7E19B085AF005BD38F /* PJTableCellView.h */,
 				D7C90F7F19B085AF005BD38F /* PJTableCellView.m */,
 				D7E244BE19B0DB4300C88033 /* Preferences */,
+				D77ABA5919B1782A00BD2C46 /* PJOutlineView.h */,
+				D77ABA5A19B1782A00BD2C46 /* PJOutlineView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,8 +317,6 @@
 			children = (
 				D70F2B0819AB5EEA002D77DA /* PJSoftwareInfoParser.h */,
 				D70F2B0919AB5EEA002D77DA /* PJSoftwareInfoParser.m */,
-				D70F2B0D19AB6B87002D77DA /* PJSoftwareManager.h */,
-				D70F2B0E19AB6B87002D77DA /* PJSoftwareManager.m */,
 				D7DE980819AD7D7E00795E75 /* NSString+PJAdditions.h */,
 				D7DE980919AD7D7E00795E75 /* NSString+PJAdditions.m */,
 				D7DE981C19ADA88600795E75 /* PJValueTransformers.h */,
@@ -397,9 +415,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D70F2AE619AAE165002D77DA /* Build configuration list for PBXNativeTarget "MacxAppsTests" */;
 			buildPhases = (
+				074498EE58F14BEFA3C6B6D1 /* Check Pods Manifest.lock */,
 				D70F2ACF19AAE165002D77DA /* Sources */,
 				D70F2AD019AAE165002D77DA /* Frameworks */,
 				D70F2AD119AAE165002D77DA /* Resources */,
+				79E1B46F454C41D28183FD3B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -421,6 +441,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "平江";
 				TargetAttributes = {
+					D70F2AB119AAE164002D77DA = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					D70F2AD219AAE165002D77DA = {
 						TestTargetID = D70F2AB119AAE164002D77DA;
 					};
@@ -482,6 +509,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		074498EE58F14BEFA3C6B6D1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		2EBB8F98EE22427FACECCBDF /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -512,6 +554,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		79E1B46F454C41D28183FD3B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MacxAppsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -519,6 +576,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77ABA5B19B1782A00BD2C46 /* PJOutlineView.m in Sources */,
+				D7633A2A19B1C70300575D08 /* PJMacxClient.m in Sources */,
 				D70F2AEC19AB0536002D77DA /* PJSoftwareInfo.m in Sources */,
 				D7E244B719B0DB2600C88033 /* PJGeneralPreferenceViewController.m in Sources */,
 				D7C90F8019B085AF005BD38F /* PJTableCellView.m in Sources */,
@@ -531,7 +590,6 @@
 				D70F2AEF19AB0597002D77DA /* PJSoftwareCollection.m in Sources */,
 				D7DE981A19ADA64C00795E75 /* PJDetailViewController.m in Sources */,
 				D70F2B0A19AB5EEA002D77DA /* PJSoftwareInfoParser.m in Sources */,
-				D70F2B0F19AB6B87002D77DA /* PJSoftwareManager.m in Sources */,
 				D7DE980A19AD7D7E00795E75 /* NSString+PJAdditions.m in Sources */,
 				D7DE981E19ADA88600795E75 /* PJValueTransformers.m in Sources */,
 				D7E244BC19B0DB3D00C88033 /* PJAdvancedPreferenceViewController.m in Sources */,
@@ -540,6 +598,7 @@
 				D70F2AC219AAE164002D77DA /* main.m in Sources */,
 				D7C69B8B19B0291C00466AD7 /* PJAppsManager.m in Sources */,
 				D7DACD7E19AC551900D7CFE1 /* PJSoftwareListViewController.m in Sources */,
+				D77ABA5E19B194D200BD2C46 /* PJPreferences.m in Sources */,
 				D7DE981719ADA63D00795E75 /* PJListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,6 +732,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MacxApps/MacxApps.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
@@ -686,6 +747,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ACD66D44D0224B5B9182B155 /* Pods-MacxApps.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MacxApps/MacxApps.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacxApps/MacxApps-Prefix.pch";
@@ -697,6 +760,7 @@
 		};
 		D70F2AE719AAE165002D77DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0603107E523749C6AE8B7D55 /* Pods-MacxAppsTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacxApps.app/Contents/MacOS/MacxApps";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -719,6 +783,7 @@
 		};
 		D70F2AE819AAE165002D77DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0603107E523749C6AE8B7D55 /* Pods-MacxAppsTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacxApps.app/Contents/MacOS/MacxApps";
 				COMBINE_HIDPI_IMAGES = YES;

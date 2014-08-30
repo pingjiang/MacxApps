@@ -31,11 +31,8 @@
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YZe-NF-I6X">
-                    <rect key="frame" x="18" y="322" width="444" height="17"/>
+                    <rect key="frame" x="18" y="322" width="390" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="17" id="qC8-Us-QWg"/>
-                    </constraints>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Author Date" usesSingleLineMode="YES" id="aDm-V9-mN1">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -86,18 +83,34 @@
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nDm-Iv-eWT">
+                    <rect key="frame" x="414" y="317" width="46" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="RaI-sI-Slw"/>
+                    </constraints>
+                    <buttonCell key="cell" type="roundTextured" title="More" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9W4-0u-VOS">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="moreButtonAction:" target="-2" id="1Gd-2H-6WY"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="Q7v-dr-607" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="6XT-zx-Thp"/>
                 <constraint firstItem="IvN-QB-sm1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Fzp-nv-bNK"/>
+                <constraint firstItem="nDm-Iv-eWT" firstAttribute="trailing" secondItem="IvN-QB-sm1" secondAttribute="trailing" id="Hjf-Za-BY4"/>
+                <constraint firstItem="YZe-NF-I6X" firstAttribute="top" secondItem="IvN-QB-sm1" secondAttribute="bottom" constant="8" symbolic="YES" id="Hn5-67-zuS"/>
+                <constraint firstItem="nDm-Iv-eWT" firstAttribute="leading" secondItem="YZe-NF-I6X" secondAttribute="trailing" constant="8" symbolic="YES" id="MEW-CA-fd5"/>
                 <constraint firstItem="IvN-QB-sm1" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="PLN-9w-M1G"/>
                 <constraint firstAttribute="bottom" secondItem="Q7v-dr-607" secondAttribute="bottom" constant="20" id="PrK-eU-mbC"/>
-                <constraint firstItem="YZe-NF-I6X" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="R3J-gf-DhW"/>
-                <constraint firstItem="Q7v-dr-607" firstAttribute="top" secondItem="YZe-NF-I6X" secondAttribute="bottom" constant="8" id="a8b-QK-Tpa"/>
-                <constraint firstItem="YZe-NF-I6X" firstAttribute="top" secondItem="IvN-QB-sm1" secondAttribute="bottom" constant="8" id="mqo-yg-jBt"/>
+                <constraint firstItem="Q7v-dr-607" firstAttribute="top" secondItem="YZe-NF-I6X" secondAttribute="bottom" constant="8" symbolic="YES" id="Uti-lt-dSH"/>
+                <constraint firstItem="YZe-NF-I6X" firstAttribute="baseline" secondItem="nDm-Iv-eWT" secondAttribute="baseline" id="h2m-8u-H6D"/>
                 <constraint firstAttribute="trailing" secondItem="Q7v-dr-607" secondAttribute="trailing" constant="20" id="peZ-ur-Q62"/>
+                <constraint firstItem="YZe-NF-I6X" firstAttribute="leading" secondItem="IvN-QB-sm1" secondAttribute="leading" id="q4b-xC-NOf"/>
                 <constraint firstAttribute="trailing" secondItem="IvN-QB-sm1" secondAttribute="trailing" constant="20" id="wJF-jB-20c"/>
-                <constraint firstAttribute="trailing" secondItem="YZe-NF-I6X" secondAttribute="trailing" constant="20" id="xzl-Je-bQY"/>
             </constraints>
         </customView>
     </objects>

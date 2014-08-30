@@ -14,7 +14,7 @@
 
 - (void)didBeginParseResult;
 - (BOOL)didParseResult:(NSDictionary *)nodeInfo;
-- (BOOL)onParseResultError:(NSError*)error;
+- (BOOL)onParseResultError:(PJSoftwareInfoParser*)parser error:(NSError*)error;
 - (void)didParseResultDone:(PJSoftwareInfoParser*)parser;
 
 @end

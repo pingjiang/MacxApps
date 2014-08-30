@@ -134,7 +134,7 @@
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     if (needDebug) NSLog(@"parseErrorOccurred %@", parseError);
-    if ([_resultDelegate onParseResultError:parseError]) {
+    if ([_resultDelegate onParseResultError:self error:parseError]) {
         [_parser abortParsing];
     }
 }
@@ -142,7 +142,7 @@
 
 - (void)parser:(NSXMLParser *)parser validationErrorOccurred:(NSError *)validationError {
     if (needDebug) NSLog(@"validationErrorOccurred %@", validationError);
-    if ([_resultDelegate onParseResultError:validationError]) {
+    if ([_resultDelegate onParseResultError:self error:validationError]) {
         [_parser abortParsing];
     }
 }

@@ -10,17 +10,20 @@
 #import "PJTableCellView.h"
 #import "PJListViewController.h"
 #import "PJDetailViewController.h"
-#import "PJSoftwareManager.h"
+#import "PJMacxClient.h"
 #import "PJAppsManager.h"
 
 @interface PJSidebarViewController ()
 
 - (void)loadSidebar;
-- (void)changeViewFor:(NSString*)identifier;
 
 // Sidebar - Softwares List
 - (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 - (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
+
+//[[PJMacxClient sharedClient] queryAllSoftwares:^(id responseObject) {
+//    NSLog(@"response: %@", [responseObject className]);
+//}];
 
 // Sidebar - Macx News
 - (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
@@ -129,7 +132,11 @@
     if (!_softwares) {
         [self setSoftwares:[[NSMutableArray alloc] init]];
     }
-    [[PJSoftwareManager sharedManager] querySoftwareListAll:^(id obj) {
+    //querySoftwareListAll
+    [[PJMacxClient sharedClient] queryAllSoftwares:^(id obj) {
+        if (!obj) {
+            return;
+        }
         PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:obj];
         [_parser setResultDelegate:self];
         [_parser setTargetObject:listViewController];
@@ -147,7 +154,7 @@
     
     [self.listViewBox setContentView:listViewController.view];
     
-    [[PJSoftwareManager sharedManager]  queryMacxNews:^(id responseObject) {
+    [[PJMacxClient sharedClient]  queryMacxNews:^(id responseObject) {
         NSError *error = nil;
         _rawMacxNewsJsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
         if (error) {
@@ -191,6 +198,7 @@
 }
 
 - (void)awakeFromNib {
+    NSLog(@"%s ", __PRETTY_FUNCTION__);
     //[self changeViewFor:_sidebar[@"items"][0][@"identifier"]];
     
     if (!_defaultView) {
@@ -200,6 +208,7 @@
 
 #pragma mark - OutlineView DataSource
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
+    NSLog(@"%s ", __PRETTY_FUNCTION__);
     if (!item) {
         return [_sidebar[@"items"] count];
     }
@@ -276,9 +285,10 @@
     return NO;
 }
 
-- (BOOL)onParseResultError:(NSError*)error {
+- (BOOL)onParseResultError:(PJSoftwareInfoParser*)parser error:(NSError*)error {
     NSLog(@"onParseResultError %@", error);
-    return YES;
+    [parser.targetObject setItems:_softwares];
+    return NO;// Do not abort, will use result below
 }
 - (void)didParseResultDone:(PJSoftwareInfoParser*)parser {
     NSLog(@"Enter %s", __PRETTY_FUNCTION__);

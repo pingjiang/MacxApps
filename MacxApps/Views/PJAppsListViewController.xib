@@ -65,7 +65,7 @@
                                                 <rect key="frame" x="1" y="1" width="297" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ji-Nn-J33">
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="6ji-Nn-J33">
                                                         <rect key="frame" x="0.0" y="17" width="297" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Application Name" id="TkA-0C-5OI">
@@ -77,7 +77,7 @@
                                                             <binding destination="bIJ-ht-w9r" name="value" keyPath="objectValue.name" id="zLd-uv-sEQ"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUL-ZQ-yXk">
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AUL-ZQ-yXk">
                                                         <rect key="frame" x="0.0" y="0.0" width="297" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="Date" id="6w3-IC-aUd">
@@ -94,6 +94,15 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="AUL-ZQ-yXk" firstAttribute="leading" secondItem="bIJ-ht-w9r" secondAttribute="leading" constant="2" id="1d1-ju-pJP"/>
+                                                    <constraint firstItem="6ji-Nn-J33" firstAttribute="leading" secondItem="bIJ-ht-w9r" secondAttribute="leading" constant="2" id="6Vm-dq-Kzp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6ji-Nn-J33" secondAttribute="trailing" constant="2" id="9uh-w8-nwd"/>
+                                                    <constraint firstItem="AUL-ZQ-yXk" firstAttribute="top" secondItem="6ji-Nn-J33" secondAttribute="bottom" id="YDn-Vu-d5H"/>
+                                                    <constraint firstItem="6ji-Nn-J33" firstAttribute="top" secondItem="bIJ-ht-w9r" secondAttribute="top" id="cPA-5K-370"/>
+                                                    <constraint firstAttribute="bottom" secondItem="AUL-ZQ-yXk" secondAttribute="bottom" id="nuq-5x-yml"/>
+                                                    <constraint firstAttribute="trailing" secondItem="AUL-ZQ-yXk" secondAttribute="trailing" constant="2" id="wsi-4V-1yw"/>
+                                                </constraints>
                                                 <connections>
                                                     <outlet property="textField" destination="6ji-Nn-J33" id="g0X-gj-cu8"/>
                                                 </connections>

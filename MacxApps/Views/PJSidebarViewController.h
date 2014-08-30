@@ -27,4 +27,7 @@
 @property (weak, nonatomic) NSBox *listViewBox;
 @property (weak, nonatomic) NSBox *detailViewBox;
 
+
+- (void)changeViewFor:(NSString*)identifier;
+
 @end
