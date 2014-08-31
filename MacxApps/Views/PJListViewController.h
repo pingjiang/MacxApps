@@ -18,6 +18,8 @@
 
 @property (strong) IBOutlet NSArrayController *arrayController;
 
+@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
+
 @property (weak) IBOutlet NSTableView *tableView;
 
 - (id<PJSelectionDelegate>)selectionDelegate;
@@ -25,5 +27,9 @@
 
 - (void)rearrangeArrayControllerItems;
 - (void)filterWithCategory:(NSString*)cid;
+- (void)filterWithBlock:(BOOL (^)(id evaluatedObject, NSDictionary *bindings))block;
+
+- (void)startAnimation;
+- (void)stopAnimation;
 
 @end

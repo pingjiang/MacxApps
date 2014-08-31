@@ -61,4 +61,19 @@
     [self.arrayController setFilterPredicate:filterPredicate];
 }
 
+- (void)filterWithBlock:(BOOL (^)(id evaluatedObject, NSDictionary *bindings))block {
+    if (!block) {
+        [self.arrayController setFilterPredicate:nil];
+        return;
+    }
+    NSPredicate *filterPredicate = [NSPredicate predicateWithBlock:block];
+    [self.arrayController setFilterPredicate:filterPredicate];
+}
+
+- (void)startAnimation {
+    [self.progressIndicator startAnimation:nil];
+}
+- (void)stopAnimation {
+    [self.progressIndicator stopAnimation:nil];
+}
 @end

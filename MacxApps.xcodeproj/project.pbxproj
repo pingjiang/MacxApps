@@ -31,6 +31,8 @@
 		D7633A2A19B1C70300575D08 /* PJMacxClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D7633A2919B1C70300575D08 /* PJMacxClient.m */; };
 		D77ABA5B19B1782A00BD2C46 /* PJOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABA5A19B1782A00BD2C46 /* PJOutlineView.m */; };
 		D77ABA5E19B194D200BD2C46 /* PJPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABA5D19B194D200BD2C46 /* PJPreferences.m */; };
+		D7C2611A19B2C97C006F8C8F /* NSData+PJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2611919B2C97C006F8C8F /* NSData+PJAdditions.m */; };
+		D7C2611C19B2D701006F8C8F /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C2611B19B2D701006F8C8F /* libiconv.dylib */; };
 		D7C69B8219B0263100466AD7 /* PJAppsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C69B8019B0263100466AD7 /* PJAppsListViewController.m */; };
 		D7C69B8319B0263100466AD7 /* PJAppsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C69B8119B0263100466AD7 /* PJAppsListViewController.xib */; };
 		D7C69B8719B0264500466AD7 /* PJAppsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C69B8519B0264500466AD7 /* PJAppsDetailViewController.m */; };
@@ -112,6 +114,9 @@
 		D77ABA5A19B1782A00BD2C46 /* PJOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJOutlineView.m; sourceTree = "<group>"; };
 		D77ABA5C19B194D200BD2C46 /* PJPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJPreferences.h; sourceTree = "<group>"; };
 		D77ABA5D19B194D200BD2C46 /* PJPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJPreferences.m; sourceTree = "<group>"; };
+		D7C2611819B2C97C006F8C8F /* NSData+PJAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PJAdditions.h"; sourceTree = "<group>"; };
+		D7C2611919B2C97C006F8C8F /* NSData+PJAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PJAdditions.m"; sourceTree = "<group>"; };
+		D7C2611B19B2D701006F8C8F /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		D7C69B7F19B0263100466AD7 /* PJAppsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAppsListViewController.h; sourceTree = "<group>"; };
 		D7C69B8019B0263100466AD7 /* PJAppsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAppsListViewController.m; sourceTree = "<group>"; };
 		D7C69B8119B0263100466AD7 /* PJAppsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJAppsListViewController.xib; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C2611C19B2D701006F8C8F /* libiconv.dylib in Frameworks */,
 				D70F2AB619AAE164002D77DA /* Cocoa.framework in Frameworks */,
 				3F08696F82554CDF8D7ED5EF /* libPods-MacxApps.a in Frameworks */,
 			);
@@ -203,6 +209,7 @@
 		D70F2AB419AAE164002D77DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7C2611B19B2D701006F8C8F /* libiconv.dylib */,
 				D70F2AB519AAE164002D77DA /* Cocoa.framework */,
 				D70F2AD419AAE165002D77DA /* XCTest.framework */,
 				D70F2AB719AAE164002D77DA /* Other Frameworks */,
@@ -323,6 +330,8 @@
 				D7DE981D19ADA88600795E75 /* PJValueTransformers.m */,
 				D7C69B8919B0291C00466AD7 /* PJAppsManager.h */,
 				D7C69B8A19B0291C00466AD7 /* PJAppsManager.m */,
+				D7C2611819B2C97C006F8C8F /* NSData+PJAdditions.h */,
+				D7C2611919B2C97C006F8C8F /* NSData+PJAdditions.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -597,6 +606,7 @@
 				D7DACD8319AC638B00D7CFE1 /* PJSoftwareDetailViewController.m in Sources */,
 				D70F2AC219AAE164002D77DA /* main.m in Sources */,
 				D7C69B8B19B0291C00466AD7 /* PJAppsManager.m in Sources */,
+				D7C2611A19B2C97C006F8C8F /* NSData+PJAdditions.m in Sources */,
 				D7DACD7E19AC551900D7CFE1 /* PJSoftwareListViewController.m in Sources */,
 				D77ABA5E19B194D200BD2C46 /* PJPreferences.m in Sources */,
 				D7DE981719ADA63D00795E75 /* PJListViewController.m in Sources */,

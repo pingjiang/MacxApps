@@ -11,8 +11,7 @@
 #import "PJSelectionDelegate.h"
 #import "PJListViewController.h"
 
-@interface PJSidebarViewController : NSViewController<NSOutlineViewDataSource, NSOutlineViewDelegate,
-    PJParseResultDelegate, PJSelectionDelegate> {
+@interface PJSidebarViewController : NSViewController<NSOutlineViewDataSource, NSOutlineViewDelegate, PJParseResultDelegate, PJSelectionDelegate> {
     id _sidebar;
     NSView *_defaultView;
     NSMutableDictionary *_viewControllerCache;
@@ -22,9 +21,9 @@
 
 @property (weak) IBOutlet NSOutlineView *sidebarView;
 
-@property (strong, nonatomic) NSMutableArray *softwares;
-@property (weak, nonatomic) NSArray *macxNews;
-@property (weak, nonatomic) NSArray *apps;
+@property (strong) NSMutableArray *softwares;
+@property (weak) NSArray *macxNews;
+@property (weak) NSArray *apps;
 
 @property (weak, nonatomic) NSBox *listViewBox;
 @property (weak, nonatomic) NSBox *detailViewBox;

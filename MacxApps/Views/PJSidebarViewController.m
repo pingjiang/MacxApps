@@ -11,11 +11,12 @@
 #import "PJDetailViewController.h"
 #import "PJMacxClient.h"
 #import "PJAppsManager.h"
+#import "NSData+PJAdditions.h"
 
 @interface PJSidebarViewController ()
 
 - (void)loadSidebar;
-- (NSString*)categoryNameForId:(NSString*)cid;
+- (NSArray*)categoryNameForId:(NSString*)cid;
 
 // Sidebar - Softwares List
 - (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
@@ -33,6 +34,7 @@
 - (void)initializeAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 - (void)updateAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 
+- (void)parseAndLoadSoftwares:(PJListViewController*)listViewController;
 
 @end
 
@@ -57,22 +59,30 @@
         NSString *cid = userItem[@"cid"];
         NSString *name = userItem[@"name"];
         
-        if (cid && name) {
-            _categoryCache[cid] = name;
+        if (!cid || !name) {
+            continue;
         }
         
+        NSMutableArray *namesArray = [NSMutableArray array];
+        [namesArray addObject:name];
+        
         for (id subUserItem in userItem[@"items"]) {
-            NSString *scid = subUserItem[@"cid"];
+            NSString *scid = userItem[@"cid"];
             NSString *sname = subUserItem[@"name"];
             
-            if (scid && sname) {
-                _categoryCache[scid] = sname;
+            if (!scid || !sname) {
+                continue;
             }
+            [namesArray addObject:sname];
+            
+            _categoryCache[scid] = @[sname];
         }
+        
+        _categoryCache[cid] = namesArray;
     }
 }
 
-- (NSString *)categoryNameForId:(NSString *)cid {
+- (NSArray *)categoryNameForId:(NSString *)cid {
     return [_categoryCache objectForKey:cid];
 }
 
@@ -155,6 +165,25 @@
     [self.detailViewBox setContentView:_defaultView];
 }
 
+- (void)parseAndLoadSoftwares:(PJListViewController*)listViewController {
+    //querySoftwareListAll
+    [[PJMacxClient sharedClient] queryAllSoftwares:^(id obj) {
+        id data = obj;
+        if (!data) {
+            // Load from cache
+        }
+        if (!data) {
+            [listViewController stopAnimation];
+            return;
+        }
+        PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:obj];
+        [_parser setResultDelegate:self];
+        [_parser setTargetObject:listViewController];
+        //[_parser setNeedDebug:YES];
+        [_parser parse];
+    }];
+}
+
 - (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
     NSLog(@"initializeSoftwareList %@ %@", listViewController, detailViewController);
     [listViewController setSelectionDelegate:self];
@@ -165,17 +194,9 @@
         [self setSoftwares:[[NSMutableArray alloc] init]];
         [listViewController setItems:self.softwares];
     }
-    //querySoftwareListAll
-    [[PJMacxClient sharedClient] queryAllSoftwares:^(id obj) {
-        if (!obj) {
-            return;
-        }
-        PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:obj];
-        [_parser setResultDelegate:self];
-        [_parser setTargetObject:listViewController];
-        //[_parser setNeedDebug:YES];
-        [_parser parse];
-    }];
+    
+    [listViewController startAnimation];
+    [NSThread detachNewThreadSelector:@selector(parseAndLoadSoftwares:) toTarget:self withObject:listViewController];
 }
 - (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
     NSLog(@"updateSoftwareList %@ %@", listViewController, detailViewController);
@@ -232,9 +253,6 @@
 }
 
 - (void)awakeFromNib {
-    NSLog(@"%s ", __PRETTY_FUNCTION__);
-    //[self changeViewFor:_sidebar[@"items"][0][@"identifier"]];
-    
     if (!_defaultView) {
         _defaultView = [self.detailViewBox contentView];
     }
@@ -302,11 +320,19 @@
         [self changeViewFor:identifier];
     } else {
         NSString *cid = itemAtRow[@"cid"];
-        NSString *categoryName = [self categoryNameForId:cid];
-        if (categoryName) {
-            NSLog(@"Change software categories %@", categoryName);
+        NSArray *categoryArray = [self categoryNameForId:cid];
+        if (categoryArray) {
+            NSLog(@"Change software categories %@", cid);
             [self changeToKeyView];
-            [[self keyListViewController] filterWithCategory:categoryName];
+            [[self keyListViewController] filterWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                NSString *value = evaluatedObject[@"type"];
+                for (NSString *category in categoryArray) {
+                    if ([value isEqualToString:category]) {
+                        return YES;
+                    }
+                }
+                return NO;
+            }];
         }
     }
 }
@@ -320,25 +346,21 @@
 - (BOOL)didParseResult:(PJSoftwareInfoParser*)parser withObject:(NSDictionary *)nodeInfo {
     //NSLog(@"Enter %s", __PRETTY_FUNCTION__);
     [_softwares addObject:nodeInfo];
-    
-    static int rearrangeArrayControllerItemsCount = 0;
-    if (++rearrangeArrayControllerItemsCount < 50) {
-        [parser.targetObject rearrangeArrayControllerItems];
-    } else {
-        rearrangeArrayControllerItemsCount = 0;
-    }
-    
     return NO;
 }
 
 - (BOOL)onParseResultError:(PJSoftwareInfoParser*)parser error:(NSError*)error {
     NSLog(@"onParseResultError %@", error);
     [parser.targetObject rearrangeArrayControllerItems];
+    PJListViewController *listViewController = parser.targetObject;
+    [listViewController stopAnimation];
     return NO;// Do not abort, will use result below
 }
 - (void)didParseResultDone:(PJSoftwareInfoParser*)parser {
     NSLog(@"Enter %s", __PRETTY_FUNCTION__);
     [parser.targetObject rearrangeArrayControllerItems];
+    PJListViewController *listViewController = parser.targetObject;
+    [listViewController stopAnimation];
 }
 
 
