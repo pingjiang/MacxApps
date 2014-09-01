@@ -42,15 +42,15 @@ Macx提供软件相关的接口地址为http://soft.macx.cn， 提供新闻相�
 
 * 软件列表和搜索
 
-![MacxApps-Search]({{ site.url }}/images/MacxApps-Search.png)
+![MacxApps-Search]({{ site.url }}/MacxApps/images/MacxApps-Search.png)
 
 * 软件分类查看
 
-![MacxApps-Categories]({{ site.url }}/images/MacxApps-Categories.png)
+![MacxApps-Categories]({{ site.url }}/MacxApps/images/MacxApps-Categories.png)
 
 * 新闻列表和搜索
 
-![MacxApps-News]({{ site.url }}/images/MacxApps-News.png)
+![MacxApps-News]({{ site.url }}/MacxApps/images/MacxApps-News.png)
 
 * 软件管理和更新
 * 软件下载和安装
