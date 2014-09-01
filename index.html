@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Macxapps : Open source replacement of official macx.cn client.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Macxapps</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pingjiang/MacxApps">View on GitHub</a>
+
+          <h1 id="project_title">Macxapps</h1>
+          <h2 id="project_tagline">Open source replacement of official macx.cn client.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pingjiang/MacxApps/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pingjiang/MacxApps/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="%E9%A1%B9%E7%9B%AE%E5%8F%91%E8%B5%B7%E5%8E%9F%E5%9B%A0" class="anchor" href="#%E9%A1%B9%E7%9B%AE%E5%8F%91%E8%B5%B7%E5%8E%9F%E5%9B%A0"><span class="octicon octicon-link"></span></a>项目发起原因</h3>
+
+<p>Macx.cn是我很一直都喜欢的一个网站，上面有很多的免费或破解的软件可以使用。最近推出了自己的客户端软件。我简单的分析了一下，这个客户端使用的是Swift开发，利用soft.macx.cn提供的接口实现的功能。软件可以方便我们搜索和管理自己的软件，但是在功能和界面的设计上都差强人意。所以我使用Objective-C重新开发了一个开源版本。使用的是同样的接口提供数据。</p>
+
+<p>目前项目还处于开发阶段，很多功能还需要重构和完善，大家有什么需求和建议可以积极提出来。有兴趣的童鞋可以一起参与开发。</p>
+
+<h3>
+<a name="macx%E6%8F%90%E4%BE%9B%E7%9A%84%E6%8E%A5%E5%8F%A3" class="anchor" href="#macx%E6%8F%90%E4%BE%9B%E7%9A%84%E6%8E%A5%E5%8F%A3"><span class="octicon octicon-link"></span></a>Macx提供的接口</h3>
+
+<p>Macx提供软件相关的接口地址为<a href="http://soft.macx.cn%EF%BC%8C">http://soft.macx.cn，</a> 提供新闻相关的接口是<a href="http://macx.cn%E3%80%82">http://macx.cn。</a></p>
+
+<p><strong>注意</strong> Macx提供的接口是我通过抓包获取，很有可能随时变化，需要关注这一点。</p>
+
+<h4>
+<a name="%E8%BD%AF%E4%BB%B6%E6%80%BB%E6%95%B0%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%98%BE%E7%A4%BA" class="anchor" href="#%E8%BD%AF%E4%BB%B6%E6%80%BB%E6%95%B0%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%98%BE%E7%A4%BA"><span class="octicon octicon-link"></span></a>软件总数，可以用于进度条显示</h4>
+
+<pre><code>req&gt; GET /number.asp
+
+res&gt; number
+</code></pre>
+
+<h4>
+<a name="%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E8%BD%AF%E4%BB%B6%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%E7%9A%84%E5%88%97%E8%A1%A8" class="anchor" href="#%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E8%BD%AF%E4%BB%B6%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%E7%9A%84%E5%88%97%E8%A1%A8"><span class="octicon octicon-link"></span></a>软件列表，软件详细信息的列表</h4>
+
+<pre><code>req&gt; GET /xml.asp?id=soft&amp;no=20&amp;order=total
+
+res&gt; text/xml
+</code></pre>
+
+<h4>
+<a name="%E8%BD%AF%E4%BB%B6%E7%82%B9%E8%B5%9E" class="anchor" href="#%E8%BD%AF%E4%BB%B6%E7%82%B9%E8%B5%9E"><span class="octicon octicon-link"></span></a>软件点赞</h4>
+
+<pre><code>req&gt; GET /like-app.asp?softid={softid}
+
+res&gt; number
+</code></pre>
+
+<h4>
+<a name="%E6%96%B0%E9%97%BB%E5%88%97%E8%A1%A8%E6%96%B0%E9%97%BB%E7%9A%84%E6%A0%87%E9%A2%98%E5%92%8C%E5%9B%BE%E7%89%87%E7%AD%89" class="anchor" href="#%E6%96%B0%E9%97%BB%E5%88%97%E8%A1%A8%E6%96%B0%E9%97%BB%E7%9A%84%E6%A0%87%E9%A2%98%E5%92%8C%E5%9B%BE%E7%89%87%E7%AD%89"><span class="octicon octicon-link"></span></a>新闻列表，新闻的标题和图片等</h4>
+
+<pre><code>req&gt; GET /api/mobile/index.php
+
+res&gt; application/json
+</code></pre>
+
+<h3>
+<a name="%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD" class="anchor" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="octicon octicon-link"></span></a>主要功能</h3>
+
+<ul>
+<li>软件列表和搜索</li>
+</ul><p><img src="/images/MacxApps-Search.png" alt="MacxApps-Search"></p>
+
+<ul>
+<li>软件分类查看</li>
+</ul><p><img src="/images/MacxApps-Categories.png" alt="MacxApps-Categories"></p>
+
+<ul>
+<li>新闻列表和搜索</li>
+</ul><p><img src="/images/MacxApps-News.png" alt="MacxApps-News"></p>
+
+<ul>
+<li>软件管理和更新</li>
+<li>软件下载和安装</li>
+</ul><h3>
+<a name="%E8%81%94%E7%B3%BB%E6%88%91" class="anchor" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="octicon octicon-link"></span></a>联系我</h3>
+
+<ul>
+<li>GitHub: <a href="https://github.com/pingjiang">@pingjiang</a>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Macxapps maintained by <a href="https://github.com/pingjiang">pingjiang</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
