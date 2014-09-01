@@ -50,7 +50,7 @@
         }
     }
     
-    NSLog(@"Open URL %@ for %@", foundUrl, identifier);
+    //NSLog(@"Open URL %@ for %@", foundUrl, identifier);
     if (foundUrl && [foundUrl length] > 0) {
         [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:foundUrl]];
     }

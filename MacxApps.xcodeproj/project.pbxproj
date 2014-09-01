@@ -32,7 +32,6 @@
 		D77ABA5B19B1782A00BD2C46 /* PJOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABA5A19B1782A00BD2C46 /* PJOutlineView.m */; };
 		D77ABA5E19B194D200BD2C46 /* PJPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = D77ABA5D19B194D200BD2C46 /* PJPreferences.m */; };
 		D7C2611A19B2C97C006F8C8F /* NSData+PJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2611919B2C97C006F8C8F /* NSData+PJAdditions.m */; };
-		D7C2611C19B2D701006F8C8F /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C2611B19B2D701006F8C8F /* libiconv.dylib */; };
 		D7C69B8219B0263100466AD7 /* PJAppsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C69B8019B0263100466AD7 /* PJAppsListViewController.m */; };
 		D7C69B8319B0263100466AD7 /* PJAppsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C69B8119B0263100466AD7 /* PJAppsListViewController.xib */; };
 		D7C69B8719B0264500466AD7 /* PJAppsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C69B8519B0264500466AD7 /* PJAppsDetailViewController.m */; };
@@ -166,7 +165,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7C2611C19B2D701006F8C8F /* libiconv.dylib in Frameworks */,
 				D70F2AB619AAE164002D77DA /* Cocoa.framework in Frameworks */,
 				3F08696F82554CDF8D7ED5EF /* libPods-MacxApps.a in Frameworks */,
 			);

@@ -13,15 +13,21 @@ static NSString *const MacxBaseURLString = @"http://soft.macx.cn";
 static NSString *const kSoftwareListProviders = @"SoftwareListProviders";
 static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loaded";
 
+// Notications
+NSString *const kWillLoadMacxSoftwares = @"WillLoadMacxSoftwares";
+NSString *const kShouldQueryMacxSoftwares = @"ShouldQueryMacxSoftwares";
+NSString *const kShouldUpdateMacxSoftwares = @"ShouldUpdateMacxSoftwares";
+NSString *const kShouldParseMacxSoftwares = @"ShouldParseMacxSoftwares";
+NSString *const kDidQueryMacxSoftwares = @"DidQueryMacxSoftwares";
+NSString *const kDidUpdateMacxSoftwares = @"DidUpdateMacxSoftwares";
+NSString *const kDidParseMacxSoftwares = @"DidParseMacxSoftwares";
+
 @interface PJMacxClient ()
 
 + (id)defaultSoftwareListProvider;
 
 - (void)callApi:(NSString*)name updateParameter:(void (^)(NSMutableDictionary*))updateParameter success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
-
-+ (NSURL*)cacheURLFor:(NSString*)key;
-+ (BOOL)isCacheExpired:(NSString*)key;
 
 @end
 
@@ -42,25 +48,6 @@ static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loade
     });
     
     return _sharedClient;
-}
-
-+ (NSURL*)cacheURLFor:(NSString *)key {
-    NSError *error = nil;
-    NSURL *cacheFilePath = [[NSFileManager defaultManager] URLForDirectory:NSCachesDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
-    if (error) {
-        NSLog(@"Find cache directory path error: %@", error);
-        return nil;
-    }
-    NSString *cacheFileName = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-    return [cacheFilePath URLByAppendingPathComponent:cacheFileName];
-}
-
-+ (BOOL)isCacheExpired:(NSString *)key {
-    NSDate *cacheDate = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-    NSInteger expires = [[NSUserDefaults standardUserDefaults] integerForKey:kMacxCacheExpire];
-    NSDate *cacheExpireDate = [cacheDate dateByAddingTimeInterval:expires*3600];
-    NSDate *now = [[NSDate alloc] init];
-    return [cacheExpireDate compare:now] != NSOrderedDescending ? YES : NO;
 }
 
 + (id)defaultSoftwareListProvider {
@@ -100,7 +87,6 @@ static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loade
     }
     
     NSString *contentType = api[@"contentType"];
-    NSLog(@"HTTP Request %@ %@, Content-Type: %@", requestURL, parameters, contentType);
     
     if (contentType) {
         AFHTTPResponseSerializer *httpResponseSerializer = [AFHTTPResponseSerializer serializer];
@@ -131,7 +117,6 @@ static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loade
             [parameters setObject:order forKey:@"order"];
         }
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"XML: %@", [responseObject className]);
         responseWith(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -143,7 +128,6 @@ static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loade
     [self callApi:@"likeapp" updateParameter:^(NSMutableDictionary* parameters) {
         [parameters setObject:@(softId) forKey:@"softid"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        // NSLog(@"Total likes: %@", responseObject);
         responseWith(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -173,7 +157,6 @@ static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loade
         NSInteger dateline = [[NSUserDefaults standardUserDefaults] integerForKey:kDatelineDaysForMacxNews] * 86400;
         [parameters setObject:@(dateline) forKey:@"dateline"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //NSLog(@"News JSON: %@", [responseObject className]);
         responseWith(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -185,7 +168,6 @@ static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loade
     [self callApi:@"totalNumbers" updateParameter:^(NSMutableDictionary* parameters) {
         // None
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Total softwares number: %@", [responseObject className]);
         responseWith(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -197,8 +179,6 @@ static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loade
     [self callApi:@"queryAllSoftwares" updateParameter:^(NSMutableDictionary* parameters) {
         // None
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Softwares xml: %@", [responseObject className]);
-        
         responseWith(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -218,7 +198,6 @@ static NSString *const kImageDidLoadNotification = @"org.pj.MacxApps-image.loade
             [parameters setObject:keyword forKey:@"keyword"];
         }
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Ajax search result html: %@", responseObject);
         responseWith(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

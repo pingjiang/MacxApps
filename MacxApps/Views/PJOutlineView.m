@@ -11,7 +11,6 @@
 @implementation PJOutlineView
 
 - (void)reloadData {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
     [super reloadData];
     
     // Always expand item under root

@@ -29,7 +29,4 @@
 - (void)filterWithCategory:(NSString*)cid;
 - (void)filterWithBlock:(BOOL (^)(id evaluatedObject, NSDictionary *bindings))block;
 
-- (void)startAnimation;
-- (void)stopAnimation;
-
 @end

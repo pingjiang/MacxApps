@@ -9,9 +9,11 @@
 #import "PJSidebarViewController.h"
 #import "PJTableCellView.h"
 #import "PJDetailViewController.h"
+#import "PJSoftwareListViewController.h"
 #import "PJMacxClient.h"
 #import "PJAppsManager.h"
 #import "NSData+PJAdditions.h"
+#import "TMCache/TMCache.h"
 
 @interface PJSidebarViewController ()
 
@@ -22,10 +24,6 @@
 - (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 - (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 
-//[[PJMacxClient sharedClient] queryAllSoftwares:^(id responseObject) {
-//    NSLog(@"response: %@", [responseObject className]);
-//}];
-
 // Sidebar - Macx News
 - (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 - (void)updateMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
@@ -34,7 +32,10 @@
 - (void)initializeAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 - (void)updateAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController;
 
-- (void)parseAndLoadSoftwares:(PJListViewController*)listViewController;
+- (void)willLoadMacxSoftwares:(NSNotification *)notification;
+- (void)shouldQueryMacxSoftwares:(NSNotification *)notification;
+- (void)shouldParseMacxSoftwares:(NSNotification *)notification;
+- (void)didParseMacxSoftwares:(NSNotification *)notification;
 
 @end
 
@@ -67,7 +68,7 @@
         [namesArray addObject:name];
         
         for (id subUserItem in userItem[@"items"]) {
-            NSString *scid = userItem[@"cid"];
+            NSString *scid = subUserItem[@"cid"];
             NSString *sname = subUserItem[@"name"];
             
             if (!scid || !sname) {
@@ -165,27 +166,73 @@
     [self.detailViewBox setContentView:_defaultView];
 }
 
-- (void)parseAndLoadSoftwares:(PJListViewController*)listViewController {
-    //querySoftwareListAll
-    [[PJMacxClient sharedClient] queryAllSoftwares:^(id obj) {
-        id data = obj;
-        if (!data) {
-            // Load from cache
-        }
-        if (!data) {
-            [listViewController stopAnimation];
-            return;
-        }
-        PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:obj];
-        [_parser setResultDelegate:self];
-        [_parser setTargetObject:listViewController];
-        //[_parser setNeedDebug:YES];
-        [_parser parse];
+
+- (void)willLoadMacxSoftwares:(NSNotification *)notification {
+    //NSLog(@"%s %@", __PRETTY_FUNCTION__, notification);
+    
+    PJListViewController* listViewController = notification.userInfo[@"listViewController"];
+    NSNumber *isInitialize = notification.userInfo[@"init"];
+    
+    NSNumber *oldSoftwaresNumbers = [[TMCache sharedCache] objectForKey:@"softwaresNumber"];
+    [[PJMacxClient sharedClient] totalNumbers:^(id responseObject) {
+        NSNumber *softwaresNumbers = responseObject;
+        [[TMCache sharedCache] setObject:softwaresNumbers forKey:@"softwaresNumber"];
+        
+        NSInteger newNum = [softwaresNumbers integerValue];
+        NSInteger oldNum = [oldSoftwaresNumbers integerValue];
+        NSInteger diffNum = newNum - oldNum;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kShouldQueryMacxSoftwares object:self userInfo:@{@"init": isInitialize ? isInitialize : @(0), @"count": @(diffNum), @"listViewController": listViewController}];
     }];
 }
 
+- (void)shouldQueryMacxSoftwares:(NSNotification *)notification {
+    //NSLog(@"%s %@", __PRETTY_FUNCTION__, notification);
+    PJListViewController* listViewController = notification.userInfo[@"listViewController"];
+    NSInteger count = [notification.userInfo[@"count"] integerValue];
+    id data = [[TMCache sharedCache] objectForKey:@"softwares"];
+    if (count > 0 || !data) {
+        //querySoftwareListAll
+        [[PJMacxClient sharedClient] queryAllSoftwares:^(id obj) {
+            if (!obj) {
+                return;
+            }
+            
+            if ([_softwares count] > 0) {
+                [_softwares removeAllObjects];
+            }
+            
+            [[TMCache sharedCache] setObject:obj forKey:@"softwares"];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kShouldParseMacxSoftwares object:self userInfo:@{@"listViewController": listViewController, @"data": obj}];
+        }];
+        
+        return;
+    }
+    
+    // 只有首次启动才加载
+    NSNumber *isInitialize = notification.userInfo[@"init"];
+    if (isInitialize && [isInitialize integerValue]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kShouldParseMacxSoftwares object:self userInfo:@{@"listViewController": listViewController, @"data": data}];
+    }
+}
+
+- (void)shouldParseMacxSoftwares:(NSNotification *)notification {
+    //NSLog(@"%s %@", __PRETTY_FUNCTION__, notification);
+    PJListViewController* listViewController = notification.userInfo[@"listViewController"];
+    id data = notification.userInfo[@"data"];
+    
+    PJSoftwareInfoParser *_parser = [[PJSoftwareInfoParser alloc] initWithData:data];
+    [_parser setResultDelegate:self];
+    [_parser setTargetObject:listViewController];
+    //[_parser setNeedDebug:YES];
+    [_parser parse];
+}
+- (void)didParseMacxSoftwares:(NSNotification *)notification {
+    //NSLog(@"%s %@", __PRETTY_FUNCTION__, notification);
+}
+
 - (void)initializeSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
-    NSLog(@"initializeSoftwareList %@ %@", listViewController, detailViewController);
     [listViewController setSelectionDelegate:self];
     
     [self.listViewBox setContentView:listViewController.view];
@@ -195,17 +242,14 @@
         [listViewController setItems:self.softwares];
     }
     
-    [listViewController startAnimation];
-    [NSThread detachNewThreadSelector:@selector(parseAndLoadSoftwares:) toTarget:self withObject:listViewController];
+    //[NSThread detachNewThreadSelector:@selector(parseAndLoadSoftwares:) toTarget:self withObject:listViewController];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kWillLoadMacxSoftwares object:self userInfo:@{@"listViewController": listViewController, @"init":@(1)}];
 }
 - (void)updateSoftwareList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
-    NSLog(@"updateSoftwareList %@ %@", listViewController, detailViewController);
-    
     [listViewController filterWithCategory:nil];
 }
 
 - (void)initializeMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
-    NSLog(@"initializeMacxNewsList %@ %@", listViewController, detailViewController);
     [listViewController setSelectionDelegate:self];
     
     [self.listViewBox setContentView:listViewController.view];
@@ -225,12 +269,11 @@
 }
 
 - (void)updateMacxNewsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
-    NSLog(@"updateMacxNewsList %@ %@", listViewController, detailViewController);
+    //NSLog(@"updateMacxNewsList %@ %@", listViewController, detailViewController);
 }
 
 
 - (void)initializeAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
-    NSLog(@"initializeAppsList %@ %@", listViewController, detailViewController);
     [listViewController setSelectionDelegate:self];
     
     [self.listViewBox setContentView:listViewController.view];
@@ -240,7 +283,7 @@
 }
 
 - (void)updateAppsList:(PJListViewController*)listViewController andDetail:(PJDetailViewController*)detailViewController {
-    NSLog(@"updateAppsList %@ %@", listViewController, detailViewController);
+    //NSLog(@"updateAppsList %@ %@", listViewController, detailViewController);
 }
 
 - (id)init
@@ -248,8 +291,16 @@
     self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
         [self loadSidebar];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willLoadMacxSoftwares:) name:kWillLoadMacxSoftwares object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldQueryMacxSoftwares:) name:kShouldQueryMacxSoftwares object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldParseMacxSoftwares:) name:kShouldParseMacxSoftwares object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didParseMacxSoftwares:) name:kDidParseMacxSoftwares object:nil];
     }
     return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)awakeFromNib {
@@ -260,7 +311,6 @@
 
 #pragma mark - OutlineView DataSource
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
-    NSLog(@"%s ", __PRETTY_FUNCTION__);
     if (!item) {
         return [_sidebar[@"items"] count];
     }
@@ -319,10 +369,10 @@
         NSLog(@"Change sys sidebar items %@", identifier);
         [self changeViewFor:identifier];
     } else {
+        // 分类sidebar的items
         NSString *cid = itemAtRow[@"cid"];
         NSArray *categoryArray = [self categoryNameForId:cid];
         if (categoryArray) {
-            NSLog(@"Change software categories %@", cid);
             [self changeToKeyView];
             [[self keyListViewController] filterWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
                 NSString *value = evaluatedObject[@"type"];
@@ -340,7 +390,7 @@
 
 #pragma mark - ParseResult Delegate
 - (void)didBeginParseResult:(PJSoftwareInfoParser*)parser {
-    NSLog(@"Enter %s", __PRETTY_FUNCTION__);
+    //NSLog(@"Enter %s", __PRETTY_FUNCTION__);
 }
 
 - (BOOL)didParseResult:(PJSoftwareInfoParser*)parser withObject:(NSDictionary *)nodeInfo {
@@ -353,14 +403,14 @@
     NSLog(@"onParseResultError %@", error);
     [parser.targetObject rearrangeArrayControllerItems];
     PJListViewController *listViewController = parser.targetObject;
-    [listViewController stopAnimation];
-    return NO;// Do not abort, will use result below
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidParseMacxSoftwares object:self userInfo:@{@"listViewController": listViewController}];
+    return YES;// Do not abort, will use result below
 }
 - (void)didParseResultDone:(PJSoftwareInfoParser*)parser {
     NSLog(@"Enter %s", __PRETTY_FUNCTION__);
     [parser.targetObject rearrangeArrayControllerItems];
     PJListViewController *listViewController = parser.targetObject;
-    [listViewController stopAnimation];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidParseMacxSoftwares object:self userInfo:@{@"listViewController": listViewController}];
 }
 
 

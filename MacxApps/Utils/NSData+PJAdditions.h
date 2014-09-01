@@ -10,10 +10,6 @@
 
 @interface NSData (PJAdditions)
 
-- (NSData *)cleanUTF8;
-- (NSData*)convertToUTF8:(CFStringEncodings)encoding;
-- (NSData*)convertBIG52UTF8;
-- (NSData*)convertGBK2UTF8;
-
+- (NSInteger)integerValue;
 
 @end

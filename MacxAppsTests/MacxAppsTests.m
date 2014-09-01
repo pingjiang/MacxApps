@@ -8,7 +8,6 @@
 
 #import <XCTest/XCTest.h>
 #import "NSString+PJAdditions.h"
-#import "PJSoftwareManager.h"
 
 @interface MacxAppsTests : XCTestCase
 
@@ -37,10 +36,7 @@
 
 - (void)testQueryAllSoftwares
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    [[PJSoftwareManager sharedManager] queryAllSoftwares:^(id responseObject) {
-        NSLog(@"Result: %@", [responseObject className]);
-    }];
+    
 }
 
 @end

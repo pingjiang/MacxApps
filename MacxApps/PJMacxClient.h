@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking/AFNetworking.h"
 
+extern NSString *const kWillLoadMacxSoftwares;
+extern NSString *const kShouldQueryMacxSoftwares;
+extern NSString *const kShouldUpdateMacxSoftwares;
+extern NSString *const kShouldParseMacxSoftwares;
+extern NSString *const kDidQueryMacxSoftwares;
+extern NSString *const kDidUpdateMacxSoftwares;
+extern NSString *const kDidParseMacxSoftwares;
+
 @interface PJMacxClient : AFHTTPRequestOperationManager
 
 + (void)initializeNetwork;

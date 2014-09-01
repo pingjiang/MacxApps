@@ -70,10 +70,4 @@
     [self.arrayController setFilterPredicate:filterPredicate];
 }
 
-- (void)startAnimation {
-    [self.progressIndicator startAnimation:nil];
-}
-- (void)stopAnimation {
-    [self.progressIndicator stopAnimation:nil];
-}
 @end

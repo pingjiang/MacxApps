@@ -9,8 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import "PJSelectionDelegate.h"
 #import "PJListViewController.h"
+#import "ITPullToRefreshScrollView.h"
 
-@interface PJSoftwareListViewController : PJListViewController
+@interface PJSoftwareListViewController : PJListViewController<ITPullToRefreshScrollViewDelegate>
+
+@property (weak) IBOutlet ITPullToRefreshScrollView *scrollView;
 
 - (id)initWithFrame:(NSRect)frameRect;
 

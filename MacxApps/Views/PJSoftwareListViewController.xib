@@ -7,7 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="PJSoftwareListViewController">
             <connections>
                 <outlet property="arrayController" destination="lVb-00-N77" id="qHb-9E-Mmz"/>
-                <outlet property="progressIndicator" destination="eJR-yg-SxT" id="O0w-1z-HRZ"/>
+                <outlet property="scrollView" destination="esx-qM-fKD" id="uW9-aZ-rne"/>
                 <outlet property="tableView" destination="HSh-TJ-ntp" id="QuP-Ld-rjJ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <searchField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vgS-vC-uGv">
-                    <rect key="frame" x="20" y="370" width="236" height="22"/>
+                    <rect key="frame" x="20" y="370" width="260" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="ETX-HL-Y4S">
                         <font key="font" metaFont="system"/>
@@ -35,10 +35,10 @@
                         </binding>
                     </connections>
                 </searchField>
-                <scrollView ambiguous="YES" misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="80" horizontalPageScroll="10" verticalLineScroll="80" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esx-qM-fKD">
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="80" horizontalPageScroll="10" verticalLineScroll="80" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esx-qM-fKD" customClass="ITPullToRefreshScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="362"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <clipView key="contentView" ambiguous="YES" misplaced="YES" drawsBackground="NO" copiesOnScroll="NO" id="MVB-tb-mmM">
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="MVB-tb-mmM">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="362"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -151,7 +151,7 @@
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="8wf-u4-Y6P">
-                        <rect key="frame" x="0.0" y="347" width="40" height="15"/>
+                        <rect key="frame" x="0.0" y="346" width="0.0" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="5RS-0X-mTH">
@@ -159,18 +159,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="eJR-yg-SxT">
-                    <rect key="frame" x="264" y="373" width="16" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </progressIndicator>
             </subviews>
             <constraints>
-                <constraint firstItem="eJR-yg-SxT" firstAttribute="leading" secondItem="vgS-vC-uGv" secondAttribute="trailing" constant="8" id="3mH-KU-OEf"/>
                 <constraint firstItem="vgS-vC-uGv" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="65O-bP-1gF"/>
                 <constraint firstItem="vgS-vC-uGv" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="Cgp-iH-009"/>
-                <constraint firstItem="eJR-yg-SxT" firstAttribute="centerY" secondItem="vgS-vC-uGv" secondAttribute="centerY" id="V7g-vy-dng"/>
+                <constraint firstAttribute="trailing" secondItem="vgS-vC-uGv" secondAttribute="trailing" constant="20" id="Gk7-J4-XMF"/>
+                <constraint firstAttribute="trailing" secondItem="esx-qM-fKD" secondAttribute="trailing" id="ROD-0U-14S"/>
                 <constraint firstItem="esx-qM-fKD" firstAttribute="top" secondItem="vgS-vC-uGv" secondAttribute="bottom" constant="8" symbolic="YES" id="VKC-4N-dLd"/>
-                <constraint firstAttribute="trailing" secondItem="eJR-yg-SxT" secondAttribute="trailing" constant="20" id="Yjf-FK-5JB"/>
                 <constraint firstAttribute="bottom" secondItem="esx-qM-fKD" secondAttribute="bottom" id="bSh-gd-tao"/>
                 <constraint firstItem="esx-qM-fKD" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="bo8-Pz-lTX"/>
             </constraints>
